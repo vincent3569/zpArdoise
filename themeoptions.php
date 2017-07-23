@@ -38,10 +38,11 @@ class ThemeOptions {
 		setThemeOptionDefault('use_colorbox_image', false);
 		setThemeOptionDefault('show_exif', true);
 
-		setOption('zp_plugin_colorbox_js', 129);
+		setOption('zp_plugin_colorbox_js', 9|THEME_PLUGIN);
 		setOption('colorbox_zpArdoise_album', 1);
 		setOption('colorbox_zpArdoise_archive', 1);
 		setOption('colorbox_zpArdoise_contact', 1);
+		setOption('colorbox_zpArdoise_favorites', 1);
 		setOption('colorbox_zpArdoise_gallery', 1);
 		setOption('colorbox_zpArdoise_image', 1);
 		setOption('colorbox_zpArdoise_index', 1);
@@ -78,69 +79,72 @@ class ThemeOptions {
 	function handleOption($option, $currentValue) {
 
 		if ($option == 'css_style') {
-			echo '<select style="width:200px;" id="' . $option . '" name="' . $option . '"' . ">\n";
+			echo '<select style="width: 200px;" id="' . $option . '" name="' . $option . '"' . ">\n";
 			echo '<option value="dark"';
 				if ($currentValue == 'dark') {
-				echo ' selected="selected">Dark</option>\n';
+					echo ' selected="selected">Dark</option>\n';
 				} else {
-				echo '>Dark</option>\n';
+					echo '>Dark</option>\n';
 				}
 			echo '<option value="light"';
 				if ($currentValue == 'light') {
-				echo ' selected="selected">Light</option>\n';
+					echo ' selected="selected">Light</option>\n';
 				} else {
-				echo '>Light</option>\n';
+					echo '>Light</option>\n';
 				}
 			echo "</select>\n";
 		}
 
 		if ($option == 'color_style') {
-			echo '<select style="width:200px;" id="' . $option . '" name="' . $option . '"' . ">\n";
+			echo '<select style="width: 200px;" id="' . $option . '" name="' . $option . '"' . ">\n";
 			echo '<option value="default"';
 				if ($currentValue == 'default') {
-				echo ' selected="selected">Default</option>\n';
+					echo ' selected="selected">Default</option>\n';
 				} else {
-				echo '>Default</option>\n';
+					echo '>Default</option>\n';
 				}
 			echo '<option value="custom"';
 				if ($currentValue == 'custom') {
-				echo ' selected="selected">Custom</option>\n';
+					echo ' selected="selected">Custom</option>\n';
 				} else {
-				echo '>Custom</option>\n';
+					echo '>Custom</option>\n';
 				}
 			echo "</select>\n";
 		}
 
 		if ($option == 'zenpage_homepage') {
-			$unpublishedpages = query_full_array("SELECT titlelink FROM ".prefix('pages')." WHERE `show` != 1 ORDER by `sort_order`");
+			$unpublishedpages = query_full_array("SELECT titlelink FROM " . prefix('pages') . " WHERE `show` != 1 ORDER by `sort_order`");
 			if (empty($unpublishedpages)) {
 				echo gettext("No unpublished pages available");
 				// clear option if no unpublished pages are available or have been published meanwhile
 				// so that the normal gallery index appears and no page is accidentally set if set to unpublished again.
-				setOption("zenpage_homepage", "none", true);
+				setThemeOption('zenpage_homepage', 'none', NULL, 'zpArdoise');
 			} else {
-				echo '<input type="hidden" name="'.CUSTOM_OPTION_PREFIX.'selector-zenpage_homepage" value=0 />' . "\n";
-				echo '<select id="'.$option.'" name="zenpage_homepage">'."\n";
-				if ($currentValue == "none") {
-					$selected = " selected = 'selected'";
+				echo '<input type="hidden" name="' . CUSTOM_OPTION_PREFIX . 'selector-zenpage_homepage" value=0 />' . "\n";
+				echo '<select id="' . $option . '" name="' . $option . '">' . "\n";
+
+				echo '<option value="none"';
+				if ($currentValue == 'none') {
+					echo ' selected="selected">' . gettext("none") . '</option>\n';
 				} else {
-					$selected = "";
+					echo '>' . gettext("none") . '</option>\n';
 				}
-				echo "<option$selected>".gettext("none")."</option>";
+
 				foreach($unpublishedpages as $page) {
 					if ($currentValue == $page["titlelink"]) {
-						$selected = " selected = 'selected'";
+						$selected = ' selected="selected"';
 					} else {
-						$selected = "";
+						$selected = '';
 					}
-					echo "<option$selected>".$page["titlelink"]."</option>";
+					echo '<option value="' . $page["titlelink"] . '"' . $selected . '>' . $page["titlelink"] . '</option>';
 				}
+
 				echo "</select>\n";
 			}
 		}
 
 		if ($option == 'image_statistic') {
-			echo '<select style="width:200px;" id="' . $option . '" name="' . $option . '"' . ">\n";
+			echo '<select style="width: 200px;" id="' . $option . '" name="' . $option . '"' . ">\n";
 			echo '<option value="none"';
 				if ($currentValue == 'none') {
 					echo ' selected="selected">None</option>\n';
@@ -192,6 +196,5 @@ class ThemeOptions {
 			echo "</select>\n";
 		}
 	}
-
 }
 ?>

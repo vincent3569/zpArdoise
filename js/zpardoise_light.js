@@ -1,6 +1,6 @@
 ﻿jQuery(document).ready(function($) {
 	//For Comment slide : force to open #comment-wrap if there is an errorbox
-	if ($('#comment-wrap .errorbox').length) {
+	if (($('#comment-wrap .errorbox').length) || ($('#comment-wrap .notebox').length)) {
 		$('#comment-wrap').css('display', 'block');
 		$('#comment-wrap').css('opacity', '1');
 	} else {

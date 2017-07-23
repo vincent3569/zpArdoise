@@ -3,7 +3,7 @@ Theme Name: zpArdoise
 Theme URI: http://www.vincentbourganel.fr/news/zpArdoise-a-ZenPhoto-ZenPage-theme
 Author: Vincent3569
 Author URI: http://www.vincentbourganel.fr
-Version 1.4.3.1
+Version 1.4.4
 */
 
 /* --------- clear -----------*/
@@ -175,24 +175,38 @@ ul.hor-list, ul.hor-list li {
 
 /* errorbox */
 .errorbox {
+	background-color: #fdd;
+	border-style: solid;
+	border-width: 1px 1px 3px 1px;
+	border-color: #faa;
+	border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px;
 	color: #dd6666;
-	background: #fdd;
-	border-top: 1px solid #faa;
-	border-left: 1px solid #faa;
-	border-right: 1px solid #faa;
-	border-bottom: 5px solid #faa;
-	margin: 5px 0 10px;
-	padding: 15px;
+	margin-bottom: 10px;
+	padding: 10px;
+
 }
 .errorbox h2 {
 	color: #dd6666;
-	font-size: 100%;
+	font-size: 90%;
 	margin: 0 0 5px;
 }
 .errorlist {
 	margin-left: 10px;
 	padding-left: 15px;
 }
+
+/* notebox */
+.notebox {
+	background-color: #ffefb7;
+	border-style: solid;
+	border-width: 1px 1px 2px 1px;
+	border-color: #ffdeb5;
+	border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px;
+	color: #663300;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
 
 /* textfields */
 input, textarea, .disabled_input, select {
@@ -469,6 +483,9 @@ ul#no-gal-ul, #image-stat ul {
 	padding-top: 5px;
 	margin: 10px auto;
 }
+.favorites {
+	margin: 10px auto 5px auto;
+}
 #rating-wrap {
 	text-align: center;
 	width: 260px;
@@ -514,7 +531,7 @@ div.ss-controls a , div.nav-controls a {
 	background: #4a4a4a;
 	padding: 1px 5px;
 	letter-spacing: 1px;
-	-moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
+	border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
 }
 div.nav-controls a {
 	margin-left: 10px;
@@ -885,6 +902,12 @@ div.search-content {
 #commentform textarea {
 	width: 380px;
 	height: 150px;
+}
+#comment_tbl {
+	width: 395px!important;
+}
+#comment_tbl  td {
+	padding: 0!important;
 }
 #commentform .pushbutton {
 	margin-top: 10px;

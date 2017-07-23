@@ -1,10 +1,38 @@
+* 1.4.4
+- css/screen.css :
+	- fix issue on nav-controls
+	- graphical improvements to be compliant with zenphoto 1.4.4
+- js/zpardoise.js, js/zpardoise_light.js :
+	- fix an issue : force to open comment box if there is a note
+- locale/
+	- add Polish translation: thanks to Paweł Kowalczyk
+- album.php :
+	- use getFullImageURL() rather than getUnprotectedImageURL() to offer zenphoto capabilities on displaying protected image
+	- improvement to support favorites handler
+- favorites.php :
+	- new file to support favorites handler
+- functions.php :
+	- fix issues in zpArdoise_printEXIF when there are no exifs on picture (undefined index warnings in Debug Log)
+	- improvement to offer zenphoto capabilities on displaying protected image
+- image.php :
+	- use getFullImageURL() rather than getUnprotectedImageURL() to offer zenphoto capabilities on displaying protected image
+	- improvement to support favorites handler
+- inc_header.php :
+	- some code cleanup
+	- improvement to offer zenphoto capabilities on displaying protected image
+	- improvement to support favorites handler
+- inc_print_image_thumb.php :
+	- use getFullImageURL() rather than getUnprotectedImageURL() to offer zenphoto capabilities on displaying protected image
+- themeoptions.php :
+	- fix an issue when saving zenpage_homepage option
+	- fix an issue when evaluating "none" value of zenpage_homepage option
+	- fix an issue when seting colorbox_js plugin
+	- improvement to support favorites handler
+
+
 * 1.4.3.1
 - css/light.css :
 	- fix issue on searchextrashow
-- locale/
-	- add Polish translation: thanks to Paweł Kowalczyk
-- inc_header.php :
-	- some code cleanup
 
 
 * 1.4.3

@@ -7,9 +7,9 @@
 			<?php } else { ?>
 				<li class="no-gal-li">
 			<?php } ?>
-			<?php if (getOption('use_colorbox_album')) { ?>
-				<?php /* to do : display full image or sized image */ ?>
-				<a class="thumb colorbox" href="<?php echo html_encode(getUnprotectedImageURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
+			<?php $fullimage = getFullImageURL(); ?>
+			<?php if ((getOption('use_colorbox_album')) && (!empty($fullimage))) { ?>
+				<a class="thumb colorbox" href="<?php echo html_encode($fullimage); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
 			<?php } else { ?>
 				<a class="thumb" href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
 			<?php } ?>

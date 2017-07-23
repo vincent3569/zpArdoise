@@ -52,8 +52,8 @@
 								<a name="<?php echo html_decode($_zp_current_image->getFileName()); ?>" class="thumb" href="<?php echo html_encode(getDefaultSizedImage()); ?>" title="<?php echo getBareImageTitle(); ?>">
 							<?php } ?>
 							<?php printImageThumb(getAnnotatedImageTitle()); ?></a>
-							<?php /* to do : display full image or sized image */ ?>
-							<a <?php if (getOption('use_colorbox_album')) { ?>class="colorbox"<?php } ?> href="<?php echo html_encode(getFullImageURL()/*getUnprotectedImageURL()*/); ?>" title="<?php echo getBareImageTitle(); ?>"></a>
+							<?php $fullimage = getFullImageURL(); ?>
+							<a <?php if ((getOption('use_colorbox_album')) && (!empty($fullimage))) { ?>class="colorbox"<?php } ?> href="<?php echo html_encode($fullimage); ?>" title="<?php echo getBareImageTitle(); ?>"></a>
 							<div class="caption">
 								<?php if (getOption('show_exif')) { ?>
 								<div class="exif-infos-gal">
@@ -98,6 +98,10 @@
 
 		<?php if (getOption('show_tag')) { ?>
 			<div class="headline-tags"><?php printTags('links', '', 'hor-list'); ?></div>
+		<?php } ?>
+
+		<?php if (function_exists('printAddToFavorites')) { ?>
+			<div class="favorites"><?php printAddToFavorites($_zp_current_album); ?></div>
 		<?php } ?>
 
 		<?php if (function_exists('printGoogleMap')) { ?>

@@ -2,7 +2,8 @@
 
 // force UTF-8 Ø
 
-if ( !defined('WEBPATH') ) die();
+if (!defined('WEBPATH')) die();
+
 if ((getOption('use_galleriffic')) && !(($_zp_gallery_page == 'image.php') || ($_zp_gallery_page == 'search.php'))) {
 	setOption('image_size', '525', false);
 	setOption('image_use_side', 'longest', false);
@@ -92,7 +93,7 @@ setOption('zenpage_zp_index_news', false, false);	/* force this option called by
 					controlsContainerSel: '#controls',
 					captionContainerSel:  '#caption',
 					loadingContainerSel:  '#loading',
-					renderSSControls:     <?php if (getOption('use_colorbox_album')) { echo 'false'; } else { echo 'true'; } ?>,
+					renderSSControls:     <?php if ((getOption('use_colorbox_album')) && (getOption('protect_full_image') <> 'No access')) { echo 'false'; } else { echo 'true'; } ?>,
 					renderNavControls:    true,
 					playLinkText:         '<?php echo gettext('Slideshow'); ?>',
 					pauseLinkText:        '<?php echo gettext('Stop'); ?>',
@@ -221,6 +222,7 @@ setOption('zenpage_zp_index_news', false, false);	/* force this option called by
 				current : "image {current} / {total}",
 				maxWidth: "98%",
 				maxHeight: "98%",
+				/*slideshowAuto: false,*/
 				photo: true
 			});
 		});
@@ -274,6 +276,9 @@ setOption('zenpage_zp_index_news', false, false);	/* force this option called by
 			<li <?php if ($_zp_gallery_page == 'news.php') { ?>class="active"<?php } ?>><?php printNewsIndexURL(gettext('News')); ?></li>
 		<?php } ?>
 		<?php if (function_exists('printPageMenu')) { printPageMenu('list-top', '', 'active', '', '', '', 0, false); } ?>
+		<?php if (function_exists('printFavoritesLink')) { ?>
+			<li> <?php printFavoritesLink(); ?></li>
+		<?php } ?>
 		<?php if (getOption('show_archive')) { ?>
 			<li <?php if ($_zp_gallery_page == 'archive.php') { ?>class="active"<?php } ?>><?php printCustomPageURL(gettext('Archive View'), 'archive'); ?></li>
 		<?php } ?>

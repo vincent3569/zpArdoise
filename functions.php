@@ -21,11 +21,6 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 			$crop = (int) $crop && true;
 		}
 	}
-	if ($fullimagelink) {
-		$a_class = ' class="' . $a_class . '"';
-	} else {
-		$a_class = NULL;
-	};
 	if (!empty($class)) {
 		$class = ' class="' . $class . '"';
 	};
@@ -41,12 +36,15 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 				break;
 		}
 		if (is_object($randomImage) && $randomImage->exists) {
-			if($fullimagelink) {
-				$randomImageURL = html_encode($randomImage->getFullimage());
+			$fullimage = getFullImageURL($randomImage);
+			if(($fullimagelink) && (!empty($fullimage))) {
+				$aa_class = ' class="' . $a_class . '"';
+				$randomImageURL = html_encode($fullimage);
 			} else {
+				$aa_class = NULL;
 				$randomImageURL = html_encode(getURL($randomImage));
 			}
-			echo '<a href="' . $randomImageURL . '"' . $a_class . ' title="' . html_encode($randomImage->getTitle()) . '">';
+			echo '<a href="' . $randomImageURL . '"' . $aa_class . ' title="' . html_encode($randomImage->getTitle()) . '">';
 			switch ($crop) {
 				case 0:
 					$html =  "<img src=\"" . pathurlencode($randomImage->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
@@ -79,20 +77,18 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 		if (is_null($height)) $height = 85;
 		if (is_null($crop)) $crop = true;
 	}
-	if ($fullimagelink) {
-		$a_class = ' class="' . $a_class . '"';
-	} else {
-		$a_class = NULL;
-	};
 	echo "\n<div id=\"$option\">\n";
 	echo "<ul>";
 	foreach ($images as $image) {
-		if($fullimagelink) {
-			$imagelink = $image->getFullImage();
+		$fullimage = getFullImageURL($image);
+		if(($fullimagelink) && (!empty($fullimage))) {
+			$aa_class = ' class="' . $a_class . '"';
+			$imagelink = html_encode($fullimage);
 		} else {
-			$imagelink = $image->getImageLink();
+			$aa_class = NULL;
+			$imagelink = html_encode(getURL($image));
 		}
-		echo "<li><a href=\"" . html_encode($imagelink)."\"" . $a_class . " title=\"" . html_encode($image->getTitle()) . "\">\n";
+		echo "<li><a href=\"" . $imagelink ."\"" . $aa_class . " title=\"" . html_encode($image->getTitle()) . "\">\n";
 		switch ($crop) {
 			case 0:
 				echo "<img src=\"" . pathurlencode($image->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n";
@@ -134,15 +130,15 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 
 /* zpArdoise_printEXIF */
 function zpardoise_printEXIF() {
-	if (getImageMetaData()) {
-		$affichExifs = '';
-		$tableauDesExif = getImageMetaData(); //On récupère les exifs dans un tableau
-		if ($tableauDesExif['EXIFModel'] != NULL) { $affichExifs .= html_encode($tableauDesExif['EXIFModel']); };
-		if ($tableauDesExif['EXIFFocalLength'] != NULL) { $affichExifs .= ' &ndash; ' . html_encode($tableauDesExif['EXIFFocalLength']); };
-		if ($tableauDesExif['EXIFFNumber'] != NULL) { $affichExifs .= ' &ndash; ' . html_encode($tableauDesExif['EXIFFNumber']); };
-		if ($tableauDesExif['EXIFExposureTime'] != NULL) {$affichExifs .= ' &ndash; ' . html_encode($tableauDesExif['EXIFExposureTime']); };
-		if ($tableauDesExif['EXIFISOSpeedRatings'] != NULL) {$affichExifs .= ' &ndash; ' . html_encode($tableauDesExif['EXIFISOSpeedRatings']) . ' ISO'; };
-		echo $affichExifs;
+	$Meta_data = getImageMetaData();		// put all exif data ina array
+	if (!is_null($Meta_data)) {
+		$Exifs_list = '';
+		if (isset($Meta_data['EXIFModel'])) { $Exifs_list .= html_encode($Meta_data['EXIFModel']); };
+		if (isset($Meta_data['EXIFFocalLength'])) { $Exifs_list .= ' &ndash; ' . html_encode($Meta_data['EXIFFocalLength']); };
+		if (isset($Meta_data['EXIFFNumber'])) { $Exifs_list .= ' &ndash; ' . html_encode($Meta_data['EXIFFNumber']); };
+		if (isset($Meta_data['EXIFExposureTime'])) {$Exifs_list .= ' &ndash; ' . html_encode($Meta_data['EXIFExposureTime']); };
+		if (isset($Meta_data['EXIFISOSpeedRatings'])) {$Exifs_list .= ' &ndash; ' . html_encode($Meta_data['EXIFISOSpeedRatings']) . ' ISO'; };
+		echo $Exifs_list;
 	}
 }
 ?>
