@@ -1,14 +1,14 @@
 	<div id="album-wrap" class="clearfix">
 		<ul>
-		<?php $x = 1; ?>
+		<?php $col = 1; ?>
 		<?php while (next_album()) { ?>
 			<?php $lastcol = ''; ?>
-			<?php if ($x == 3) {$lastcol=' class="lastcol"'; $x = 0;} ?>
+			<?php if ($col == 3) {$lastcol=' class="lastcol"'; $col = 0;} ?>
 			<li<?php echo $lastcol; ?>>
-				<a class="album-thumb" href="<?php echo html_encode(getAlbumLinkURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle(); ?>"><?php printCustomAlbumThumbImage(getBareAlbumTitle(), NULL, getOption('personnal_thumb_width'), getOption('personnal_thumb_height'), getOption('personnal_thumb_width'), getOption('personnal_thumb_height')); ?></a>
-				<h4><a href="<?php echo html_encode(getAlbumLinkURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h4>
+				<a class="album-thumb" href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle(); ?>"><?php printCustomAlbumThumbImage(getBareAlbumTitle(), NULL, getOption('personnal_thumb_width'), getOption('personnal_thumb_height'), getOption('personnal_thumb_width'), getOption('personnal_thumb_height')); ?></a>
+				<h4><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h4>
 			</li>
-			<?php $x++; ?>
+			<?php $col++; ?>
 		<?php } ?>
 		</ul>
 	</div>

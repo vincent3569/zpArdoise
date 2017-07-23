@@ -3,7 +3,7 @@ Theme Name: zpArdoise
 Theme URI: http://www.vincentbourganel.fr/news/zpArdoise-a-ZenPhoto-ZenPage-theme
 Author: Vincent3569
 Author URI: http://www.vincentbourganel.fr
-Version 1.4.5
+Version 1.4.6
 */
 
 /* --------- clear -----------*/
@@ -1184,7 +1184,3 @@ div#jump-search select option {
 .slide img {
 	display: block;
 }
-
-/* addthis */
-addthis_toolbox {display: inline;}
-.at300bs {display: inline-block !important;}

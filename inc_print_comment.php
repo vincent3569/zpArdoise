@@ -1,20 +1,20 @@
 	<?php
 	switch ($_zp_gallery_page) {
 		case 'album.php':
-			$comments_open = getOption('comment_form_albums');
-			$comments_allowed = getCommentsAllowed();
+			$comments_open = getOption('comment_form_albums');					// option of comment_form plugin for albums
+			$comments_allowed = $_zp_current_album->getCommentsAllowed();		// value for current album
 			break;
 		case 'image.php':
 			$comments_open = getOption('comment_form_images');
-			$comments_allowed = getCommentsAllowed();
+			$comments_allowed = $_zp_current_image->getCommentsAllowed();
 			break;
 		case 'pages.php':
 			$comments_open = getOption('comment_form_pages');
-			$comments_allowed = zenpageOpenedForComments();
+			$comments_allowed = $_zp_current_zenpage_page->getCommentsAllowed();
 			break;
 		case 'news.php':
 			$comments_open = getOption('comment_form_articles');
-			$comments_allowed = zenpageOpenedForComments();
+			$comments_allowed = $_zp_current_zenpage_news->getCommentsAllowed();
 			break;
 		default:
 			return;

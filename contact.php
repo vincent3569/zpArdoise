@@ -1,6 +1,6 @@
 <?php 
-if (!function_exists('printContactForm')) die();
-include ('inc_header.php');
+if (extensionEnabled('contact_form')) {
+	include ('inc_header.php');
 ?>
 
 	<div id="post">
@@ -21,4 +21,9 @@ include ('inc_header.php');
 
 	</div>
 
-<?php include('inc_footer.php'); ?>
+<?php
+	include('inc_footer.php');
+
+} else {
+	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
+} ?>

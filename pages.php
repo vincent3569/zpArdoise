@@ -1,6 +1,6 @@
-<?php
-if (!class_exists('Zenpage')) die();
-include ('inc_header.php');
+<?php 
+if ($_zenpage_enabled) {
+	include ('inc_header.php');
 ?>
 
 		<div id="post" class="clearfix">
@@ -15,6 +15,13 @@ include ('inc_header.php');
 			<?php printCodeblock(1); ?>
 		</div>
 
-		<?php if (function_exists('printCommentForm')) {include('inc_print_comment.php');} ?>
+		<?php if (extensionEnabled('comment_form')) { ?>
+			<?php include('inc_print_comment.php'); ?>
+		<?php } ?>
 
-<?php include('inc_footer.php'); ?>
+<?php
+	include('inc_footer.php');
+
+} else {
+	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
+} ?>

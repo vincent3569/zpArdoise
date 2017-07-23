@@ -23,7 +23,7 @@
 			</div>
 		<?php } ?>
 
-		<?php if ((getOption('image_statistic') != 'none') && ((function_exists('printImageStatistic')) || (getOption('image_statistic') == 'random'))) { ?>
+		<?php if ((getOption('image_statistic') != 'none') && ((extensionEnabled('image_album_statistics')) || (getOption('image_statistic') == 'random'))) { ?>
 			<?php include('inc_print_image_statistic.php'); ?>
 		<?php } ?>
 

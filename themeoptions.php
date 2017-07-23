@@ -10,18 +10,18 @@ require_once(SERVERPATH . '/' . ZENFOLDER . '/admin-functions.php');
 
 class ThemeOptions {
 
-	function ThemeOptions() {
-		setThemeOption('albums_per_row', '3', NULL, 'zpArdoise');
-		setThemeOptionDefault('albums_per_page', '9');
-		setThemeOption('images_per_row', '5', NULL, 'zpArdoise');
-		setThemeOptionDefault('images_per_page', '20');
-		setThemeOption('thumb_size', '150', NULL, 'zpArdoise');
-		setThemeOption('thumb_crop', '1', NULL, 'zpArdoise');
-		setThemeOption('thumb_crop_width', '150', NULL, 'zpArdoise');
-		setThemeOption('thumb_crop_height', '150', NULL, 'zpArdoise');
-		setThemeOption('image_size', '700', NULL, 'zpArdoise');
+	function __construct() {
+		setThemeOptionDefault('albums_per_row', 3);
+		setThemeOptionDefault('albums_per_page', 9);
+		setThemeOptionDefault('images_per_row', 5);
+		setThemeOptionDefault('images_per_page', 20);
+		setThemeOptionDefault('thumb_size', 150);
+		setThemeOptionDefault('thumb_crop', 1);
+		setThemeOptionDefault('thumb_crop_width', 150);
+		setThemeOptionDefault('thumb_crop_height', 150);
+		setThemeOptionDefault('image_size', 700);
 		setThemeOptionDefault('image_use_side', 'longest');
-		setThemeOption('custom_index_page', '', NULL, 'zpArdoise');
+		setThemeOptionDefault('custom_index_page', '');
 
 		setThemeOptionDefault('use_image_logo_filename', 'banniere3.jpg');
 		setThemeOptionDefault('show_image_logo_on_image', false);
@@ -51,6 +51,17 @@ class ThemeOptions {
 		setOption('colorbox_zpArdoise_password', 1);
 		setOption('colorbox_zpArdoise_register', 1);
 		setOption('colorbox_zpArdoise_search', 1);
+
+		if (class_exists('cacheManager')) {
+			$me = basename(dirname(__FILE__));
+			cacheManager::deleteThemeCacheSizes($me);
+			cacheManager::addThemeCacheSize($me, getThemeOption('thumb_size'), NULL, NULL, getThemeOption('thumb_crop_width'), getThemeOption('thumb_crop_height'), NULL, NULL, true);
+			if (getOption('use_galleriffic')) {
+				cacheManager::addThemeCacheSize($me, 85, NULL, NULL, 85, 85, NULL, NULL, true);
+				cacheManager::addThemeCacheSize($me, 525, NULL, NULL, NULL, NULL, NULL, NULL, false);
+			}
+			cacheManager::addThemeCacheSize($me, getThemeOption('image_size'), NULL, NULL, NULL, NULL, NULL, NULL, false);
+		}
 	}
 
 	function getOptionsDisabled() {

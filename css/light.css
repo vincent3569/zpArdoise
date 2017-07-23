@@ -190,3 +190,10 @@ div#footer {
 #slidenav a:hover {
 	color: #111 !important;
 }
+#paypal_button{
+	background: #eee!important;
+	border: 0px solid #eee!important;
+}
+#paypal_button:hover, #paypal_button:focus {
+	border: 0px solid #eee!important;
+}

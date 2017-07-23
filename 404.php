@@ -13,18 +13,7 @@
 		</div>
 
 		<h4>
-			<?php
-			echo gettext('The Zenphoto object you are requesting cannot be found.');
-			if (isset($album)) {
-				echo '<br />'.sprintf(gettext('Album: %s'), html_encode($album));
-			}
-			if (isset($image)) {
-				echo '<br />'.sprintf(gettext('Image: %s'), html_encode($image));
-			}
-			if (isset($obj)) {
-				echo '<br />'.sprintf(gettext('Page: %s'), html_encode(substr(basename($obj), 0, -4)));
-			}
-			?>
+			<?php print404status(isset($album) ? $album : NULL, isset($image) ? $image : NULL, $obj); ?>
 		</h4>
 
 	</div>

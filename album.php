@@ -8,7 +8,6 @@
 				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 			<?php } ?>
 			&raquo;&nbsp;<?php printParentBreadcrumb('', ' » ', ' » '); ?><?php printAlbumTitle(); ?></h3>
-
 			<div class="headline-text"><?php printAlbumDesc(); ?></div>
 		</div>
 
@@ -32,7 +31,6 @@
 
 		<?php if (getNumImages() > 0) { ?>
 			<?php if (getOption('use_galleriffic')) { ?>
-
 			<div id="galleriffic-wrap" class="clearfix">
 				<div id="gallery" class="content">
 					<div id="zpArdoise_controls" class="controls"></div>
@@ -53,7 +51,7 @@
 							<?php } ?>
 							<?php printImageThumb(getAnnotatedImageTitle()); ?></a>
 							<?php $fullimage = getFullImageURL(); ?>
-							<a <?php if ((getOption('use_colorbox_album')) && (!empty($fullimage))) { ?>class="colorbox"<?php } ?> href="<?php echo html_encode($fullimage); ?>" title="<?php echo getBareImageTitle(); ?>"></a>
+							<a <?php if ((getOption('use_colorbox_album')) && (!empty($fullimage))) { ?>class="colorbox"<?php } ?> href="<?php echo html_encode(pathurlencode($fullimage)); ?>" title="<?php echo getBareImageTitle(); ?>"></a>
 							<div class="caption">
 								<?php if (getOption('show_exif')) { ?>
 								<div class="exif-infos-gal">
@@ -61,7 +59,7 @@
 								</div>
 								<?php } ?>
 								<div class="image-title">
-									<a href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php echo gettext('Image'); ?> : <?php echo getImageTitle(); ?>"><?php printImageTitle(); ?></a>
+									<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php echo gettext('Image'); ?> : <?php echo getImageTitle(); ?>"><?php printImageTitle(); ?></a>
 								</div>
 								<div class="image-desc">
 									<?php printImageDesc(); ?>
@@ -73,7 +71,7 @@
 				</div>
 			</div>
 
-			<!-- If javascript is disabled in the users browser, the following version of the album page will display  -->
+			<!-- If javascript is disabled in the users browser, the following version of the album page will display -->
 			<noscript>
 				<?php include('inc_print_image_thumb.php'); ?>
 
@@ -100,11 +98,11 @@
 			<div class="headline-tags"><?php printTags('links', '', 'hor-list'); ?></div>
 		<?php } ?>
 
-		<?php if (function_exists('printAddToFavorites')) { ?>
+		<?php if ((zp_loggedin()) && (extensionEnabled('favoritesHandler'))) { ?>
 			<div class="favorites"><?php printAddToFavorites($_zp_current_album); ?></div>
 		<?php } ?>
 
-		<?php if (function_exists('printGoogleMap')) { ?>
+		<?php if (extensionEnabled('GoogleMap')) { ?>
 			<div class="googlemap"><?php printGoogleMap(NULL, 'googlemap'); ?></div>
 			<script type="text/javascript">
 			//<![CDATA[
@@ -119,6 +117,8 @@
 			</script>
 		<?php } ?>
 
-		<?php if (function_exists('printCommentForm')) {include('inc_print_comment.php');} ?>
+		<?php if (extensionEnabled('comment_form')) { ?>
+			<?php include('inc_print_comment.php'); ?>
+		<?php } ?>
 
 <?php include('inc_footer.php'); ?>

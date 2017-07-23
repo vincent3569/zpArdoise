@@ -7,15 +7,15 @@
 					case 'popular':
 						echo gettext_th('Popular images'); break;		/* to do : use zenphoto translation rather than local translation */
 					case 'latest':
-						echo gettext_th('Latest images'); break;
+						echo gettext('Latest images'); break;
 					case 'latest-date':
-						echo gettext_th('Latest images'); break;
+						echo gettext('Latest images'); break;
 					case 'latest-mtime':
-						echo gettext_th('Latest images'); break;
+						echo gettext('Latest images'); break;
 					case 'mostrated':
-						echo gettext_th('Most Rated Images'); break;
+						echo gettext_th('Most rated images'); break;
 					case 'toprated':
-						echo gettext_th('Top Rated Images'); break;
+						echo gettext('Top rated images'); break;
 				}
 				?>
 			</h4>

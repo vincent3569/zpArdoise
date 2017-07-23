@@ -1,4 +1,7 @@
-<?php include ('inc_header.php'); ?>
+<?php 
+if (extensionEnabled('favoritesHandler')) {
+	include ('inc_header.php');
+?>
 
 		<div id="headline" class="clearfix">
 			<h3><?php printHomeLink('', ' » '); ?>
@@ -8,7 +11,6 @@
 				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 			<?php } ?>
 			&raquo;&nbsp;<?php printAlbumTitle(); ?></h3>
-
 			<div class="headline-text"><?php printAlbumDesc(); ?></div>
 		</div>
 
@@ -40,4 +42,9 @@
 
 		</div>
 
-<?php include('inc_footer.php'); ?>
+<?php
+	include('inc_footer.php');
+
+} else {
+	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
+} ?>

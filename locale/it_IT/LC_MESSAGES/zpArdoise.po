@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zpArdoise\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-08 21:14+0100\n"
-"PO-Revision-Date: 2012-04-24 23:41+0100\n"
+"PO-Revision-Date: 2013-12-23 19:10+0100\n"
 "Last-Translator: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "MIME-Version: 1.0\n"
@@ -11,66 +11,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: gettext_th\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: C:\\Users\\Famille\\Documents\\_Vincent\\Site Internet\\Galerie photo\\zenphoto\\themes\\zpArdoise\n"
+"Language: it_IT\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Famille\\Documents\\_Vincent\\Site Internet"
+"\\Galerie photo\\zenphoto\\themes\\zpArdoise\n"
 
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/archive.php:24
-msgid "News archive"
-msgstr "Archivio notizie"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
+#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/footer.php:44
 msgid "You can browse with the arrows keys of your keyboard"
 msgstr "È possibile navigare con i tasti freccia della vostra tastiera"
 
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/image_statistic.php:5
-msgid "Random images"
-msgstr "Random immagini"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
+#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/image_statistic.php:7
 msgid "Popular images"
 msgstr "Popolare immagini"
 
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/image_statistic.php:9
-#: photo\zenphoto\themes\zpArdoise/image_statistic.php:11
-#: photo\zenphoto\themes\zpArdoise/image_statistic.php:13
-msgid "Latest images"
-msgstr "Ultime immagini"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
+#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/image_statistic.php:15
-msgid "Most Rated Images"
+msgid "Most rated images"
 msgstr "La maggior parte delle immagini votati"
 
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/image_statistic.php:17
-msgid "Top Rated Images"
-msgstr "Immagini più votate"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
+#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/news.php:9
 #: photo\zenphoto\themes\zpArdoise/news.php:11
 msgid "newer"
 msgstr "più recenti"
 
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
+#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/news.php:14
 #: photo\zenphoto\themes\zpArdoise/news.php:16
 msgid "older"
 msgstr "più vecchi"
-

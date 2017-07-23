@@ -15,8 +15,7 @@
 		$numalbums = getNumAlbums();
 		$total1 = $numimages + $numalbums;
 
-		$zenpage = getOption('zp_plugin_zenpage');
-		if ($zenpage && !isArchive()) {
+		if ($_zenpage_enabled && !isArchive()) {
 			$numnews = getNumNews();
 			$numpages = getNumPages();
 		} else {
@@ -91,15 +90,14 @@
 			if ($numnews > 0) { ?>
 				<div>
 					<ul class="search-item"><li><?php printf(gettext('Articles (%s)'), $numnews); ?></li></ul>
-
-					<?php while (next_news('date', 'desc')) { ?>
-					<div class="news-truncate clearfix">
-						<h3 class="search-title"><?php printNewsTitleLink(); ?></h3>
-						<div class="search-content clearfix">
-							<?php echo shortenContent(strip_tags(getNewsContent()), 100, getOption("zenpage_textshorten_indicator")); ?>
+						<?php while (next_news()) { ?>
+						<div class="news-truncate clearfix">
+							<h3 class="search-title"><?php printNewsURL(); ?></h3>
+							<div class="search-content clearfix">
+								<?php echo shortenContent(getBare(getNewsContent()), 100, getOption("zenpage_textshorten_indicator")); ?>
+							</div>
 						</div>
-					</div>
-					<?php } ?>
+						<?php } ?>
 				</div>
 			<?php
 			}
@@ -107,15 +105,14 @@
 			if ($numpages > 0) { ?>
 				<div>
 					<ul class="search-item"><li><?php printf(gettext('Pages (%s)'), $numpages); ?></li></ul>
-
-					<?php while (next_page()) { ?>
-					<div class="news-truncate clearfix">
-						<h3 class="search-title"><?php printPageTitlelink(); ?></h3>
-						<div class="search-content clearfix">
-							<?php echo shortenContent(strip_tags(getPageContent()), 100, getOption("zenpage_textshorten_indicator")); ?>
+						<?php while (next_page()) { ?>
+						<div class="news-truncate clearfix">
+							<h3 class="search-title"><?php printPageURL(); ?></h3>
+							<div class="search-content clearfix">
+								<?php echo shortenContent(getBare(getPageContent()), 100, getOption("zenpage_textshorten_indicator")); ?>
+							</div>
 						</div>
-					</div>
-					<?php } ?>
+						<?php } ?>
 				</div>
 			<?php
 			}

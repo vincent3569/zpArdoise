@@ -40,7 +40,7 @@
 			<div id="image">
 				<?php $fullimage = getFullImageURL(); ?>
 				<?php if ((getOption('use_colorbox_image')) && (!empty($fullimage))) { ?>
-					<a class="colorbox" href="<?php echo html_encode($fullimage); ?>" title="<?php echo getBareImageTitle();?>"><?php printDefaultSizedImage(getImageTitle()); ?></a>
+					<a class="colorbox" href="<?php echo html_encode(pathurlencode($fullimage)); ?>" title="<?php echo getBareImageTitle();?>"><?php printDefaultSizedImage(getImageTitle()); ?></a>
 				<?php } else { ?>
 					<?php printDefaultSizedImage(getImageTitle()); ?>
 				<?php } ?>
@@ -59,16 +59,18 @@
 				<div class="headline-tags"><?php printTags('links', '', 'hor-list'); ?></div>
 			<?php } ?>
 
-			<?php if (function_exists('printAddToFavorites')) { ?>
+			<?php if ((zp_loggedin()) && (extensionEnabled('favoritesHandler'))) { ?>
 				<div class="favorites"><?php printAddToFavorites($_zp_current_image); ?></div>
 			<?php } ?>
 
-			<?php if (function_exists('printRating')) { ?>
+			<?php if (extensionEnabled('rating')) { ?>
 				<div id="rating-wrap"><?php printRating(); ?></div>
 			<?php } ?>
 
 		</div>
 
-		<?php if (function_exists('printCommentForm')) {include('inc_print_comment.php');} ?>
+		<?php if (extensionEnabled('comment_form')) { ?>
+			<?php include('inc_print_comment.php'); ?>
+		<?php } ?>
 
 <?php include('inc_footer.php'); ?>
