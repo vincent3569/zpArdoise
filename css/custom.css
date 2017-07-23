@@ -1,0 +1,26 @@
+/*---------------------------------------------------------------
+uncomment the 1st line to change the background image
+change the value of the color to change the color of the links
+----------------------------------------------------------------*/
+
+/*body{background-image: url(../images/bg2.jpg);}*/
+
+a, a:active{color: #A3C159;}
+#main-menu ul li a.active, #main-menu ul li.active a{background-color: #A3C159;}
+div.pagination-nogal ul a, div.pagination-nogal ul a:visited, div.pagination-news ul a, div.pagination-news ul a:visited{border-color: #A3C159; color: #A3C159;}
+div.pagination-nogal ul li.current, div.pagination-news ul li.current{border-color: #A3C159; background-color: #A3C159}
+div.nav-img ul a, div.nav-img a{color: #A3C159;}
+div.nav-img ul a:hover, div.nav-img a:hover{border-color:#A3C159; background-color: #A3C159;}
+#admin h3:hover{color: #A3C159;}
+div.detail-download a:hover, div.nav-controls a:hover, div.ss-controls a:hover{background-color: #A3C159;}
+div.pagination a, div.pagination span.current{border-color: #A3C159;}
+div.pagination span.ellipsis{border-color: #A3C159;}
+div.pagination span.current{background-color: #A3C159; border-color: #A3C159;}
+div.pagination a:hover{border-color: #A3C159;}
+
+/*
+#b45e2c rouge brique
+#f09018 orange
+#778899 gris-bleu
+#a3c159 vert amande
+*/

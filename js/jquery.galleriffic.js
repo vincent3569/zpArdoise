@@ -70,10 +70,10 @@
 		enableTopPager:            false,
 		enableBottomPager:         true,
 		maxPagesToShow:            7,
-		imageContainerSel:         '',
-		captionContainerSel:       '',
-		controlsContainerSel:      '',
-		loadingContainerSel:       '',
+		imageContainerSel:         '#slideshow',
+		controlsContainerSel:      '#controls',
+		captionContainerSel:       '#caption',
+		loadingContainerSel:       '#loading',
 		renderSSControls:          true,
 		renderNavControls:         true,
 		playLinkText:              'Play',
@@ -140,7 +140,7 @@
 			// @param {Boolean} insert Specifies whether the the image is appended to the end or inserted into the gallery.
 			// @param {Integer} position The index within the gallery where the item shouold be added.
 			addImage: function(listItem, thumbExists, insert, position) {
-				var $li = ( typeof listItem == "string" ) ? $(listItem) : listItem;				
+				var $li = ( typeof listItem == "string" ) ? $(listItem) : listItem;
 				var $aThumb = $li.find('a.thumb');
 				var slideUrl = $aThumb.attr('href');
 				var title = $aThumb.attr('title');
@@ -471,7 +471,7 @@
 				var page = this.getCurrentPage();
 				if (page > 0) {
 					var startIndex = page * this.numThumbs;
-					var prevPage = startIndex - this.numThumbs;				
+					var prevPage = startIndex - this.numThumbs;
 					this.gotoIndex(prevPage, dontPause, bypassHistory);
 				}
 				
@@ -630,10 +630,15 @@
 					.append('<span class="image-wrapper current"><a class="advance-link" rel="history" href="#'+this.data[nextIndex].hash+'" title="'+imageData.title+'">&nbsp;</a></span>')
 					.find('span.current').css('opacity', '0');
 				
+				//var newSlide=this.$imageContainer
+				//	.append('<span class="image-wrapper current"><a class="advance-link" rel="history" href="#'+this.currentImage.index.hash+'" title="'+imageData.title+'">&nbsp;</a></span>')
+				//	.find('span.current').css('opacity','0');
 				newSlide.find('a')
 					.append(imageData.image)
+					
 					.click(function(e) {
-						gallery.clickHandler(e, this);
+						$("a[rel='zoom']:eq(" + imageData.index + ")").click();
+						gallery.pause()
 					});
 				
 				var newCaption = 0;
@@ -935,10 +940,6 @@
 			$(document).keydown(function(e) {
 				var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
 				switch(key) {
-					case 32: // space
-						gallery.next();
-						e.preventDefault();
-						break;
 					case 33: // Page Up
 						gallery.previousPage();
 						e.preventDefault();

@@ -2,14 +2,14 @@
 
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<title>zpArdoise 1.0 – a ZenPhoto/ZenPage theme</title>
+<title>zpArdoise 1.1 – a ZenPhoto/ZenPage theme</title>
 <style>
 <!--
-body{background-color:#333; color:#bbb; font-size:11.0pt; font-family:"Corbel","sans-serif";}
-h1{font-size:16.0pt;font-family:"Georgia","serif";}
-h2{font-size:14.0pt;font-family:"Georgia","serif";}
-h3{font-size:12.0pt;font-family:"Georgia","serif";}
-a, a:active{color:#f09018; text-decoration:none;}
+body{background-color:#333; color:#bbb; font-size:90%; font-family:"Corbel","sans-serif";}
+h2{font-size:100%;font-style:italic;font-family:"Georgia","serif";}
+h3{font-size:110%;font-family:"Georgia","serif";}
+h4{font-size:90%;font-style:italic;font-family:"Georgia","serif";}
+a, a:active{color:#86a1b6; text-decoration:none;}
 a:focus, a:hover{text-decoration:none;}
 ol{margin-bottom:0cm;}
 ul{margin-bottom:0cm;}
@@ -22,87 +22,90 @@ ul{margin-bottom:0cm;}
 <div>
 
 <!-- English -->
-<h3><a name="english"></a>English version - <a title="Francais" href="#francais">Version Française</a></h3>
-<h2>zpArdoise 1.0 &ndash; a ZenPhoto/ZenPage theme</h2>
-<p><b><span style='color:red'>This is the first release of this theme. Please report bugs on the forum and I will try to fix as soon as possible.</b></span></p>
-
-<p>zpArdoise theme is a theme for ZenPhoto/ZenPage, inherited from <a href="http://www.blueskywebcreations.com/zpgalleriffic/" target="_blank">zpGalleriffic</a> theme (thanks to <a href="http://www.gjr-web.com/" title="http://www.gjr-web.com/" target="_blank">gjr</a>).</p>
-<p>The theme has been optimized for 150x150 px squared thumbnails (five thumbnails per line): think of adjusting the size of thumbnails, otherwise you will have results that are not very elegant.<br>
-You can also use the script Galleriffic (presentation script of images from the gallery). In this case, you should not have any albums that mixes sub-albums and pictures, because of configuration of the theme, album.php can display two pagination bars (that of the theme and that of gallerific script).</p>
-
-<p>The additional scripts used are the same that zpGalleriffic:<br>
-<ul style='margin-top:0cm' type=disc>
- <li ><a href="http://www.twospy.com/galleriffic/" target="_blank">Galleriffic</a>,
-    <a href="http://www.mikage.to/jquery/jquery_history.html" target="_blank">jQuery History Plugin</a>,
-    <a href="http://www.position-absolute.com/articles/jquery-fade-and-slide-toggle-plugin" target="_blank">Slide and Toggle Fade</a></li>
-</ul></p>
-
-<p>I also added a script for displaying the images with the arrow keys.</p>
-
-<p>The theme supports the following ZenPhoto plugins:<br>
-<ul style='margin-top:0cm' type=disc>
-  <li >comment_form, contact_form, image_album_statistics, print_album_menu, rating, slideshow, user_login-out, zenpage</li>
-</ul></p>
-
-<h2>Installation</h2>
-
-<p>Important: You must have <b>ZenPhoto 1.2.9 release or higher</b>.</p>
-<ol style='margin-top:0cm' start=1 type=1>
- <li >Upload the zip file to your computer</li>
- <li >Unzip the downloaded zip file locally, and upload the zpArdoise folder to the directory &laquo;&nbsp;/themes/&nbsp;&raquo; of your ZenPhoto site</li>
- <li >In ZenPhoto administration, go to the Themes tab and activate the zpArdoise theme</li>
- <li >Navigate to Options&gt;Theme to view and configure the available options for zpArdoise</li>
+<h2><a name="english"></a>English version - <a title="Francais" href="#francais">Version Française</a></h2>
+<h3>zpArdoise 1.3 &ndash; a ZenPhoto/ZenPage theme</h3>
+<p><span style='color:red'><b>Please report bugs on the forum and I will try to fix as soon as possible.</b></span></p>
+<p>zpArdoise theme is a theme for ZenPhoto/ZenPage, inherited from <a href="http://www.zenphoto.org/zp/theme/zpGalleriffic/subpages.jpg.php" target="_blank">zpGalleriffic</a> theme (thanks to <a title="http://www.gjr-web.com/" href="http://www.gjr-web.com/" target="_blank">gjr</a>).<br />
+After having submitted my site for the showcase of ZenPhoto, I am pleased to offer my zpArdoise theme to the community.</p>
+<p>Feel free to download and use it, and thanks in advance for your feedback!</p>
+<h4>Description</h4>
+<p><span style="color: #ff0000;"><b>Important:</b></span> To use the v1.3 of the theme, you must have ZenPhoto 1.4 (or more).<br />If you have ZenPhoto from 1.2.9 to 1.3.1.2, you should use zpArdoise 1.0.</p>
+<p>Additional scripts used:</p>
+<ul style="margin-top: 0cm;" type="disc">
+<li><a href="http://www.twospy.com/galleriffic/" target="_blank">Galleriffic</a>, <a href="http://www.mikage.to/jquery/jquery_history.html" target="_blank">jQuery History Plugin</a>, <a href="http://www.position-absolute.com/articles/jquery-fade-and-slide-toggle-plugin" target="_blank">Slide and Toggle Fade</a></li>
+<li>script for displaying the images with the arrow keys.</li>
+</ul>
+<p>The theme supports the following ZenPhoto plugins:</p>
+<ul style="margin-top: 0cm;" type="disc">
+<li>colorbox, comment_form, contact_form, GoogleMap, image_album_statistics, print_album_menu, rating, register_user, slideshow, user_login-out, zenpage</li>
+</ul>
+<h4>Improvements of 1.3 release</h4>
+<ul style="margin-top: 0cm;" type="disc">
+<li>Replacement of  'Use Colorbox' option by 'Use Colorbox in Album' option to use colorbox plugin in Album page, whether galleriffic is used or not (if 'Use Colorbox in Album' is checked, Image page will never be called)</li>
+<li>New 'Use Colorbox in Image' option to use the colorbox plugin in Image page</li>
+<li>New 'Galleriffic delay' option to configure the duration of the Galleriffic slideshow</li>
+<li>Navigation with keyboard arrows on single news pages</li>
+<li>Add translations in english, french, italian, german and spanish for specific litteral strings of the zpArdoise theme</li>
+<li>Some graphical improvements</li>
+<li>Fix some translation issues</li>
+</ul>
+<h4>Installation</h4>
+<ol style="margin-top: 0cm;" type="1">
+<li>Upload the zip file to your computer</li>
+<li>Unzip the downloaded zip file locally, and upload the zpArdoise folder to the directory « /themes/ » of your ZenPhoto site</li>
+<li>In ZenPhoto administration, go to the Themes tab and activate the zpArdoise theme</li>
+<li>Navigate to Options&gt;Theme to view and configure the available options for zpArdoise</li>
+<li>In Options&gt;Theme, adujst squared thumb size to 150 px (the theme has been optimized for this size)</li>
 </ol>
-
-<p>Optional:<br>
-<ol style='margin-top:0cm' start=5 type=1>
- <li >You can customize the header image by placing images 900 px wide (eg 900x120 px) in the directory &laquo;&nbsp;themes/zpArdoise/images/&nbsp;&raquo;, and configure your header in Options&gt;Theme</li>
- <li >You can use the RSS icon provided by copying the file &laquo;&nbsp;themes/zpArdoise/images/rss.gif&nbsp;&raquo; in the directory &laquo;&nbsp;zp-core/images/&nbsp;&raquo;</li>
-</ol></p>
-<p>Thanks in advance for your feedback and enjoy with this theme!</p>
-
+<h4>Options</h4>
+<ol style="margin-top: 0cm;" type="1">
+<li>You can customize the header image by placing images 900 px wide (eg 900x120 px) in the directory « themes/zpArdoise/images/ », and configure your header in Options&gt;Theme</li>
+<li>You can  use the script Galleriffic (presentation script of images). Then, you should not have any albums that mixes sub-albums and pictures (in this case, all sub-albums are displayed on album.php, to avoid having two navigation bars, that of the zpardoise theme and that of the galleriffic script)</li>
+<li>You can use the RSS icon provided by copying the file « themes/zpArdoise/images/rss.gif » in the directory « zp-core/images/ »</li>
+</ol>
 <p>&nbsp;</p>
-
+<p>&nbsp;</p>
 <!-- French -->
-<h3><a name="francais"></a><a title="english" href="#english">English version</a> - Version Française</h3>
-<h2>zpArdoise 1.0 &ndash; un th&egrave;me ZenPhoto/ZenPage</h2>
-<p><b><span style='color:red'>Il s'agit de la premi&egrave;re version de ce th&egrave;me. Rapportez les bugs sur le forum ZenPhoto.org et j&rsquo;essaierais de les corriger aussit&ocirc;t que possible.</span></b></p>
-
-<p>zpArdoise est un th&egrave;me pour ZenPhoto/ZenPage directement h&eacute;rit&eacute; du th&egrave;me <a href="http://www.blueskywebcreations.com/zpgalleriffic/" target="_blank">zpGalleriffic</a> (merci &agrave; <a href="http://www.gjr-web.com/" title="http://www.gjr-web.com/" target="_blank">gjr</a>).</p>
-<p>Le th&egrave;me a &eacute;t&eacute; optimis&eacute; pour des vignettes carr&eacute;es de 150x150 px (5 vignettes par ligne)&nbsp;: pensez &agrave; r&eacute;gler la taille des vignettes car sinon vous aurez des r&eacute;sultats qui ne seront pas tr&egrave;s &eacute;l&eacute;gants.<br>
-Vous pouvez &eacute;galement utiliser le script Galleriffic (script de pr&eacute;sentation des images de la galerie). Dans ce cas, vous ne devriez pas avoir d'albums qui m&eacute;langent des sous-albums et des photos, car en fonction de la configuration de votre th&egrave;me, album.php peut afficher deux barres de pagination (celle du th&egrave;me et celle du script gallerific).</p>
-
-<p>Les scripts additionnels utilis&eacute;s sont les m&ecirc;mes que zpGalleriffic :<br>
-<ul style='margin-top:0cm' type=disc>
- <li ><a href="http://www.twospy.com/galleriffic/" target="_blank">Galleriffic</a>,
-    <a href="http://www.mikage.to/jquery/jquery_history.html" target="_blank">jQuery History Plugin</a>,
-    <a href="http://www.position-absolute.com/articles/jquery-fade-and-slide-toggle-plugin" target="_blank">Slide and Toggle Fade</a></li>
-</ul></p>
-
-<p>J'ai &eacute;galement ajout&eacute; un script de visualisation des images avec les fl&egrave;ches du clavier.</p>
-
-<p>Le th&egrave;me supporte les plugins ZenPhoto suivants :<br>
-<ul style='margin-top:0cm' type=disc>
-  <li >comment_form, contact_form, image_album_statistics, print_album_menu, rating, slideshow, user_login-out, zenpage</li>
-</ul></p>
-
-<h2>Installation</h2>
-
-<p>Important&nbsp;: Vous devez avoir la version <b>ZenPhoto 1.2.9 ou sup&eacute;rieure</b>.</p>
-<ol style='margin-top:0cm' start=1 type=1>
- <li >T&eacute;l&eacute;chargez le fichier zip sur votre ordinateur</li>
- <li >D&eacute;compressez le fichier zip localement, et t&eacute;l&eacute;charger le dossier zpArdoise dans votre r&eacute;pertoire &laquo;&nbsp;/themes/&nbsp;&raquo; de votre site ZenPhoto</li>
- <li >Dans l'administration ZenPhoto, allez sur l'onglet Th&egrave;mes et activer le th&egrave;me zpArdoise</li>
- <li >Allez sur Options&gt;Th&egrave;me afin d'afficher et configurer les options disponibles pour zpArdoise</li>
+<h2><a name="francais"></a><a title="english" href="#english">English version</a> - Version Française</h2>
+<h3>zpArdoise 1.3 &ndash; un th&egrave;me ZenPhoto/ZenPage</h3>
+<p><span style='color:red'><b>Rapportez les bugs sur le forum ZenPhoto.org et j&rsquo;essaierais de les corriger aussit&ocirc;t que possible.</b></span></p>
+<p>zpArdoise est un thème pour ZenPhoto/ZenPage directement hérité du thème <a href="http://www.zenphoto.org/zp/theme/zpGalleriffic/subpages.jpg.php" target="_blank">zpGalleriffic</a> (merci à <a title="http://www.gjr-web.com/" href="http://www.gjr-web.com/" target="_blank">gjr</a>).<br />
+Après avoir soumis mon site sur le showcase de ZenPhoto, je suis heureux d'offrir mon thème zpArdoise à la communauté.<p>
+<p>N'hésitez pas à le télécharger et à l'utiliser, et merci d'avance pour vos avis et commentaires !</p><h4>Description</h4>
+<p><span style="color: #ff0000;"><b>Important :</b></span> Pour utiliser la v1.3 du theme, vous devez utiliser ZenPhoto 1.4 (ou plus).<br />Si vous utilisez ZenPhoto allant de 1.2.9 à 1.3.1.2, vous devez utiliser zpArdoise v1.0</p>
+<p>Scripts additionnels utilisés :</p>
+<ul style="margin-top: 0cm;" type="disc">
+<li><a href="http://www.twospy.com/galleriffic/" target="_blank">Galleriffic</a>, <a href="http://www.mikage.to/jquery/jquery_history.html" target="_blank">jQuery History Plugin</a>, <a href="http://www.position-absolute.com/articles/jquery-fade-and-slide-toggle-plugin" target="_blank">Slide and Toggle Fade</a></li>
+<li>script de visualisation des images avec les flèches du clavier.</li>
+</ul>
+<p>Le thème supporte les plugins ZenPhoto suivants :</p>
+<ul style="margin-top: 0cm;" type="disc">
+<li>colorbox, comment_form, contact_form, GoogleMap, image_album_statistics, print_album_menu, rating, register_user, slideshow, user_login-out, zenpage</li>
+</ul>
+<h4>Améliorations de la version 1.3</h4>
+<ul style="margin-top: 0cm;" type="disc">
+<li>Remplacement de l'option 'Use Colorbox' par l'option 'Use Colorbox in Album' pour utiliser le plugin colorbox dans la page Albums, que galleriffic soit utilisé ou non (si 'Use Colorbox in Album' est cochée, la page Image ne sera jamais appelée)</li>
+<li>Nouvelle option 'Use Colorbox in Image' pour utiliser le plugin colorbox dans la page Image</li>
+<li>Nouvelle option 'Galleriffic delay' pour configurer la durée du diaporama Galleriffic</li>
+<li>Navigation avec les flèches du clavier sur les articles d'actualités</li>
+<li>Ajout des traductions en anglais, français, italien, allemand et espagnol pour les chaînes littérales spécifiques du thème zpArdoise</li>
+<li>Quelques améliorations graphiques</li>
+<li>Correction de quelques problèmes de traduction</li>
+</ul>
+<h4>Installation</h4>
+<ol style="margin-top: 0cm;" type="1">
+<li>Téléchargez le fichier zip sur votre ordinateur</li>
+<li>Décompressez le fichier zip localement, et télécharger le dossier zpArdoise dans votre répertoire « /themes/ » de votre site ZenPhoto</li>
+<li>Dans l'administration ZenPhoto, allez sur l'onglet Thèmes et activer le thème zpArdoise</li>
+<li>Allez sur Options&gt;Thème afin d'afficher et configurer les options disponibles pour zpArdoise</li>
+<li>sur Options&gt;Thème, ajustez la taille des vignettes carrées à 150 px (le thème a été optimisé pour cette taille)</li>
 </ol>
-
-<p>Optionnel&nbsp;:<br>
-<ol style='margin-top:0cm' start=5 type=1>
-  <li >Vous pouvez personnaliser l'image d&rsquo;ent&ecirc;te en d&eacute;posant des images d&rsquo;une largeur de 900 px (900 x 120 px par exemple) dans le r&eacute;pertoire &laquo;&nbsp;themes/zpArdoise/images/&nbsp;&raquo;, et en configurant le header dans Options&gt;Th&egrave;me</li>
-  <li >Vous pouvez utiliser l&rsquo;ic&ocirc;ne RSS fournie dans le th&egrave;me en copiant le fichier &laquo;&nbsp;themes/zpArdoise/images/rss.gif&nbsp;&raquo; dans le r&eacute;pertoire &laquo;&nbsp;zp-core/images/&nbsp;&raquo;</li>
-</ol></p>
-
-<p>Merci d'avance pour vos avis et commentaires, et profitez bien de ce th&egrave;me !</p>
+<h4>Options</h4>
+<ol style="margin-top: 0cm;" type="1">
+<li>Vous pouvez personnaliser l'image d’entête en déposant des images d’une largeur de 900 px (900 x 120 px par exemple) dans le répertoire « themes/zpArdoise/images/ », et en configurant le header dans Options&gt;Thème</li>
+<li>Vous pouvez utiliser le script Galleriffic (script de présentation des images). Vous devriez alors éviter d'avoir des albums qui mélangent des sous-albums et des photos (dans ce cas, tous les sous-albums sont affichés, pour ne pas avoir deux barres de navigation, celle du thème zpArdoise et celle du script gallerific)</li>
+<li>Vous pouvez utiliser l’icône RSS fournie dans le thème en copiant le fichier « themes/zpArdoise/images/rss.png » dans le répertoire « zp-core/images/ »</li>
+</ol>
 
 </div>
 

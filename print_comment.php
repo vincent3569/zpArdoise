@@ -23,10 +23,10 @@
 	<?php if ((function_exists('printCommentForm')) && ($comments_open)) { ?>
 		<?php if ($comments_allowed || (getCommentCount() > 0 )) { ?>
 			<a class="fadetoggler"><img src="<?php echo $_zp_themeroot; ?>/images/search-drop.png" alt="search_drop" id="search_icon" />
-			<?php if (getCommentCount() == 0) {
-				echo gettext('Comments').' ('.getCommentCount().')';
+			<?php if ((getCommentCount() == 0) || (getCommentCount() == 1)) {
+				echo gettext('comment').' ('.getCommentCount().')';
 			} else {
-				echo sprintf(ngettext('Commentaire (%u)', 'Commentaires (%u)', getCommentCount()), getCommentCount());
+				echo gettext('comments').' ('.getCommentCount().')';
 			} ?>
 			</a>
 			<div id="comment-wrap" class="fader clearfix">

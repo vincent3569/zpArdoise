@@ -19,26 +19,31 @@
 						</ul>
 					</div>
 
-					<?php if ((function_exists('printSlideShowLink')) && (!getOption('use_galleriffic'))) { ?>
+					<?php if (function_exists('printSlideShowLink')) { ?>
+					<?php /* if ((function_exists('printSlideShowLink')) && (!getOption('use_galleriffic'))) { */ ?>
 					<div class="control-slide">
-						<?php printSlideShowLink('Diaporama'); ?>
+						<?php printSlideShowLink(gettext('Slideshow')); ?>
 					</div>
 					<?php } ?>
 
 				</div>
 
-				<h4><?php printHomeLink('', ' &raquo; '); ?>
+				<h3><?php printHomeLink('', ' &raquo; '); ?>
 				<?php if (gettext(getOption('zenpage_homepage')) == gettext('none')) { ?>
 					<a href="<?php echo htmlspecialchars(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo getGalleryTitle(); ?></a>
 				<?php } else { ?>
 					<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 				<?php } ?>
-				<?php printParentBreadcrumb(' &raquo; ', ' &raquo; ', ' &raquo; ');  printAlbumBreadcrumb('', ' &raquo; '); ?><?php printImageTitle(true); ?></h4>
+				<?php printParentBreadcrumb(' &raquo; ', ' &raquo; ', ' &raquo; ');  printAlbumBreadcrumb('', ' &raquo; '); printImageTitle(true); ?></h3>
 
 			</div>
 
 			<div id="image">
-				<?php printDefaultSizedImage(getImageTitle()); ?>
+				<?php if(getOption('use_colorbox_image')) { ?>
+					<a rel="zoom" href="<?php echo htmlspecialchars(getUnprotectedImageURL()); ?>" title="<?php echo getBareImageTitle();?>"><?php printDefaultSizedImage(getImageTitle()); ?></a>
+				<?php } else { ?>
+					<?php printDefaultSizedImage(getImageTitle()); ?>
+				<?php } ?>
 			</div>
 
 			<div class="img-title"><?php printImageTitle(true); ?></div>
@@ -50,14 +55,14 @@
 				<?php // affichage des exif
 				$affichExifs = '';
 				if (count(getImageMetaData()) != 0) {
-					$tableauDesExif = getImageMetaData(); //On récupère les exfs dans un tableau
+					$tableauDesExif = getImageMetaData(); //On rï¿½cupï¿½re les exfs dans un tableau
 					if ($tableauDesExif['EXIFModel']!= NULL) {$affichExifs .= $tableauDesExif['EXIFModel']; };
 					if ($tableauDesExif['EXIFFocalLength']!= NULL) {$affichExifs .= ' &ndash; '.$tableauDesExif['EXIFFocalLength']; };
 					if ($tableauDesExif['EXIFFNumber']!= NULL) {$affichExifs .= ' &ndash; '.$tableauDesExif['EXIFFNumber']; };
 					if ($tableauDesExif['EXIFExposureTime']!= NULL)	{$affichExifs .= ' &ndash; '.$tableauDesExif['EXIFExposureTime']; };
 					if ($tableauDesExif['EXIFISOSpeedRatings']!= NULL) {$affichExifs .= ' &ndash; '.$tableauDesExif['EXIFISOSpeedRatings'].' ISO'; };
 				}
-				echo $affichExifs; ?>
+				echo $affichExifs; ?>
 			</div>
 			<?php } ?>
 
@@ -66,14 +71,11 @@
 			<?php } ?>
 
 			<?php if (function_exists('printRating')) { ?>
-				<div id="rating-wrap">
-					<?php printRating(); ?>
-				<noscript>Sorry, you must enable Javascript in your browser in order to vote...</noscript>
-				</div>
+				<div id="rating-wrap"><?php printRating(); ?></div>
 			<?php } ?>
 
 		</div>
 
-		<?php include('print_comment.php'); ?>
+		<?php include('print_comment.php'); ?>	
 
 <?php include('footer.php'); ?>

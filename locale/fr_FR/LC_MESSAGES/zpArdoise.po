@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zpArdoise\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-08 21:14+0100\n"
+"PO-Revision-Date: 2011-03-10 23:40+0100\n"
+"Last-Translator: vincent3569 <vincent_bourganel@yahoo.fr>\n"
+"Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext_th\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Famille\\Documents\\_Vincent\\Site Internet\\Galerie photo\\zenphoto\\themes\\zpArdoise\n"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/archive.php:24
+msgid "News archive"
+msgstr "Archives des actualités"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/footer.php:44
+msgid "You can browse with the arrows keys of your keyboard"
+msgstr "Vous pouvez naviguer à l'aide des flèches de votre clavier"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/header.php:83
+msgid "Stop"
+msgstr "Stop"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/image_statistic.php:5
+msgid "Random images"
+msgstr "Images au hasard"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/image_statistic.php:7
+msgid "Popular images"
+msgstr "Images populaires"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/image_statistic.php:9
+#: photo\zenphoto\themes\zpArdoise/image_statistic.php:11
+#: photo\zenphoto\themes\zpArdoise/image_statistic.php:13
+msgid "Latest images"
+msgstr "Dernières images"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/image_statistic.php:15
+msgid "Most Rated Images"
+msgstr "Images les plus notées"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/image_statistic.php:17
+msgid "Top Rated Images"
+msgstr "Image les mieux notées"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/news.php:9
+#: photo\zenphoto\themes\zpArdoise/news.php:11
+msgid "newer"
+msgstr "plus récent"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/news.php:14
+#: photo\zenphoto\themes\zpArdoise/news.php:16
+msgid "older"
+msgstr "plus ancien"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:33
+msgid "Display a menu link to the Archive list."
+msgstr "Affiche un lien vers les Archives dans le menu."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:34
+msgid "Image file for the logo area: enter the full filename (including extension) of the image file located in themes/zpArdoise/images/ (banniere1.jpg for example)."
+msgstr "Image utilisée pour le logo : entrez le nom du fichier complet (avec son extention) de l'image localisée dans le répetoire themes/zpArdoise/images/ (banniere1.jpg par exemple)."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:35
+msgid "Check to show the logo on the Image page."
+msgstr "Validez pour afficher le logo sur la page Image."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:36
+msgid "Choose the color of the links. You may change the values in themes/zpArdoise/css/custom.css."
+msgstr "Choisissez la couleur des liens. Vous pouvez changer les valeurs dans le fichier themes/zpArdoise/css/custom.css."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:37
+msgid "Show the main EXIF Data on Image page (Model, FocalLength, FNumber, ExposureTime, ISOSpeedRatings). Remember you have to check these EXIFs data on admin>image>information EXIF."
+msgstr "Affiche les principales données EXIF sur la page Image (Modèle, Focale, Diaphragme, Vitesse, ISO). Vous devez choisir ces données EXIF dans les pages admin>image>information EXIF."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:38
+msgid "Check to use the Galleriffic script. Uncheck to use a standard display. This standard display is also displayed when javascript is disabled in the browser."
+msgstr "Validez pour utiliser le script Galleriffic. Ne validez pas pour utiliser un affichage standard. Cet affichage standard est également utilisé lorsque javascript est désactivé dans le navigateur."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:39
+msgid "If Galleriffic is used, enter the delay of the gallerific slideshow in ms (eg 3000)."
+msgstr "Si Galleriffic est utilisé, entrez de délai du diaporama de galleriffic en ms (par exemple 3000)."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:40
+msgid "Shows a strip of thumbnails on Gallery page, depending of the selected option. NOTE: For anything other than random, the image_statistic plugin must be activated."
+msgstr "Montre des mignatures sur la page Galerie, en fonction de l'option choisie. NOTE : pour un affichage autre que random (aléatoire), le plugin image_statistic doit être activé."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:41
+msgid "Check to show a tag cloud with all the tags of the gallery."
+msgstr "Affiche un nuage de tags sur la page Galerie."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:42
+msgid "Check to display the full size image with Colorbox in album page, if galleriffic is used or not. NOTE : in that case, Image page will never be used."
+msgstr "Permet l'affichage de l'image en grande taille dans Colorbox sur la page Album, que Galleriffic soit utilisé ou pas. NOTE : si utilisé, la page Image ne sera jamais utilisée."
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/themeoptions.php:43
+msgid "Check to display the full size image with Colorbox in Image page."
+msgstr "Permet l'affichage de l'image en grande taille dans Colorbox sur la page Image."
+

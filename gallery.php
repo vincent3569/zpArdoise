@@ -1,14 +1,14 @@
 <?php include ('header.php'); ?>
 
 		<div id="headline" class="clearfix">
-			<h4><?php printHomeLink('', ' &raquo; '); echo getGalleryTitle(); ?></h4>
+			<h3><?php printHomeLink('', ' &raquo; '); echo getGalleryTitle(); ?></h3>
 			<div class="headline-text"><?php printGalleryDesc(true); ?></div>
 		</div>
 
 		<?php if (isAlbumPage()) { ?>
 			<?php include('print_album_thumb.php'); ?>
 
-			<div class="pagination-album">
+			<div class="pagination-nogal">
 				<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
 			</div>
 		<?php } ?>

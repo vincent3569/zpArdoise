@@ -7,7 +7,7 @@
  */
 ;(function($) {
 	var defaults = {
-		mouseOutOpacity:   0.67,
+		mouseOutOpacity:   0.75,								/* init : 0.67 */
 		mouseOverOpacity:  1.0,
 		fadeSpeed:         'fast',
 		exemptionSelector: '.selected'
@@ -23,7 +23,7 @@
 			var $target = $(element);
 			
 			if (config.exemptionSelector)
-				$target = $target.not(config.exemptionSelector);	
+				$target = $target.not(config.exemptionSelector);
 			
 			$target.fadeTo(config.fadeSpeed, opacity);
 		}
