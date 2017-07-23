@@ -43,19 +43,12 @@
 				<?php printNewsContent(); ?>
 				<?php printCodeblock(1); ?>
 			</div>
-			<?php if (getOption('show_tag') == true) { ?>
+			<?php if (getOption('show_tag')) { ?>
 				<div class="headline-tags"><?php printTags('links', '', 'hor-list'); ?></div>
 			<?php } ?>
 		</div>
 
-		<?php if (function_exists('printCommentForm')) { ?>
-			<?php if (zenpageOpenedForComments() || (!zenpageOpenedForComments() && (getCommentCount() > 0))) { ?>
-				<a class="fadetoggler"><img src="<?php echo $_zp_themeroot; ?>/images/search-drop.png" alt="search_drop" id="search_icon" /><?php echo gettext('Comments'); ?> (<?php echo getCommentCount(); ?>)</a>
-				<div id="comment-wrap" class="fader clearfix">
-					<?php printCommentForm(); ?>
-				</div>
-			<?php } ?>
-		<?php } ?>
+		<?php include('print_comment.php'); ?>
 
 	<?php } else {
 	// news article loop ?>
@@ -65,7 +58,7 @@
 		</div>
 
 		<div id="news" class="clearfix">
-			<?php while (next_news('date', 'desc')): ; ?>
+			<?php while (next_news()): ; ?>
 			<div class="news-truncate clearfix">
 				<h3><?php printNewsTitleLink(); ?></h3>
 				<div class="newsarticlecredit">

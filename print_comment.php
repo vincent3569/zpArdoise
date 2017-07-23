@@ -7,11 +7,11 @@
 			$comments_open = getOption('comment_form_images');
 			$comments_allowed = getCommentsAllowed();
 			break;
-		case ZENPAGE_PAGES.'.php':
+		case 'pages.php':
 			$comments_open = getOption('comment_form_pages');
 			$comments_allowed = zenpageOpenedForComments();
 			break;
-		case ZENPAGE_NEWS.'.php':
+		case 'news.php':
 			$comments_open = getOption('comment_form_articles');
 			$comments_allowed = zenpageOpenedForComments();	
 			break;
@@ -22,11 +22,12 @@
 
 	<?php if ((function_exists('printCommentForm')) && ($comments_open)) { ?>
 		<?php if ($comments_allowed || (getCommentCount() > 0 )) { ?>
-			<a class="fadetoggler"><img src="<?php echo $_zp_themeroot; ?>/images/search-drop.png" alt="search_drop" id="search_icon" />
-			<?php if ((getCommentCount() == 0) || (getCommentCount() == 1)) {
-				echo gettext('comment').' ('.getCommentCount().')';
+			<a class="fadetoggler"><img src="<?php echo $_zp_themeroot; ?>/images/icon-comment.png" alt="icon-comment" id="icon-comment" />
+			<?php $num = getCommentCount();
+			if ($num == 0) {
+				echo gettext('No Comments');
 			} else {
-				echo gettext('comments').' ('.getCommentCount().')';
+				echo sprintf(ngettext('%u Comment','%u Comments',$num), $num);
 			} ?>
 			</a>
 			<div id="comment-wrap" class="fader clearfix">

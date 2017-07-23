@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zpArdoise\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-08 21:14+0100\n"
-"PO-Revision-Date: 2011-03-10 23:35+0100\n"
+"PO-Revision-Date: 2011-04-22 00:28+0100\n"
 "Last-Translator: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,24 @@ msgstr ""
 #: photo\zenphoto\themes\zpArdoise/archive.php:24
 msgid "News archive"
 msgstr "News archiv"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/footer.php:25
+msgid "The photos of this site are licensed under <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en\" target=\"_blank\">Creative Common</a>"
+msgstr "The photos of this site are licensed under <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.de\" target=\"_blank\">Creative Common</a>"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/footer.php:25
+msgid "<a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en\" target=\"_blank\"><img style=\"border-width: 0;\" src=\"http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png\" alt=\"Creative Commons\" /></a>"
+msgstr "<a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.de\" target=\"_blank\"><img style=\"border-width: 0;\" src=\"http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png\" alt=\"Creative Commons\" /></a>"
+
+#: C:\Users\Famille\Documents\_Vincent\Site
+#: Internet\Galerie
+#: photo\zenphoto\themes\zpArdoise/footer.php:25
+msgid "Thank you contact me before using"
+msgstr "Thank you contact me before using"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie

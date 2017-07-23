@@ -1,5 +1,102 @@
-* 1.0
-initial version
+* 1.4
+- css/screen.css :
+	- graphical improvements
+- js/zpardoise.js
+	- fix a compatibility issue between opacityrollover and flag_thumbnail with ie7 (fix only with no galleriffic)
+- 404.php :
+	- update for compatibility with zenphoto 1.4.1
+- album.php :
+	- update for compatibility with zenphoto 1.4.1
+	- with galleriffic, add the description and the EXIF data under the image
+- archive.php :
+	- update for compatibility with zenphoto 1.4.1
+- contact.php :
+	- update for compatibility with zenphoto 1.4.1
+- hearder.php
+	- fix an issue : add some code to force compatibility with IE9
+	- fix an issue : new evaluation of $galleryactive with 1.4.1
+	- update for compatibility with zenphoto 1.4.1
+	- better integration between galleriffic and 'Use Colorbox Album' option
+- footer.php :
+	- call the new file login.php
+- functions.php :
+	- customized functions called by zpardoise
+- image.php :
+	- update for compatibility with zenphoto 1.4.1
+- image_statistic.php
+	 - supports 'Use Colorbox Album' option : if used, the pictures of the statistic strip are opened in the colorbox
+- news.php :
+	- fix an issue : include print_comment.php file to display comment
+- login.php :
+	- call the zenphoto standard password form
+- pages.php :
+	- fix an issue : new evaluation evaluation of BlockCodes with 1.4.1 if an unpublished page is choosen for homepage
+- password.php :
+	- call the zenphoto standard password form
+	- update for compatibility with zenphoto 1.4.1
+- print_album_thumb.php :
+	- update for compatibility with zenphoto 1.4.1
+- print_comment.php :
+	- better displaying of comment number
+	- fix an issue : comments on news and page was not displayed
+- print_image_thumb.php :
+	- update for compatibility with zenphoto 1.4.1
+- register.php :
+	- update for compatibility with zenphoto 1.4.1
+- search.php :
+	- graphical improvements
+	- update for compatibility with zenphoto 1.4.1
+- themeoptions.php :
+	- galleriffic is choosen by default
+
+
+* 1.3
+- css/screen.css :
+	- graphical improvements
+- album.php :
+	- inversion of "controls" and "caption" of galleriffic script
+	- change use_colorbox option by use_colorbox_album (if use_colorbox_album is checked, Image page will never be called)
+	- improvements for the supported GoogleMap plugin
+- footer.php :
+	- improvements with he message "You can browse with the arrows keys of your keyboard"
+- header.php :
+	- supports new 'Use Colorbox Album' & 'Use Colorbox Image' options
+	- using zpArdoise.js
+	- add configuration of galleriffic script in order to fix some translation issue and to use new option 'Galleriffic delai'
+	- supports personnal translation in english, french, italian, german and spanish for some litteral strings
+	- allows navigation with arrow keys on single news pages
+	- fix issue between Colorbox and naviguation script
+- image.php :
+	- fix translation issue of Slideshow
+	- supports new 'Use Colorbox Image' option
+	- supports personnal translation in english, french, italian, german and spanish for some litteral strings
+- image_statistic.php :
+	- supports personnal translation in english, french, italian, german and spanish for some litteral strings
+- news.php :
+	- rewriting of the news pages (moving "news-cat-list" to the top of the page)
+	- supports personnal translation in english, french, italian, german and spanish for some litteral strings
+- print_comment.php :
+	- fix translation issue
+- print_image_thumb :
+	- supports new 'Use Colorbox Album' option
+- search.php :
+	- fix translation issue
+	- supports Slideshow plugin
+- themeoptions :
+	- removal of the 'Use Colorbox' option
+	- supports new 'Use Colorbox Album' & 'Use Colorbox Image' options
+	- supports new 'Galleriffic delai' options
+- zpardoise.js :
+	- rewrite and simplification of zpgalleriffic.js and zpgalleriffic-min.js
+
+
+* 1.2
+- css/screen.css :
+	- graphical improvements
+- header.php :
+	- fix problem with printZenpageRSSHeaderLink() (the title of the link in navigation bar was wrong)
+- news.php :
+	- fix problems with IE6 (the text of the news was not aligned under "extra-content" and "news-cat-list")
 
 
 * 1.1
@@ -60,50 +157,5 @@ initial version
 	- supports new 'Color' option
 
 
-* 1.2
-- css/screen.css :
-	- graphical improvements
-- header.php :
-	- fix problem with printZenpageRSSHeaderLink() (the title of the link in navigation bar was wrong)
-- news.php :
-	- fix problems with IE6 (the text of the news was not aligned under "extra-content" and "news-cat-list")
-
-
-* 1.3
-- css/screen.css :
-	- graphical improvements
-- album.php :
-	- inversion of "controls" and "caption" of galleriffic script
-	- change use_colorbox option by use_colorbox_album (if use_colorbox_album is checked, Image page will never be called)
-	- improvements for the supported GoogleMap plugin
-- footer.php :
-	- improvements with he message "You can browse with the arrows keys of your keyboard"
-- header.php :
-	- supports new 'Use Colorbox Album' & 'Use Colorbox Image' options
-	- using zpArdoise.js
-	- add configuration of galleriffic script in order to fix some translation issue and to use new option 'Galleriffic delai'
-	- supports personnal translation in english, french, italian, german and spanish for some litteral strings
-	- allows navigation with arrow keys on single news pages
-	- fix issue between Colorbox and naviguation script
-- image.php :
-	- fix translation issue of Slideshow
-	- supports new 'Use Colorbox Image' option
-	- supports personnal translation in english, french, italian, german and spanish for some litteral strings
-- image_statistic.php :
-	- supports personnal translation in english, french, italian, german and spanish for some litteral strings
-- news.php :
-	- rewriting of the news pages (moving "news-cat-list" to the top of the page)
-	- supports personnal translation in english, french, italian, german and spanish for some litteral strings
-- print_comment.php :
-	- fix translation issue
-- print_image_thumb :
-	- supports new 'Use Colorbox Album' option
-- search.php :
-	- fix translation issue
-	- supports Slideshow plugin
-- themeoptions :
-	- removal of the 'Use Colorbox' option
-	- supports new 'Use Colorbox Album' & 'Use Colorbox Image' options
-	- supports new 'Galleriffic delai' options
-- zpardoise.js :
-	- rewrite and simplification of zpgalleriffic.js and zpgalleriffic-min.js
+* 1.0
+initial version

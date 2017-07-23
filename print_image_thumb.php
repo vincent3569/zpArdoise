@@ -8,9 +8,9 @@
 				<li class="no-gal-li">
 			<?php } ?>
 			<?php if(getOption('use_colorbox_album')) { ?>
-				<a class="thumb" rel="zoom" href="<?php echo htmlspecialchars(getUnprotectedImageURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
+				<a class="thumb" rel="zoom" href="<?php echo html_encode(getUnprotectedImageURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
 			<?php } else { ?>
-				<a class="thumb" href="<?php echo htmlspecialchars(getImageLinkURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
+				<a class="thumb" href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
 			<?php } ?>
 			</li>
 		<?php $x++; endwhile; ?>

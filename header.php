@@ -6,10 +6,10 @@ if ( !defined('WEBPATH') ) die();
 if ((getOption('use_galleriffic')) && !(($_zp_gallery_page == 'image.php') || ($_zp_gallery_page == 'search.php'))) {
 	setOption('image_size', '525', false);
 	setOption('image_use_side', 'longest', false);
-	setOption('thumb_size', '75', false);
+	setOption('thumb_size', '85', false);
 	setOption('thumb_crop', '1', false);
-	setOption('thumb_crop_width', '75', false);
-	setOption('thumb_crop_height', '75', false);
+	setOption('thumb_crop_width', '85', false);
+	setOption('thumb_crop_height', '85', false);
 }
 setOption('personnal_thumb_width', '267', false);
 setOption('personnal_thumb_height', '133', false);
@@ -20,6 +20,8 @@ setOption('zenpage_zp_index_news', false, false);
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" >
+	<?php zp_apply_filter('theme_head'); ?>
 	<title>
 	<?php
 	echo getMainSiteName();
@@ -45,7 +47,6 @@ setOption('zenpage_zp_index_news', false, false);
 		<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/css/<?php echo getOption('color_style'); ?>.css" type="text/css" media="screen"/>
 	<?php } ?>
 	<link rel="shortcut icon" href="<?php echo $_zp_themeroot; ?>/images/favicon.ico" />
-	<?php zp_apply_filter('theme_head'); ?>
 
 	<script type="text/javascript" src="<?php echo $_zp_themeroot; ?>/js/fadeSliderToggle.js"></script>
 	<script type="text/javascript" src="<?php echo $_zp_themeroot; ?>/js/jquery.opacityrollover.js"></script>
@@ -54,14 +55,14 @@ setOption('zenpage_zp_index_news', false, false);
 		<script type="text/javascript" src="<?php echo $_zp_themeroot; ?>/js/jquery.history.js"></script>
 		<script type="text/javascript" src="<?php echo $_zp_themeroot; ?>/js/jquery.galleriffic.js"></script>
 		<script type="text/javascript">
-			//<![CDATA[
+		//<![CDATA[
 
 			jQuery(document).ready(function($) {
 
 				// We only want these styles applied when javascript is enabled
-				$('div.navigation').css({'width' : '300px', 'float' : 'left'});
-				$('div.content').css('display', 'block');
 				$('#galleriffic-wrap').css('display', 'block');
+				$('div.content').css('display', 'block');
+				$('div.navigation').css({'width' : '305px', 'float' : 'left'});
 
 				// Initially set opacity on thumbs
 				var onMouseOutOpacity = 0.75;
@@ -69,7 +70,7 @@ setOption('zenpage_zp_index_news', false, false);
 				// Initialize Advanced Galleriffic Gallery
 				var gallery = $('#thumbs').galleriffic({
 					delay:                <?php if (is_numeric(getOption('galleriffic_delai'))) { echo getOption('galleriffic_delai'); } else { echo '3000'; } ?>,
-					numThumbs:            18,
+					numThumbs:            15,
 					preloadAhead:         18,
 					enableTopPager:       true,
 					enableBottomPager:    true,
@@ -78,7 +79,7 @@ setOption('zenpage_zp_index_news', false, false);
 					controlsContainerSel: '#controls',
 					captionContainerSel:  '#caption',
 					loadingContainerSel:  '#loading',
-					renderSSControls:     true,
+					renderSSControls:     <?php if (getOption('use_colorbox_album')) { echo 'false'; } else { echo 'true'; } ?>,
 					renderNavControls:    true,
 					playLinkText:         '<?php echo gettext('Slideshow'); ?>',
 					pauseLinkText:        '<?php echo gettext_th('Stop'); ?>',
@@ -141,13 +142,13 @@ setOption('zenpage_zp_index_news', false, false);
 				});
 
 			});
-			//]]>
+		//]]>
 		</script>
 	<?php } ?>
 
 	<?php if (($_zp_gallery_page == 'image.php') || ((function_exists('is_NewsArticle')) && (is_NewsArticle()))) { ?>
 	<script type="text/javascript">
-		//<![CDATA[
+	//<![CDATA[
 
 		<?php $NextURL = $PrevURL = false; ?>
 		<?php if ($_zp_gallery_page == 'image.php') { ?>
@@ -191,19 +192,17 @@ setOption('zenpage_zp_index_news', false, false);
 		$(document).bind('cbox_open', function() {ColorboxActive = true;})
 		$(document).bind('cbox_closed', function() {ColorboxActive = false;});
 
-		//]]>
+	//]]>
 	</script>
 	<?php } ?>
 
 	<?php if((getOption('use_colorbox_album')) || (getOption('use_colorbox_image'))) { ?>
 	<script type="text/javascript">
-		//<![CDATA[
-
+	//<![CDATA[
 		$(document).ready(function(){
 			$("a[rel='zoom']").colorbox({slideshow:true, slideshowSpeed:3000, slideshowAuto:false, maxWidth:"98%", maxHeight:"98%", photo:true});
 		});
-
-		//]]>
+	//]]>
 	</script>
 	<?php } ?>
 
@@ -220,21 +219,20 @@ setOption('zenpage_zp_index_news', false, false);
 	<?php if (($_zp_gallery_page != 'image.php') || (getOption('show_image_logo_on_image'))){ ?>
 	<div id="site-title" class="clearfix">
 		<!-- banniere -->
-		<a href="<?php echo htmlspecialchars(getGalleryIndexURL()); ?>" title="<?php echo getGalleryTitle(); ?>"><img id="zplogo" src="<?php echo $_zp_themeroot; ?>/images/<?php echo getOption('use_image_logo_filename'); ?>" alt="<?php echo getGalleryTitle(); ?>" /></a>
+		<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo getGalleryTitle(); ?>"><img id="zplogo" src="<?php echo $_zp_themeroot; ?>/images/<?php echo getOption('use_image_logo_filename'); ?>" alt="<?php echo getGalleryTitle(); ?>" /></a>
 	</div>
 	<?php } ?>
 
 	<div id="main-menu">
-	<?php if	(($_zp_gallery_page == 'index.php') ||
-				($_zp_gallery_page == 'gallery.php') ||
+	<?php if (($_zp_gallery_page == 'gallery.php') ||
 				($_zp_gallery_page == 'album.php') ||
-				($_zp_gallery_page == 'image.php') ||
-				($_zp_gallery_page == 'search.php'))
+				($_zp_gallery_page == 'image.php'))
 		{ $galleryactive = 1; }
 	?>
 
 		<ul>
 		<?php if (gettext(getOption('zenpage_homepage')) == gettext('none')) { ?>
+			<?php if ($_zp_gallery_page == 'index.php') { $galleryactive = true; } ?>
 			<li <?php if ($galleryactive) { ?>class="active"<?php } ?>><a href="<?php echo getGalleryIndexURL(false); ?>"><?php echo gettext('Gallery'); ?></a></li>
 		<?php } else { ?>
 			<?php if (function_exists('getPageTitleLink')) { ?>

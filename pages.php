@@ -9,7 +9,7 @@
 			<?php } ?>
 			
 			<?php printPageContent(); ?>
-			<?php printCodeblock(1); ?>
+			<?php printCodeblock(1, $_zp_current_zenpage_page); ?>
 		</div>
 
 		<?php include('print_comment.php'); ?>

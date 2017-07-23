@@ -17,9 +17,18 @@
 						echo gettext_th('Top Rated Images'); break;
 				} ?>
 			</h4>
-			<?php if (getOption('image_statistic') == 'random') { ?>
-				<?php printRandomImages(8, null, 'all', '', 86, 86, true); ?>
-			<?php } else { ?>
-				<?php printImageStatistic(8, getOption('image_statistic'), '', false, false, false, '', '', 86, 86, true, false); ?>
-			<?php } ?>
+			<?php if (getOption('image_statistic') == 'random') {
+				if(getOption('use_colorbox_album')) {
+					zpardoise_printRandomImages(8, null, 'all', '', 85, 85, true, 'zoom', true);
+				} else {
+					zpardoise_printRandomImages(8, null, 'all', '', 85, 85, true, null, false);
+				}
+			} else {
+				
+				if(getOption('use_colorbox_album')) {
+					zpardoise_printImageStatistic(8, getOption('image_statistic'), '', false, false, false, '', '', 85, 85, true, false, 'zoom', true);
+				} else {
+					zpardoise_printImageStatistic(8, getOption('image_statistic'), '', false, false, false, '', '', 85, 85, true, false, null, false);
+				}
+			} ?>
 		</div>

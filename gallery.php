@@ -13,7 +13,7 @@
 			</div>
 		<?php } ?>
 
-		<?php if (getOption('show_tag') == true) { ?>
+		<?php if (getOption('show_tag')) { ?>
 			<div class="headline-tags">
 				<?php printAllTagsAs('cloud', 'hor-list', 'abc', false, true, 2.5, 30, 5, NULL, 1); ?>
 			</div>

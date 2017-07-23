@@ -3,7 +3,7 @@
 			<?php if ((getOption('allow_search')) || (function_exists('printAlbumMenu'))) { ?>
 			<div id="jump-search" class="clearfix">
 				<?php if (function_exists('printAlbumMenu')) { printAlbumMenu('jump', NULL, '', '', '', '', gettext('Gallery Index')); } ?>
-				<?php if (getOption('allow_search')) { printSearchForm('', '', '', gettext('Search'), "$_zp_themeroot/images/search-drop.png"); } ?>
+				<?php if (getOption('allow_search')) { printSearchForm('', 'search', '', gettext('Search'), "$_zp_themeroot/images/search-drop.png"); } ?>
 			</div>
 			<?php } ?>
 
@@ -19,27 +19,25 @@
 					<?php echo getMainSiteName(); ?><?php printCustomPageURL(gettext('Archive View'), 'archive', '', ' | '); ?>
 					<?php if (function_exists('printContactForm')) { ?><?php printCustomPageURL(gettext('Contact'), 'contact', '', ' | '); } ?>
 
-					<?php
-					if (function_exists('printUserLogin_out')) {
+					<?php if (function_exists('printUserLogin_out')) {
 						if (zp_loggedin()) {
 							printUserLogin_out(' | ', '');
 						} else { ?>
-							&nbsp;|&nbsp;<a href="<?php echo FULLWEBPATH . "/" . ZENFOLDER . "/admin.php"; ?>"><?php echo gettext("Log in"); ?></a>
+							|&nbsp;<a href="<?php echo getCustomPageURL('login'); ?>" title="<?php echo gettext('Login'); ?>"><?php echo gettext('Login'); ?></a>
 						<?php
 						}
 					} ?>
 
-					<?php
-					if ((!zp_loggedin()) && (function_exists('printRegistrationForm'))) {
+					<?php if ((!zp_loggedin()) && (function_exists('printRegistrationForm'))) {
 						printCustomPageURL(gettext('Register'), 'register', '', ' | ');
 					} ?>
 				</div>
 
 				<div id="zpcredit">
-					<?php printZenphotoLink(); ?>&nbsp;&nbsp;
-					<?php if	(($_zp_gallery_page == 'image.php') ||
-								(($_zp_gallery_page == 'album.php') && (getOption('use_galleriffic'))) ||
-								((function_exists('is_NewsArticle')) && (is_NewsArticle()))) { ?>
+					<?php printZenphotoLink(); ?>
+					<?php if (($_zp_gallery_page == 'image.php') ||
+							(($_zp_gallery_page == 'album.php') && (getOption('use_galleriffic'))) ||
+							((function_exists('is_NewsArticle')) && (is_NewsArticle()))) { ?>
 					&nbsp;<img src="<?php echo $_zp_themeroot; ?>/images/info.png" title="<?php echo gettext_th('You can browse with the arrows keys of your keyboard'); ?>" alt="info_icon" />
 					<?php } ?>
 				</div>
@@ -57,4 +55,4 @@ zp_apply_filter('theme_body_close');
 ?>
 
 </body>
-</html>			<!-- zpArdoise 1.3 - a ZenPhoto/ZenPage theme by Vincent3569  -->
+</html>			<!-- zpArdoise 1.4 - a ZenPhoto/ZenPage theme by Vincent3569  -->

@@ -15,7 +15,7 @@ body{
 	line-height: 1.2;
 	overflow: -moz-scrollbars-vertical;
 	background-attachment: scroll;
-	background-image: url(../images/bg1.jpg);
+	background-image: url(../images/bg2.jpg);
 	background-repeat: repeat;
 	padding-top: 20px;
 	padding-bottom: 40px;
@@ -34,11 +34,18 @@ div#page{
 	/*border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; -webkit-border-radius: 10px;*/
 }
 div#container{padding: 10px 20px}
+
 img, a img{border: 0;}
-#daily-image{text-align: center;}
-#daily-image a img{padding: 2px; border: 1px solid #4a4a4a;}
+img.cadre{padding: 2px; border: 1px solid #4a4a4a;}
+img.ombre{box-shadow: 2px 2px 9px #111; -moz-box-shadow: 2px 2px 9px #111; -webkit-box-shadow: 2px 2px 9px #111;}
+img.ombreB{border: 1px solid #4a4a4a; box-shadow: 2px 2px 9px #111; -moz-box-shadow: 2px 2px 9px #111; -webkit-box-shadow: 2px 2px 9px #111;}
+
 #map{padding: 2px; border: 1px solid #4a4a4a;}
-#image img, #image a img{padding: 20px; margin-top: 10px; border: 1px solid #4a4a4a; background-color: #111;}
+#image img, #image a img{
+	margin-top: 10px;
+	border: 1px solid #4a4a4a; 
+	box-shadow: 2px 2px 9px #111; -moz-box-shadow: 2px 2px 9px #111; -webkit-box-shadow: 2px 2px 9px #111;
+}
 ul.hor-list, ul.hor-list li{display: inline; margin-left: 0!important; margin-right: 2px; padding-right: 0; padding-left: 0;}
 a, a:active{color: #86a1b6; text-decoration: none;}
 a:focus, a:hover{text-decoration: none;}
@@ -122,7 +129,7 @@ div#jump-search select option{padding: 0 5px;}
 }
 #searchfields_icon{position: relative; top: 4px;}
 
-div#album-wrap {margin: 10px 0; padding: 0; clear: both;}			/* hot fix 1.3 */
+div#album-wrap {margin: 10px 0; padding: 0; clear: both;}
 div#album-wrap ul{margin: 10px 0; padding: 0;}
 div#album-wrap ul li{width: 273px; display: block; float: left; margin: 10px 20px 10px 0; padding: 0; list-style-type: none; background: none;}
 div#album-wrap ul li.lastcol{margin-right: 0;}
@@ -171,7 +178,7 @@ div.nav-img ul .disabledlink{
 	border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
 }
 
-#image-stat{width: 100%; margin: 20px 0; text-align: center;}
+#image-stat{width: 100%; margin: 50px 0 20px; text-align: center;}
 #image-stat h4{
 	background: #000 url(../images/hr.gif) repeat-x 0 100%;
 	margin-bottom: 20px;
@@ -182,12 +189,12 @@ div.nav-img ul .disabledlink{
 }
 table#archive h4{border-bottom: 1px solid #666666; padding-bottom: 2px; }
 
-#thumbs-nogal{clear: both;}											/* hot fix 1.3 */
+#thumbs-nogal{clear: both;}
 ul.thumbs-nogal, ul.thumbs, #image-stat ul{clear: both; margin: 0; padding: 0;}
 ul.thumbs li{float: left; padding: 0; list-style: none; margin: 5px 10px 5px 0;}
 ul.thumbs-nogal li{float: left; padding: 0; list-style: none; margin: 5px 20px 15px 0;}
 ul.thumbs-nogal li.no-gal-li-lastimg{margin-right: 0;}
-#image-stat li{float: left; padding: 0; list-style: none; margin: 0 15px 5px 0;}
+#image-stat li{float: left; padding: 0; list-style: none; margin: 0 8px 5px 8px;}
 ul#no-gal-ul, #image-stat ul{text-align: center; width: auto; margin: 0 auto 20px auto;}
 a.thumb, #image-stat a{padding: 2px; display: block; border: 1px solid #4a4a4a;}
 ul.thumbs li.selected a.thumb{background: #fff;}
@@ -244,8 +251,12 @@ div.newsarticlecredit{margin: -40px 0 15px 0;
 	font-style: italic;
 	font-size: 85%;
 }
-.zenpage_customimage_right{float: right; margin: 0 0 15px 20px;}
-.zenpage_customimage_left{float: left; margin: 0 20px 15px 0;}
+.readmorelink{clear: both};
+h3.search-title{margin: 0 0 20px;}
+div.search-content{margin: 0 0 20px 20px;}
+
+.zenpage_customimage_right{float: right; margin: 0 0 15px 15px;}
+.zenpage_customimage_left{float: left; margin: 0 15px 15px 0;}
 
 div#footer{
 	clear: both;
@@ -281,8 +292,40 @@ input[disabled="disabled"], textarea[disabled="disabled"]{color: #777!important;
 form strong{font-weight: bold; color: red;}
 .post strong{font-weight: bold; color: red;}
 
-.fadetoggler{font-weight: bold; display: block; margin: 10px 0; letter-spacing: 1px; text-transform: capitalize;}
-.fadetoggler:hover{cursor: pointer;}
+.passwordform{margin-left: 100px;}
+#logon_box {
+	border:1px solid #bbb;
+	width:300px;
+	border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#logon_box legend{color: #bbb; margin-left: 5px;}
+.password{margin: 20px 0 15px 10px;}
+.password h2{font-family: Corbel, Verdana, Arial, sans-serif; font-size: 100%; font-weight: normal; color: #bbb; margin-bottom: 20px;}
+button{
+	background: #444!important;
+	border: 1px solid #000!important;
+	padding: 3px 5px!important;
+	margin: 0 5px 0 0;
+	color: #eee!important;
+	font-family: Corbel, Verdana, Arial, sans-serif;
+	font-size: 90%;
+	font-weight: normal!important;
+	border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
+}
+button:hover{
+	border: 1px solid #222!important;
+	border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
+}
+button[type=submit]:hover, button[type=reset]:hover{
+	background: #111!important; color: #ccc!important; cursor: pointer!important;
+	border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
+}
+
+
+
+.fadetoggler, .fadetoggler-googlemap{font-weight: bold; display: block; margin: 10px 0; letter-spacing: 1px; /*text-transform: capitalize;*/}
+.fadetoggler:hover, .fadetoggler-googlemap:hover{cursor: pointer;}
+#icon-comment{position: relative; top: 8px;}
 
 #commentcontent h3{font-size: 100%; display: none;}
 #commententry h3{font-weight: bold; text-transform: lowercase; display: block;}
@@ -294,13 +337,13 @@ form strong{font-weight: bold; color: red;}
 #commentform{text-align: left;}
 #commentform table td{padding: 2px 10px 2px 0; text-align: left;}
 #commentform .pushbutton{margin-top: 10px; margin-bottom: 15px;}
-#commentform textarea{width: 345px;}
+#commentform textarea{width: 370px;}
 #commentform .inputbox{width: 175px;}
 
 #admin, #admin_data{position: fixed; right: 0px; top: 0px; width: 140px; border-bottom: 1px solid #4a4a4a; border-left: 1px solid #4a4a4a; background: #222; z-index: 2; padding: 2px;}
-#admin_data{top: 10px; padding-top: 20px; z-index: 1; line-height: 1.6em; text-align: left;}
+#admin_data{top: 0px; padding-top: 20px; z-index: 1; line-height: 1.6em; text-align: left;}
 #admin_data ul{padding: 5px 0 0 10px;}
-#admin h3{font-weight: normal; margin: 0; padding: 3px;}
+#admin h3{font-size: 85%; font-weight: normal; margin: 0;}
 #admin h3:hover{color: #86a1b6;}
 
 table#archive{margin: 0 auto;}
@@ -309,12 +352,13 @@ table#archive h4{border-bottom: 1px solid #666666; padding-bottom: 2px; font-fam
 table#archive ul.archive, table#archive ul.month{list-style-type: none;}
 table#archive li.year{font-size: 100%; font-weight: bold; margin-top: 10px;}
 
-div.post{text-align: justify; width: 500px; margin-right: auto; margin-left: auto;}
+div.post{text-align: justify; margin-right: auto; margin-left: auto;}
 form#mailform{text-align: center;}
 form#mailform table{margin: 15px auto;}
 form#mailform table td{text-align: left;}
 table.register_user{margin: 15px auto;}
 table.register_user td{text-align: left;}
+table.register_user p{margin: 0!important;}
 
 div#googlemap_data{margin: 10px 0 15px;}
 
@@ -327,9 +371,6 @@ addthis_toolbox{display: inline;}
 /*--------------------- galleriffic  -------------------------*/
 #galleriffic-wrap{margin: 15px 0 0 0; overflow: hidden; display: none;}
 div.content{display: none; float: right; width: 550px;}
-div.content a, div.navigation a{text-decoration: none;}
-div.content a:focus, div.content a:hover, div.content a:active{text-decoration: underline;}
-
 div.controls{margin-top: 5px;}
 div.controls a{padding: 5px;}
 div.ss-controls{float: left; margin-bottom: 5px;}
@@ -355,20 +396,25 @@ div.slideshow a.advance-link{
 }
 div.slideshow a.advance-link:focus{outline: none;}
 div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.slideshow a.advance-link:visited{text-decoration: none;}
-div.slideshow img{vertical-align: middle; border: 1px solid #4a4a4a;}
-
-div.detail-download{float: right; margin-top: 3px;}
-div.detail-download a, div.nav-controls a, div.ss-controls a{
+div.slideshow img{
+	vertical-align: middle;
+	border: 1px solid #4a4a4a;
+	box-shadow: 2px 2px 9px #111; -moz-box-shadow: 2px 2px 9px #111; -webkit-box-shadow: 2px 2px 9px #111;
+}
+div.nav-controls a, div.ss-controls a{
 	margin-left: 10px; background: #4a4a4a; padding: 1px 5px; letter-spacing: 1px;
 	-moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
 }
-div.detail-download a:hover, div.nav-controls a:hover, div.ss-controls a:hover{background: #86a1b6; color: #fff; text-decoration: none;}
+div.nav-controls a:hover, div.ss-controls a:hover{background: #86a1b6; color: #fff; text-decoration: none;}
 
 div.ss-controls a{margin-left: 0;}
-div.caption-container{position: relative; height: 25px; width: 550px;}
-span.image-caption{position: absolute; top: 0; left: 0; display: block; width: 550px; height: 25px;}
-div.caption{position: absolute; top: 0; left: 0; height: 25px; width: 550px;}
-#galleriffic-wrap div.image-title{font-weight: normal; font-size: 100%; font-style: italic;}
+div.caption-container{position: relative; height: 90px /*25px;*/}
+span.image-caption{position: absolute; top: 0; left: 0; display: block; width: 550px; /*height: 25px;*/}
+div.caption{margin-top: 5px; /*position: absolute; top: 0; left: 0; height: 25px; width: 550px;*/}
+#galleriffic-wrap div.image-title{margin-bottom: 10px; font-weight: normal; font-size: 100%; font-weight: bold; letter-spacing: 1px;}
+#galleriffic-wrap div.image-desc{/*width: 290px; position: absolute; left: -310px; top: -100px;*/}
+#exif-infos-gal{float: right;}
+
 div.navigation{/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */}
 div.photo-index{color: #888;}
 
@@ -389,7 +435,6 @@ div.pagination span.current{font-weight: bold; background-color: #86a1b6; border
 div.pagination a:hover{text-decoration: none; color: #fff; border-color: #86a1b6;}
 /*--------------------- galleriffic  -------------------------*/
 
-/* Error Messages */
 .errorbox {
 	color: #DD6666;
 	background-color: #FDD;

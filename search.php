@@ -3,7 +3,7 @@
 		<div id="headline" class="clearfix">
 			<h3><?php printHomeLink('', ' &raquo; '); ?>
 			<?php if (gettext(getOption('zenpage_homepage')) == gettext('none')) { ?>
-				<a href="<?php echo htmlspecialchars(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo getGalleryTitle(); ?></a>
+				<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo getGalleryTitle(); ?></a>
 			<?php } else { ?>
 				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 			<?php } ?>
@@ -87,8 +87,8 @@
 
 					<?php while (next_news('date', 'desc')): ; ?>
 					<div class="news-truncate clearfix">
-						<h3><?php printNewsTitleLink(); ?></h3>
-						<div class="clearfix">
+						<h3 class="search-title"><?php printNewsTitleLink(); ?></h3>
+						<div class="search-content clearfix">
 							<?php echo shortenContent(strip_tags(getNewsContent()), 100, getOption("zenpage_textshorten_indicator")); ?>
 						</div>
 					</div>
@@ -103,8 +103,8 @@
 
 					<?php while (next_page()): ; ?>
 					<div class="news-truncate clearfix">
-						<h3><?php printPageTitlelink(); ?></h3>
-						<div class="clearfix">
+						<h3 class="search-title"><?php printPageTitlelink(); ?></h3>
+						<div class="search-content clearfix">
 							<?php echo shortenContent(strip_tags(getPageContent()), 100, getOption("zenpage_textshorten_indicator")); ?>
 						</div>
 					</div>

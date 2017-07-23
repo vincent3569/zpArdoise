@@ -9,15 +9,11 @@
 			<?php } else { ?>
 				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 			<?php } ?>
-			&raquo; <?php echo gettext('Contact'); ?></h3>
+			&raquo; <?php echo gettext('Login'); ?></h3>
 		</div>
 
 		<div class="post">
-			<?php if (function_exists('printContactForm')) { ?>
-				<?php printContactForm(); ?>
-			<?php } else { ?>
-				<p><?php echo gettext('The Contact Form plugin has not been activated.'); ?></p>
-			<?php } ?>
+			<?php printUserLogin_out('', '', true); ?>
 		</div>
 
 	</div>
