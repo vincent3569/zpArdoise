@@ -64,7 +64,7 @@ if (!defined('WEBPATH')) die();
 				msie: /msie/.test( userAgent ) && !/opera/.test( userAgent ),
 				mozilla: /mozilla/.test( userAgent ) && !/(compatible|webkit)/.test( userAgent )
 			};
-		})(jQuery); 
+		})(jQuery);
 		//]]>
 		</script>
 		<script type="text/javascript" src="<?php echo $_zp_themeroot; ?>/js/jquery.history.js"></script>
@@ -237,7 +237,7 @@ if (!defined('WEBPATH')) die();
 	<?php if (($_zp_gallery_page != 'image.php') || (getOption('show_image_logo_on_image'))){ ?>
 	<div id="site-title" class="clearfix">
 		<?php if (extensionEnabled('dynamic-locale')) { ?>
-			<div id="flag"><?php printLanguageSelector('langselector'); ?></div>
+			<div id="flag"><?php printLanguageSelector(); ?></div>
 		<?php } ?>
 		<!-- banniere -->
 		<div id="banniere">
