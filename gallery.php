@@ -2,7 +2,7 @@
 
 		<div id="headline" class="clearfix">
 			<h3><?php printHomeLink('', ' » '); echo html_encode(getGalleryTitle()); ?></h3>
-			<div class="headline-text"><?php printGalleryDesc(true); ?></div>
+			<div class="headline-text"><?php printGalleryDesc(); ?></div>
 		</div>
 
 		<?php if (isAlbumPage()) { ?>

@@ -22,20 +22,18 @@
 	}
 	?>
 
-	<?php if ((function_exists('printCommentForm')) && ($comments_open)) { ?>
-		<?php if ($comments_allowed || (getCommentCount() > 0 )) { ?>
-			<a class="fadetoggler"><img src="<?php echo $_zp_themeroot; ?>/images/icon-comment.png" alt="icon-comment" id="icon-comment" />
-			<?php
-			$num = getCommentCount();
-			if ($num == 0) {
-				echo gettext('No Comments');
-			} else {
-				echo sprintf(ngettext('%u Comment','%u Comments',$num), $num);
-			}
-			?>
-			</a>
-			<div id="comment-wrap" class="fader clearfix">
-				<?php printCommentForm(true, NULL, true); ?>
-			</div>
-		<?php } ?>
+	<?php if (($comments_open) && ($comments_allowed || (getCommentCount() > 0 ))){ ?>
+		<a class="fadetoggler"><img src="<?php echo $_zp_themeroot; ?>/images/icon-comment.png" alt="icon-comment" id="icon-comment" />
+		<?php
+		$num = getCommentCount();
+		if ($num == 0) {
+			echo gettext('No Comments');
+		} else {
+			echo sprintf(ngettext('%u Comment','%u Comments',$num), $num);
+		}
+		?>
+		</a>
+		<div id="comment-wrap" class="fader clearfix">
+			<?php printCommentForm(true, NULL, true); ?>
+		</div>
 	<?php } ?>

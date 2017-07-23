@@ -3,6 +3,7 @@
 // force UTF-8 Ø
 
 /* zpArdoise_printRandomImages
+	- use improvements of zenphoto 1.4.5 on printRandomImages and printImageStatistic
 	- use improvements of zenphoto 1.4.2 on printRandomImages and printImageStatistic :
 		- http://www.zenphoto.org/trac/ticket/1914,
 		- http://www.zenphoto.org/trac/ticket/2020,
@@ -13,21 +14,22 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 	if (is_null($crop) && is_null($width) && is_null($height)) {
 		$crop = 2;
 	} else {
-		if (is_null($width)) $width = 85;
-		if (is_null($height)) $height = 85;
+		if (is_null($width))
+			$width = 85;
+		if (is_null($height))
+			$height = 85;
 		if (is_null($crop)) {
 			$crop = 1;
 		} else {
 			$crop = (int) $crop && true;
 		}
 	}
-	if (!empty($class)) {
+	if (!empty($class))
 		$class = ' class="' . $class . '"';
-	};
+
 	echo "<ul" . $class . ">";
-	for ($i=1; $i<=$number; $i++) {
-		echo "<li>\n";
-		switch($option) {
+	for ($i = 1; $i <= $number; $i++) {
+		switch ($option) {
 			case "all":
 				$randomImage = getRandomImages();
 				break;
@@ -36,10 +38,10 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 				break;
 		}
 		if (is_object($randomImage) && $randomImage->exists) {
-			$fullimage = getFullImageURL($randomImage);
-			if(($fullimagelink) && (!empty($fullimage))) {
+			echo "<li>\n";
+			if ($fullimagelink) {
 				$aa_class = ' class="' . $a_class . '"';
-				$randomImageURL = html_encode($fullimage);
+				$randomImageURL = html_encode($randomImage->getFullimageURL());
 			} else {
 				$aa_class = NULL;
 				$randomImageURL = html_encode(getURL($randomImage));
@@ -58,8 +60,10 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 			}
 			echo zp_apply_filter('custom_image_html', $html, false);
 			echo "</a>";
+			echo "</li>\n";
+		} else {
+			break;
 		}
-		echo "</li>\n";
 	}
 	echo "</ul>";
 }
@@ -68,27 +72,33 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 	- use improvements of zenphoto 1.4.2 on printRandomImages and printImageStatistic (http://www.zenphoto.org/trac/ticket/1914)
 	- implements call of colorbox (http://www.zenphoto.org/trac/ticket/1908 and http://www.zenphoto.org/trac/ticket/1909)
 */
-function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showtitle=false, $showdate=false, $showdesc=false, $desclength=40, $showstatistic='', $width=NULL, $height=NULL, $crop=NULL, $collection=false, $fullimagelink=false, $a_class=NULL) {
-	$images = getImageStatistic($number, $option, $albumfolder,$collection);
+function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showtitle=false, $showdate=false, $showdesc=false, $desclength=40, $showstatistic='', $width=NULL, $height=NULL, $crop=NULL, $collection=false, $fullimagelink=false, $threshold=0, $a_class=NULL) {
+	$images = getImageStatistic($number, $option, $albumfolder, $collection, $threshold);
 	if (is_null($crop) && is_null($width) && is_null($height)) {
 		$crop = 2;
 	} else {
-		if (is_null($width)) $width = 85;
-		if (is_null($height)) $height = 85;
-		if (is_null($crop)) $crop = true;
+		if (is_null($width))
+			$width = 85;
+		if (is_null($height))
+			$height = 85;
+		if (is_null($crop)) {
+			$crop = 1;
+		} else {
+			$crop = (int) $crop && true;
+		}
 	}
+
 	echo "\n<div id=\"$option\">\n";
 	echo "<ul>";
 	foreach ($images as $image) {
-		$fullimage = getFullImageURL($image);
-		if(($fullimagelink) && (!empty($fullimage))) {
+		if ($fullimagelink) {
 			$aa_class = ' class="' . $a_class . '"';
-			$imagelink = html_encode($fullimage);
+			$imagelink = $image->getFullImageURL();
 		} else {
 			$aa_class = NULL;
-			$imagelink = html_encode(getURL($image));
+			$imagelink = $image->getImageLink();
 		}
-		echo "<li><a href=\"" . $imagelink ."\"" . $aa_class . " title=\"" . html_encode($image->getTitle()) . "\">\n";
+		echo "<li><a href=\"" . html_encode($imagelink) ."\"" . $aa_class . " title=\"" . html_encode($image->getTitle()) . "\">\n";
 		switch ($crop) {
 			case 0:
 				echo "<img src=\"" . pathurlencode($image->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n";
@@ -100,24 +110,26 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 				echo "<img src=\"" . pathurlencode($image->getThumb()) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n<br />";
 				break;
 		}
-		if($showtitle) {
-			echo "<h3><a href=\"" . html_encode($image->getImageLink()) . "\" title=\"" . html_encode($image->getTitle()) . "\">\n";
+		if ($showtitle) {
+			echo "<h3><a href=\"" . pathurlencode($image->getImageLink()) . "\" title=\"" . html_encode($image->getTitle()) . "\">\n";
 			echo $image->getTitle() . "</a></h3>\n";
 		}
-		if($showdate) {
-			echo "<p>" . zpFormattedDate(DATE_FORMAT,strtotime($image->getDateTime())) . "</p>";
+		if ($showdate) {
+			echo "<p>" . zpFormattedDate(DATE_FORMAT, strtotime($image->getDateTime())) . "</p>";
 		}
-		if($showstatistic === "rating" OR $showstatistic === "rating+hitcounter") {
+		if ($showstatistic === "rating" OR $showstatistic === "rating+hitcounter") {
 			$votes = $image->get("total_votes");
 			$value = $image->get("total_value");
-			if($votes != 0) {
+			if ($votes != 0) {
 				$rating =  round($value/$votes, 1);
 			}
 			echo "<p>" . sprintf(gettext('Rating: %1$u (Votes: %2$u)'), $rating, $votes) . "</p>";
 		}
-		if($showstatistic === "hitcounter" OR $showstatistic === "rating+hitcounter") {
+		if ($showstatistic === "hitcounter" OR $showstatistic === "rating+hitcounter") {
 			$hitcounter = $image->get("hitcounter");
-			if(empty($hitcounter)) { $hitcounter = "0"; }
+			if (empty($hitcounter)) {
+				$hitcounter = "0";
+			}
 			echo "<p>" . sprintf(gettext("Views: %u"), $hitcounter) . "</p>";
 		}
 		if($showdesc) {

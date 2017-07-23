@@ -92,14 +92,14 @@
 				<div>
 					<ul class="search-item"><li><?php printf(gettext('Articles (%s)'), $numnews); ?></li></ul>
 
-					<?php while (next_news('date', 'desc')): ; ?>
+					<?php while (next_news('date', 'desc')) { ?>
 					<div class="news-truncate clearfix">
 						<h3 class="search-title"><?php printNewsTitleLink(); ?></h3>
 						<div class="search-content clearfix">
 							<?php echo shortenContent(strip_tags(getNewsContent()), 100, getOption("zenpage_textshorten_indicator")); ?>
 						</div>
 					</div>
-					<?php endwhile; ?>
+					<?php } ?>
 				</div>
 			<?php
 			}
@@ -108,14 +108,14 @@
 				<div>
 					<ul class="search-item"><li><?php printf(gettext('Pages (%s)'), $numpages); ?></li></ul>
 
-					<?php while (next_page()): ; ?>
+					<?php while (next_page()) { ?>
 					<div class="news-truncate clearfix">
 						<h3 class="search-title"><?php printPageTitlelink(); ?></h3>
 						<div class="search-content clearfix">
 							<?php echo shortenContent(strip_tags(getPageContent()), 100, getOption("zenpage_textshorten_indicator")); ?>
 						</div>
 					</div>
-					<?php endwhile; ?>
+					<?php } ?>
 				</div>
 			<?php
 			}

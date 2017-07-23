@@ -59,7 +59,7 @@ class ThemeOptions {
 
 	function getOptionsSupported() {
 		return array(
-			gettext('Use this file as logo') => array('order' => 0, 'key' => 'use_image_logo_filename', 'type' => OPTION_TYPE_TEXTBOX, 'multilingual' => 1, 'desc' => gettext_th('Image file for the logo area: enter the full filename (including extension) of the image file located in themes/zpArdoise/images/ (banniere1.jpg for example).', 'zpArdoise')),
+			gettext('Use this file as logo') => array('order' => 0, 'key' => 'use_image_logo_filename', 'type' => OPTION_TYPE_TEXTBOX, 'multilingual' => 0, 'desc' => gettext_th('Image file for the logo area: enter the full filename (including extension) of the image file located in themes/zpArdoise/images/ (banniere1.jpg for example).', 'zpArdoise')),
 			gettext('Show the logo on Image page') => array('order' => 1, 'key' => 'show_image_logo_on_image', 'type' => OPTION_TYPE_CHECKBOX, 'desc' => gettext_th('Check to show the logo on the Image page.', 'zpArdoise')),
 			gettext('Style') => array('order' => 2, 'key' => 'css_style', 'type' => OPTION_TYPE_CUSTOM, 'desc' => gettext_th('Choose Dark or Light for color style of the site.', 'zpArdoise')),
 			gettext('Color') => array('order' => 3, 'key' => 'color_style', 'type' => OPTION_TYPE_CUSTOM, 'desc' => gettext_th('Choose the color of links: choose Default to use the default color of Dark or Light style and choose Custom to use a custom value. You can customize these values by editing the file theme/zpArdoise/css/custom.css.', 'zpArdoise')),
@@ -113,7 +113,7 @@ class ThemeOptions {
 		}
 
 		if ($option == 'zenpage_homepage') {
-			$unpublishedpages = query_full_array("SELECT titlelink FROM " . prefix('pages') . " WHERE `show` != 1 ORDER by `sort_order`");
+			$unpublishedpages = query_full_array("SELECT titlelink, title FROM " . prefix('pages') . " WHERE `show` != 1 ORDER by `sort_order`");
 			if (empty($unpublishedpages)) {
 				echo gettext("No unpublished pages available");
 				// clear option if no unpublished pages are available or have been published meanwhile
@@ -136,7 +136,7 @@ class ThemeOptions {
 					} else {
 						$selected = '';
 					}
-					echo '<option value="' . $page["titlelink"] . '"' . $selected . '>' . $page["titlelink"] . '</option>';
+					echo '<option value="' . $page["titlelink"] . '"' . $selected . '>' . get_language_string($page["title"]) . '</option>';
 				}
 
 				echo "</select>\n";

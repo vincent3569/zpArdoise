@@ -34,9 +34,9 @@
 				}
 			} else {
 				if (getOption('use_colorbox_album')) {
-					zpArdoise_printImageStatistic($number, getOption('image_statistic'), '', false, false, false, '', '', NULL, NULL, NULL, false, true, 'colorbox');
+					zpArdoise_printImageStatistic($number, getOption('image_statistic'), '', false, false, false, '', '', NULL, NULL, NULL, false, true, 0, 'colorbox');
 				} else {
-					zpArdoise_printImageStatistic($number, getOption('image_statistic'), '', false, false, false, '', '', NULL, NULL, NULL, false, false);
+					zpArdoise_printImageStatistic($number, getOption('image_statistic'), '', false, false, false, '', '', NULL, NULL, NULL, false, false, 0);
 				}
 			}
 			?>

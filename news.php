@@ -1,4 +1,7 @@
-<?php include ('inc_header.php'); ?>
+<?php
+if (!class_exists('Zenpage')) die();
+include ('inc_header.php');
+?>
 
 		<div id="headline-news">
 			<?php if (is_NewsArticle()) { ?>
@@ -48,7 +51,7 @@
 			<?php } ?>
 		</div>
 
-		<?php include('inc_print_comment.php'); ?>
+		<?php if (function_exists('printCommentForm')) {include('inc_print_comment.php');} ?>
 
 	<?php } else {
 	// news article loop ?>
@@ -58,7 +61,7 @@
 		</div>
 
 		<div id="news" class="clearfix">
-			<?php while (next_news()): ; ?>
+			<?php while (next_news()) { ?>
 			<div class="news-truncate clearfix">
 				<h3><?php printNewsTitleLink(); ?></h3>
 				<div class="newsarticlecredit">
@@ -68,7 +71,7 @@
 				<?php printNewsContent(); ?>
 
 			</div>
-			<?php endwhile; ?>
+			<?php } ?>
 		</div>
 
 		<div class="pagination-news clearfix">

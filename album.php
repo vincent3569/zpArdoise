@@ -7,9 +7,9 @@
 			<?php } else { ?>
 				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 			<?php } ?>
-			&raquo;&nbsp;<?php printParentBreadcrumb('', ' » ', ' » '); ?><?php printAlbumTitle(true); ?></h3>
+			&raquo;&nbsp;<?php printParentBreadcrumb('', ' » ', ' » '); ?><?php printAlbumTitle(); ?></h3>
 
-			<div class="headline-text"><?php printAlbumDesc(true); ?></div>
+			<div class="headline-text"><?php printAlbumDesc(); ?></div>
 		</div>
 
 		<?php if ((function_exists('printSlideShowLink')) && (!getOption('use_galleriffic'))) { ?>
@@ -35,10 +35,10 @@
 
 			<div id="galleriffic-wrap" class="clearfix">
 				<div id="gallery" class="content">
-					<div id="controls" class="controls"></div>
+					<div id="zpArdoise_controls" class="controls"></div>
 					<div class="slideshow-container">
 						<div id="loading" class="loader"></div>
-						<div id="slideshow" class="slideshow"></div>
+						<div id="zpArdoise_slideshow" class="slideshow"></div>
 					</div>
 					<div id="caption" class="caption-container"></div>
 				</div>
@@ -47,9 +47,9 @@
 						<?php while (next_image(true)) { ?>
 						<li>
 							<?php if (isImageVideo()) { ?>
-								<a name="<?php echo html_decode($_zp_current_image->getFileName()); ?>" class="thumb" href="<?php echo $_zp_themeroot; ?>/images/video-placeholder.jpg" title="<?php echo getBareImageTitle(); ?>">
+								<a class="thumb" href="<?php echo $_zp_themeroot; ?>/images/video-placeholder.jpg" title="<?php echo getBareImageTitle(); ?>">
 							<?php } else { ?>
-								<a name="<?php echo html_decode($_zp_current_image->getFileName()); ?>" class="thumb" href="<?php echo html_encode(getDefaultSizedImage()); ?>" title="<?php echo getBareImageTitle(); ?>">
+								<a class="thumb" href="<?php echo html_encode(getDefaultSizedImage()); ?>" title="<?php echo getBareImageTitle(); ?>">
 							<?php } ?>
 							<?php printImageThumb(getAnnotatedImageTitle()); ?></a>
 							<?php $fullimage = getFullImageURL(); ?>
@@ -61,10 +61,10 @@
 								</div>
 								<?php } ?>
 								<div class="image-title">
-									<a href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php echo gettext('Image'); ?> : <?php echo getImageTitle(); ?>"><?php printImageTitle(false); ?></a>
+									<a href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php echo gettext('Image'); ?> : <?php echo getImageTitle(); ?>"><?php printImageTitle(); ?></a>
 								</div>
 								<div class="image-desc">
-									<?php printImageDesc(true); ?>
+									<?php printImageDesc(); ?>
 								</div>
 							</div>
 						</li>
@@ -119,6 +119,6 @@
 			</script>
 		<?php } ?>
 
-		<?php include('inc_print_comment.php'); ?>
+		<?php if (function_exists('printCommentForm')) {include('inc_print_comment.php');} ?>
 
 <?php include('inc_footer.php'); ?>

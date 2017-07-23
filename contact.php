@@ -1,4 +1,7 @@
-<?php include ('inc_header.php'); ?>
+<?php 
+if (!function_exists('printContactForm')) die();
+include ('inc_header.php');
+?>
 
 	<div id="post">
 
@@ -13,9 +16,7 @@
 		</div>
 
 		<div class="post">
-			<?php if (function_exists('printContactForm')) { ?>
-				<?php printContactForm(); ?>
-			<?php } ?>
+			<?php printContactForm(); ?>
 		</div>
 
 	</div>

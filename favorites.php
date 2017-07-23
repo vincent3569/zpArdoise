@@ -7,10 +7,18 @@
 			<?php } else { ?>
 				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 			<?php } ?>
-			&raquo;&nbsp;<?php printAlbumTitle(true); ?></h3>
+			&raquo;&nbsp;<?php printAlbumTitle(); ?></h3>
 
-			<div class="headline-text"><?php printAlbumDesc(true); ?></div>
+			<div class="headline-text"><?php printAlbumDesc(); ?></div>
 		</div>
+
+		<?php if (function_exists('printSlideShowLink')) { ?>
+		<div class="control-nav">
+			<div class="control-slide">
+				<?php printSlideShowLink(gettext('Slideshow')); ?>
+			</div>
+		</div>
+		<?php } ?>
 
 		<div>
 			<div class="pagination-nogal clearfix">

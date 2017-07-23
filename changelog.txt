@@ -1,3 +1,50 @@
+* 1.4.5.1
+- inc_header.php :
+	- fix issue introduced by Zenphoto 1.4.5.8
+
+
+* 1.4.5
+- css/screen, css/light.css :
+	- fix issue on button css rules (to avoid overwriting between zpArdoise css rules and colorbox 1.4.5 css rules)
+	- graphical improvements to be compliant with html5
+	- graphical improvements to be compliant with new contact, comment and register forms
+- js/jquery.galleriffic.js :
+	- fix JS issue (conflict between galleriffic and colorbox navigation)
+- album.php, contact.php, favorites.php, gallery.php, image.php, inc_header.php, inc_print_album_thumb.php, inc_print_image_thumb.php, news.php, search.php :
+	- code clean up
+- album.php, image.php, news.php, pages.php, inc_print_comment.php:
+	- some rewrite to be compliant with new comment_form plugin
+- album.php :
+	- remove "name" attribute of <a> tags (attribute deprecated with html5)
+	- rename #controls and #slideshow to #zpArdoise_controls and #zpArdoise_slideshow to avoid css confict with slideshow plugin and slideshow macro
+- contact.php, news.php, pages.php, register.php
+	- some rewrite to add controls before display these pages
+- favorites.php :
+	- add slideshow link (use improvements of zenphoto 1.4.5)
+- functions :
+	- use improvements of zenphoto 1.4.5 on zpArdoise_printRandomImages and zpArdoise_printImageStatistic
+- inc_footer.php :
+	- some rewrite to be compliant with new rss plugin
+	- use printRSSLink() instead of printZenpageRSSLink(), deprecated with 1.4.5
+	- remove printAdminToolbox(), deprecated with 1.4.5
+- inc_header.php :
+	- switch to html5 (https://github.com/zenphoto/zenphoto/issues/274)
+	- some rewrite to be compliant with new rss plugin
+	- use printRSSHeaderLink() instead of printZenpageRSSHeaderLink(), deprecated with 1.4.5
+	- add jquery to use theme rss image for comment rss feed instead standard rss image
+	- add pagination in title tag on gallery, album, news, search and favorites pages
+	- disable of some options of comment_form, to avoid JS conflits
+	- improvement to avoid JS conflicts between Colorbox and naviguation script
+	- rename #controls and #slideshow to #zpArdoise_controls and #zpArdoise_slideshow to avoid css confict with slideshow plugin and slideshow macro
+	- use .on() method rather than .live() method removed from jQuery 1.9.0
+	- add some JS code to replace .browser() method removed from jQuery 1.9.0 (https://github.com/zenphoto/zenphoto/commit/467a672f3633b34b50dd64076fe509f85018466a)
+- inc_print_image_statistic.php
+	- add parameter in zpArdoise_printImageStatistic's call
+- themeoptions.php :
+	- fix issue on 'use_image_logo_filename' field (set multilingual to false)
+	- fix issue on 'Homepage' option : dispalays translated title of unpublished pages
+
+
 * 1.4.4
 - css/screen.css :
 	- fix issue on nav-controls
@@ -9,6 +56,8 @@
 - album.php :
 	- use getFullImageURL() rather than getUnprotectedImageURL() to offer zenphoto capabilities on displaying protected image
 	- improvement to support favorites handler
+- favorites.php :
+	- new file to support favorites handler
 - functions.php :
 	- fix issues in zpArdoise_printEXIF when there are no exifs on picture (undefined index warnings in Debug Log)
 	- improvement to offer zenphoto capabilities on displaying protected image
@@ -21,8 +70,6 @@
 	- improvement to support favorites handler
 - inc_print_image_thumb.php :
 	- use getFullImageURL() rather than getUnprotectedImageURL() to offer zenphoto capabilities on displaying protected image
-- favorites.php :
-	- new file to support favorites handler
 - themeoptions.php :
 	- fix an issue when saving zenpage_homepage option
 	- fix an issue when evaluating "none" value of zenpage_homepage option

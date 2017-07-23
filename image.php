@@ -33,7 +33,7 @@
 				<?php } else { ?>
 					<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 				<?php } ?>
-				&raquo;&nbsp;<?php printParentBreadcrumb('', ' » ', ' » '); printAlbumBreadcrumb('', ' » '); printImageTitle(true); ?></h3>
+				&raquo;&nbsp;<?php printParentBreadcrumb('', ' » ', ' » '); printAlbumBreadcrumb('', ' » '); printImageTitle(); ?></h3>
 
 			</div>
 
@@ -46,8 +46,8 @@
 				<?php } ?>
 			</div>
 
-			<div id="img-title"><?php printImageTitle(true); ?></div>
-			<div id="img-infos"><?php printImageDesc(true); ?></div>
+			<div id="img-title"><?php printImageTitle(); ?></div>
+			<div id="img-infos"><?php printImageDesc(); ?></div>
 
 			<?php if (getOption('show_exif')) { ?>
 			<div id="exif-infos">
@@ -69,6 +69,6 @@
 
 		</div>
 
-		<?php include('inc_print_comment.php'); ?>
+		<?php if (function_exists('printCommentForm')) {include('inc_print_comment.php');} ?>
 
 <?php include('inc_footer.php'); ?>

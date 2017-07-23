@@ -9,7 +9,7 @@ Description
 -----------
 
 The theme supports the following ZenPhoto plugins:
-- colorbox, comment_form, contact_form, dynamic-locale, favoritesHander (**new**), flag_thumbnail, GoogleMap, image_album_statistics, print_album_menu, rating, register_user, slideshow, user_login-out, zenpage
+- colorbox, comment_form, contact_form, dynamic-locale, favoritesHander, flag_thumbnail, GoogleMap, image_album_statistics, print_album_menu, rating, register_user, RSS (**new**), slideshow, user_login-out, zenpage
 
 Additional scripts used:
 - Galleriffic (jQuery plugin for rich experience and fast-performing photo galleries)
@@ -19,7 +19,7 @@ Additional scripts used:
 If you use Galleriffic script, you should not have any albums that mixes sub-albums and pictures (in this case, there is no navigation bars, so all sub-albums may be not displayed on album.php).
 
 ### Important
-To use the release **1.4.4** of the theme, you must have **ZenPhoto 1.4.4.x**.
+To use the release **1.4.5** of the theme, you must have **ZenPhoto 1.4.5.x**.
 If you use another release of ZenPhoto, see [Archives of zpArdoise on Github](https://github.com/vincent3569/zpArdoise/releases).
 
 Report issues on the [ZenPhoto forum](http://www.zenphoto.org/support/) or create a new issue on [GitHub](https://github.com/vincent3569/zpArdoise/issues) and I will fix it as soon as possible (only the latest version is supported).

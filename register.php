@@ -1,4 +1,7 @@
-<?php include ('inc_header.php'); ?>
+<?php
+if (!function_exists('printRegistrationForm')) die();
+include ('inc_header.php');
+?>
 
 	<div id="post">
 

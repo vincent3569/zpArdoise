@@ -15,7 +15,7 @@
 		<?php } ?>
 
 		<div id="foot-left">
-			<?php if ((getOption('RSS_album_image')) || ((getOption('RSS_articles')) && (function_exists('printZenpageRSSLink')))) { ?>
+			<?php if (class_exists('RSS')) { ?>
 			<div id="rsslinks">
 				<?php
 				$separ = '';
@@ -23,8 +23,8 @@
 					printRSSLink('Gallery', '', gettext('Gallery'), '', false, 'rss');
 					$separ = ' | ';
 				}
-				if ((getOption('RSS_articles')) && (function_exists('printZenpageRSSLink'))) {
-					printZenpageRSSLink('NewsWithImages', '', $separ, gettext('News and Gallery'), '', false, 'rss');
+				if (getOption('RSS_articles')) {
+					printRSSLink('NewsWithImages', $separ, gettext('News and Gallery'), '', false, 'rss');
 				}
 				?>
 				<script type="text/javascript">
@@ -62,10 +62,9 @@
 </div>			<!-- END #PAGE -->
 
 <?php
-	printAdminToolbox();
 	zp_apply_filter('theme_body_close');
 ?>
 
 </body>
 </html>
-<!-- zpArdoise 1.4.4 - a ZenPhoto/ZenPage theme by Vincent3569  -->
+<!-- zpArdoise 1.4.5.1 - a ZenPhoto/ZenPage theme by Vincent3569  -->

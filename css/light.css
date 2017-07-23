@@ -25,12 +25,12 @@ img.cadre {
 	border: 1px solid #444;
 }
 img.ombreB {
-	border: 0 solid #444;
+	border: 0 solid #444 !important;
 }
-input, textarea, .disabled_input, select {
-	color: #333!important;
-	background: #ddd!important;
-	border: 1px solid #bbb!important;
+input, textarea, select, .disabled_input label {
+	color: #333 !important;
+	background: #ddd !important;
+	border: 1px solid #bbb !important;
 }
 div.nav-img ul a, div.nav-img a {
 	border: 1px solid #bbb;
@@ -52,7 +52,7 @@ div.pagination-nogal ul li.current, div.pagination-news ul li.current {
 	color: #fff;
 }
 div.pagination-nogal ul a:hover, div.pagination-news ul a:hover {
-	color: #333!important;
+	color: #333 !important;
 }
 div.pagination-nogal ul .disabledlink, div.pagination-news ul .disabledlink {
 	border: 1px solid #bbb;
@@ -105,7 +105,7 @@ div.extra-content {
 	background: url(../images/hr_light.gif) repeat-y;
 }
 div.slideshow img {
-	border: 0 solid #444;
+	border: 0 none;
 	box-shadow: 2px 2px 9px #111; -moz-box-shadow: 2px 2px 9px #111; -webkit-box-shadow: 2px 2px 9px #111;
 }
 div.pagination a, div.pagination span.current {
@@ -133,10 +133,10 @@ table#archive td#newsarchive {
 #passwordform {
 	background: #eee;
 }
-#loginform fieldset, #registration_form fieldset {
+#loginform fieldset {
 	border: 1px solid #bbb;
 }
-#loginform legend, #registration_form legend {
+#loginform legend {
 	color: #333;
 }
 #comment-wrap {
@@ -146,24 +146,22 @@ table#archive td#newsarchive {
 	background: url(../images/hr_light.gif) repeat-y;
 }
 input:hover, input:focus, textarea:hover, textarea:focus {
-	border: 1px solid #444!important;
+	border: 1px solid #444 !important;
 }
-input.button:hover, input.button:focus, input[type=submit]:hover, input[type=submit]:focus, input[type=reset]:hover, input[type=reset]:focus, #rating-wrap input[type=button]:hover, #rating-wrap input[type=button]:focus {
-	background: #999!important;
+input[type=submit]:hover, input[type=submit]:focus, input[type=reset]:hover, input[type=reset]:focus, #rating-wrap input[type=button]:hover, #rating-wrap input[type=button]:focus {
+	background: #999 !important;
 }
 input[disabled="disabled"], textarea[disabled="disabled"] {
-	color: #777!important;
+	color: #777 !important;
 }
-button {
-	background: #ddd!important;
-	border: 1px solid #bbb!important;
-	color: #333!important;
-}
-button:hover {
-	border: 1px solid #444!important;
+button[type=submit], button[type=reset] {
+	background: #ddd !important;
+	border: 1px solid #bbb !important;
+	color: #333 !important;
 }
 button[type=submit]:hover, button[type=reset]:hover {
-	background: #999!important;
+	background: #999 !important;
+	border: 1px solid #444 !important;
 }
 div#footer {
 	background: url(../images/hr_light.gif) repeat-x;
@@ -182,13 +180,13 @@ div#footer {
 #slidenav a, #slidenav a:visited {
 	background: #ddd;
 	border: 1px solid #bbb;
-	color: #666!important;
+	color: #666 !important;
 	box-shadow: 2px 2px 3px #111; -moz-box-shadow: 2px 2px 3px #111; -webkit-box-shadow: 2px 2px 3px #111;
 }
 #slidenav a.activeSlide {
 	background: #aaa;
-	color: #111!important;
+	color: #111 !important;
 }
 #slidenav a:hover {
-	color: #111!important;
+	color: #111 !important;
 }

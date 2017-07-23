@@ -6,9 +6,9 @@ change all values of color to change color of the links
 #main-menu ul li a.active, #main-menu ul li.active a {background-color: #4d93e8;}
 a, a:active, a:focus, a:hover {color: #4d93e8;}
 div.nav-img ul a, div.nav-img a {color: #4d93e8;}
-div.nav-img ul a:hover, div.nav-img a:hover {border-color:#4d93e8; background-color: #4d93e8}
+div.nav-img ul a:hover, div.nav-img a:hover {border-color:#4d93e8; background-color: #4d93e8;}
 div.pagination-nogal ul a, div.pagination-nogal ul a:visited, div.pagination-news ul a, div.pagination-news ul a:visited {border-color: #4d93e8; color: #4d93e8;}
-div.pagination-nogal ul li.current, div.pagination-news ul li.current {border-color: #4d93e8; background-color: #4d93e8}
+div.pagination-nogal ul li.current, div.pagination-news ul li.current {border-color: #4d93e8; background-color: #4d93e8;}
 div.ss-controls a:hover, div.nav-controls a:hover {background-color: #4d93e8;}
 div.pagination a, div.pagination span.current {border-color: #4d93e8;}
 div.pagination span.ellipsis {border-color: #4d93e8;}

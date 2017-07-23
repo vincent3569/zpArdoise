@@ -939,6 +939,8 @@
 		if (this.enableKeyboardNavigation) {
 			$(document).keydown(function(e) {
 
+			if (ColorboxActive) return true;				/* cohabitation entre script de navigation et colorbox */
+
 			var target = e.target || e.srcElement;			/* disable navigation on an input editable element */
 			if (target && target.type) return true;			/* issue#147 on http://code.google.com/p/galleriffic/issues/detail?id=147 */
 
