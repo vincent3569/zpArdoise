@@ -22,6 +22,7 @@ If you use Galleriffic script, you should not have any albums that mixes sub-alb
 If you use another release of ZenPhoto, see [Archives of zpArdoise on Github](https://github.com/vincent3569/zpArdoise/releases).
 
 Report issues on the [ZenPhoto forum](http://www.zenphoto.org/support/) or create a new issue on [GitHub](https://github.com/vincent3569/zpArdoise/issues) and I will fix it as soon as possible (only the latest version is supported).
+
 Please note that the ZenPhoto team advise to regulary upgrade its site with the latest version of ZenPhoto to benefit from the latest features of the application, to solve the various security holes, and to benefit from the support of the ZenPhoto team.
 
 ### ChangeLog
