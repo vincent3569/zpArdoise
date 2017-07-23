@@ -9,8 +9,6 @@
 - album.php :
 	- use getFullImageURL() rather than getUnprotectedImageURL() to offer zenphoto capabilities on displaying protected image
 	- improvement to support favorites handler
-- favorites.php :
-	- new file to support favorites handler
 - functions.php :
 	- fix issues in zpArdoise_printEXIF when there are no exifs on picture (undefined index warnings in Debug Log)
 	- improvement to offer zenphoto capabilities on displaying protected image
@@ -23,6 +21,8 @@
 	- improvement to support favorites handler
 - inc_print_image_thumb.php :
 	- use getFullImageURL() rather than getUnprotectedImageURL() to offer zenphoto capabilities on displaying protected image
+- favorites.php :
+	- new file to support favorites handler
 - themeoptions.php :
 	- fix an issue when saving zenpage_homepage option
 	- fix an issue when evaluating "none" value of zenpage_homepage option
