@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zpArdoise\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-08 21:14+0100\n"
-"PO-Revision-Date: 2011-11-20 23:50+0100\n"
+"PO-Revision-Date: 2012-04-24 23:41+0100\n"
 "Last-Translator: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "MIME-Version: 1.0\n"
@@ -25,8 +25,8 @@ msgstr "Archives des actualités"
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/inc_footer.php:25
-msgid "The photos of this site are licensed under <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en\" target=\"_blank\">Creative Common</a>"
-msgstr "Les photos de ce site sont sous licence <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.fr\" target=\"_blank\">Creative Common</a>"
+msgid "The photos of this site are licensed under <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en\" target=\"_blank\">Creative Commons</a>"
+msgstr "Les photos de ce site sont sous licence <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.fr\" target=\"_blank\">Creative Commons</a>"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
@@ -37,7 +37,7 @@ msgstr "<a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.fr\" tar
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/inc_footer.php:25
-msgid "Thank you contact me before using"
+msgid "Thanks contact me before using"
 msgstr "Merci de me contacter avant toute utilisation"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
@@ -45,12 +45,6 @@ msgstr "Merci de me contacter avant toute utilisation"
 #: photo\zenphoto\themes\zpArdoise/inc_footer.php:44
 msgid "You can browse with the arrows keys of your keyboard"
 msgstr "Vous pouvez naviguer à l'aide des flèches de votre clavier"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/inc_header.php:93
-msgid "Stop"
-msgstr "Stop"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie

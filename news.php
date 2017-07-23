@@ -23,7 +23,7 @@
 				<?php printAllNewsCategories(gettext('All news'), true, 'news-cat-list', 'news-cat-active'); ?>
 			</div>
 			<?php } ?>
-			<h3><?php printNewsIndexURL(gettext('News')); ?><?php printCurrentNewsCategory(' &raquo; Cat&eacute;gorie : '); ?><?php printCurrentNewsArchive(' | '); ?></h3>
+			<h3><?php printNewsIndexURL(gettext('News')); ?><?php printCurrentNewsCategory(' » ' . gettext('Category') . ' : '); ?><?php printCurrentNewsArchive(' » '); ?></h3>
 		</div>
 
 	<?php
@@ -52,9 +52,9 @@
 
 	<?php } else {
 	// news article loop ?>
-	
+
 		<div class="pagination-news clearfix">
-			<?php printNewsPageListWithNav('&raquo;', '&laquo;', true, 'clearfix'); ?>
+			<?php printNewsPageListWithNav(' » ', ' « ', true, 'clearfix'); ?>
 		</div>
 
 		<div id="news" class="clearfix">
@@ -72,7 +72,7 @@
 		</div>
 
 		<div class="pagination-news clearfix">
-			<?php printNewsPageListWithNav(' &raquo; ', ' &laquo; ', true, 'clearfix'); ?>
+			<?php printNewsPageListWithNav(' » ', ' « ', true, 'clearfix'); ?>
 		</div>
 
 	<?php } ?>

@@ -1,13 +1,13 @@
 <?php include ('inc_header.php'); ?>
 
 		<div id="headline" class="clearfix">
-			<h3><?php printHomeLink('', ' &raquo; '); ?>
+			<h3><?php printHomeLink('', ' » '); ?>
 			<?php if (gettext(getOption('zenpage_homepage')) == gettext('none')) { ?>
-				<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo getGalleryTitle(); ?></a>
+				<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo html_encode(getGalleryTitle()); ?></a>
 			<?php } else { ?>
 				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 			<?php } ?>
-			&raquo; <?php echo '<em>'.gettext('Search').'</em>'; ?></h3>
+			&raquo;&nbsp;<?php echo '<em>'.gettext('Search').'</em>'; ?></h3>
 		</div>
 
 		<?php
@@ -35,28 +35,30 @@
 		?>
 
 		<div class="search-result">
-			<p><?php printf(ngettext('%1$u Hit for <em>%2$s</em>', '%1$u Hits for <em>%2$s</em>', $total), $total, $searchwords); ?></p>
+			<p><?php printf(ngettext('%1$u Hit for <em>%2$s</em>', '%1$u Hits for <em>%2$s</em>', $total), $total, html_encode($searchwords)); ?></p>
 			<?php if ($total == 0 ) { ?>
 				<p><?php echo gettext("Sorry, no matches found. Try refining your search."); ?></p>
 			<?php } ?>
 		</div>
 
 		<div>
-			<?php if (getOption('search_no_albums')) {
+			<?php
+			if (getOption('search_no_albums')) {
 				if ($numimages > 0) {
-					echo'<ul class="search-item"><li>'; printf(gettext('Images (%s)'), $numimages); echo'</ul></li>';
+					echo'<ul class="search-item"><li>'; printf(gettext('Images (%s)'), $numimages); echo'</li></ul>';
 				}
 			} else {
 				if (getOption('search_no_images')) {
 					if ($numalbums > 0) {
-						echo'<ul class="search-item"><li>'; printf(gettext('Albums (%s)'), $numalbums); echo'</ul></li>';
+						echo'<ul class="search-item"><li>'; printf(gettext('Albums (%s)'), $numalbums); echo'</li></ul>';
 					}
 				} else {
 					if ($total1 > 0) {
-						echo'<ul class="search-item"><li>'; printf(gettext('Albums (%1$s) &amp; Images (%2$s)'), $numalbums, $numimages); echo'</ul></li>';
+						echo'<ul class="search-item"><li>'; printf(gettext('Albums (%1$s) &amp; Images (%2$s)'), $numalbums, $numimages); echo'</li></ul>';
 					}
 				}
-			} ?>
+			}
+			?>
 
 			<?php if (function_exists('printSlideShowLink')) { ?>
 			<div class="control-nav">
@@ -67,7 +69,7 @@
 			<?php } ?>
 
 			<div class="pagination-nogal clearfix">
-				<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
+				<?php printPageListWithNav(' « ', ' » ', false, true, 'clearfix', NULL, true, 7); ?>
 			</div>
 
 			<?php
@@ -80,7 +82,7 @@
 			?>
 
 			<div class="pagination-nogal clearfix">
-				<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
+				<?php printPageListWithNav(' « ', ' » ', false, true, 'clearfix', NULL, true, 7); ?>
 			</div>
 
 		</div>
@@ -88,7 +90,7 @@
 		<?php if ($_zp_page == 1) { //test of zenpage searches
 			if ($numnews > 0) { ?>
 				<div>
-					<ul class="search-item"><li><?php printf(gettext('Articles (%s)'), $numnews); ?></ul></li>
+					<ul class="search-item"><li><?php printf(gettext('Articles (%s)'), $numnews); ?></li></ul>
 
 					<?php while (next_news('date', 'desc')): ; ?>
 					<div class="news-truncate clearfix">
@@ -104,7 +106,7 @@
 
 			if ($numpages > 0) { ?>
 				<div>
-					<ul class="search-item"><li><?php printf(gettext('Pages (%s)'), $numpages); ?></ul></li>
+					<ul class="search-item"><li><?php printf(gettext('Pages (%s)'), $numpages); ?></li></ul>
 
 					<?php while (next_page()): ; ?>
 					<div class="news-truncate clearfix">

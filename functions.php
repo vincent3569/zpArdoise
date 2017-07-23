@@ -1,15 +1,15 @@
 <?php
 
-// force UTF-8 �
+// force UTF-8 Ø
 
-/* zpArdoise_printRandomImages 
+/* zpArdoise_printRandomImages
 	- use improvements of zenphoto 1.4.2 on printRandomImages and printImageStatistic :
 		- http://www.zenphoto.org/trac/ticket/1914,
 		- http://www.zenphoto.org/trac/ticket/2020,
 		- http://www.zenphoto.org/trac/ticket/2028
 	- implements call of colorbox (http://www.zenphoto.org/trac/ticket/1908 and http://www.zenphoto.org/trac/ticket/1909)
 */
-function zpArdoise_printRandomImages($number=5, $class=null, $option='all', $rootAlbum='', $width=NULL, $height=NULL, $crop=NULL, $fullimagelink=false, $a_class=null) {
+function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $rootAlbum='', $width=NULL, $height=NULL, $crop=NULL, $fullimagelink=false, $a_class=NULL) {
 	if (is_null($crop) && is_null($width) && is_null($height)) {
 		$crop = 2;
 	} else {
@@ -24,7 +24,7 @@ function zpArdoise_printRandomImages($number=5, $class=null, $option='all', $roo
 	if ($fullimagelink) {
 		$a_class = ' class="' . $a_class . '"';
 	} else {
-		$a_class = null;
+		$a_class = NULL;
 	};
 	if (!empty($class)) {
 		$class = ' class="' . $class . '"';
@@ -49,13 +49,13 @@ function zpArdoise_printRandomImages($number=5, $class=null, $option='all', $roo
 			echo '<a href="' . $randomImageURL . '"' . $a_class . ' title="' . html_encode($randomImage->getTitle()) . '">';
 			switch ($crop) {
 				case 0:
-					$html =  "<img src=\"" . html_encode($randomImage->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
+					$html =  "<img src=\"" . pathurlencode($randomImage->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
 					break;
 				case 1:
-					$html = "<img src=\"" . html_encode($randomImage->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
+					$html = "<img src=\"" . pathurlencode($randomImage->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
 					break;
 				case 2:
-					$html = "<img src=\"" . html_encode($randomImage->getThumb()) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
+					$html = "<img src=\"" . pathurlencode($randomImage->getThumb()) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
 					break;
 			}
 			echo zp_apply_filter('custom_image_html', $html, false);
@@ -70,7 +70,7 @@ function zpArdoise_printRandomImages($number=5, $class=null, $option='all', $roo
 	- use improvements of zenphoto 1.4.2 on printRandomImages and printImageStatistic (http://www.zenphoto.org/trac/ticket/1914)
 	- implements call of colorbox (http://www.zenphoto.org/trac/ticket/1908 and http://www.zenphoto.org/trac/ticket/1909)
 */
-function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showtitle=false, $showdate=false, $showdesc=false, $desclength=40, $showstatistic='', $width=NULL, $height=NULL, $crop=NULL, $collection=false, $fullimagelink=false, $a_class=null) {
+function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showtitle=false, $showdate=false, $showdesc=false, $desclength=40, $showstatistic='', $width=NULL, $height=NULL, $crop=NULL, $collection=false, $fullimagelink=false, $a_class=NULL) {
 	$images = getImageStatistic($number, $option, $albumfolder,$collection);
 	if (is_null($crop) && is_null($width) && is_null($height)) {
 		$crop = 2;
@@ -82,7 +82,7 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 	if ($fullimagelink) {
 		$a_class = ' class="' . $a_class . '"';
 	} else {
-		$a_class = null;
+		$a_class = NULL;
 	};
 	echo "\n<div id=\"$option\">\n";
 	echo "<ul>";
@@ -95,13 +95,13 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 		echo "<li><a href=\"" . html_encode($imagelink)."\"" . $a_class . " title=\"" . html_encode($image->getTitle()) . "\">\n";
 		switch ($crop) {
 			case 0:
-				echo "<img src=\"" . html_encode($image->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n";
+				echo "<img src=\"" . pathurlencode($image->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n";
 				break;
 			case 1:
-				echo "<img src=\"" . html_encode($image->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n";
+				echo "<img src=\"" . pathurlencode($image->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE)) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n";
 				break;
 			case 2:
-				echo "<img src=\"" . html_encode($image->getThumb()) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n<br />";
+				echo "<img src=\"" . pathurlencode($image->getThumb()) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n<br />";
 				break;
 		}
 		if($showtitle) {
@@ -134,16 +134,15 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 
 /* zpArdoise_printEXIF */
 function zpardoise_printEXIF() {
-	$affichExifs = '';
-	if (count(getImageMetaData()) != 0) {
-		$tableauDesExif = getImageMetaData(); //On r?cup?re les exfs dans un tableau
-		if ($tableauDesExif['EXIFModel']!= NULL) {$affichExifs .= $tableauDesExif['EXIFModel']; };
-		if ($tableauDesExif['EXIFFocalLength']!= NULL) {$affichExifs .= ' &ndash; '.$tableauDesExif['EXIFFocalLength']; };
-		if ($tableauDesExif['EXIFFNumber']!= NULL) {$affichExifs .= ' &ndash; '.$tableauDesExif['EXIFFNumber']; };
-		if ($tableauDesExif['EXIFExposureTime']!= NULL)	{$affichExifs .= ' &ndash; '.$tableauDesExif['EXIFExposureTime']; };
-		if ($tableauDesExif['EXIFISOSpeedRatings']!= NULL) {$affichExifs .= ' &ndash; '.$tableauDesExif['EXIFISOSpeedRatings'].' ISO'; };
+	if (getImageMetaData()) {
+		$affichExifs = '';
+		$tableauDesExif = getImageMetaData(); //On récupère les exifs dans un tableau
+		if ($tableauDesExif['EXIFModel'] != NULL) { $affichExifs .= html_encode($tableauDesExif['EXIFModel']); };
+		if ($tableauDesExif['EXIFFocalLength'] != NULL) { $affichExifs .= ' &ndash; ' . html_encode($tableauDesExif['EXIFFocalLength']); };
+		if ($tableauDesExif['EXIFFNumber'] != NULL) { $affichExifs .= ' &ndash; ' . html_encode($tableauDesExif['EXIFFNumber']); };
+		if ($tableauDesExif['EXIFExposureTime'] != NULL) {$affichExifs .= ' &ndash; ' . html_encode($tableauDesExif['EXIFExposureTime']); };
+		if ($tableauDesExif['EXIFISOSpeedRatings'] != NULL) {$affichExifs .= ' &ndash; ' . html_encode($tableauDesExif['EXIFISOSpeedRatings']) . ' ISO'; };
+		echo $affichExifs;
 	}
-	echo $affichExifs;
 }
-
 ?>

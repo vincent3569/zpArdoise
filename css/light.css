@@ -1,4 +1,4 @@
-body {
+﻿body {
 	background: #ddd url(../images/bg3.jpg) repeat scroll;
 	color: #333;
 }
@@ -26,6 +26,11 @@ img.cadre {
 }
 img.ombreB {
 	border: 0 solid #444;
+}
+input, textarea, .disabled_input, select {
+	color: #333!important;
+	background: #ddd!important;
+	border: 1px solid #bbb!important;
 }
 div.nav-img ul a, div.nav-img a {
 	border: 1px solid #bbb;
@@ -117,7 +122,7 @@ div.pagination a:hover {
 	border-color: #b45e2c;
 }
 table#archive h4 {
-	border-bottom: 1px solid #666666;
+	border-bottom: 1px solid #666;
 }
 table#archive td#newsarchive {
 	background: url(../images/hr_light.gif) repeat-y;
@@ -128,27 +133,17 @@ table#archive td#newsarchive {
 #passwordform {
 	background: #eee;
 }
-#loginform fieldset {
+#loginform fieldset, #registration_form fieldset {
 	border: 1px solid #bbb;
 }
-#loginform legend {
+#loginform legend, #registration_form legend {
 	color: #333;
 }
-/* à supprimer avec 1.4.2 */
-table.password h2 {
-	color: #333;
-}
-/* fin à supprimer avec 1.4.2 */
 #comment-wrap {
 	background: url(../images/hr_light.gif) repeat-x;
 }
 #comments {
 	background: url(../images/hr_light.gif) repeat-y;
-}
-input, textarea, .disabled_input, select {
-	color: #333!important;
-	background: #ddd!important;
-	border: 1px solid #bbb!important;
 }
 input:hover, input:focus, textarea:hover, textarea:focus {
 	border: 1px solid #444!important;
@@ -173,7 +168,7 @@ button[type=submit]:hover, button[type=reset]:hover {
 div#footer {
 	background: url(../images/hr_light.gif) repeat-x;
 }
-#search ul {
+#searchextrashow {
 	background: #ddd;
 	border: 1px solid #bbb;
 }
@@ -187,13 +182,12 @@ div#footer {
 #slidenav a, #slidenav a:visited {
 	background: #ddd;
 	border: 1px solid #bbb;
-	color: #444;
+	color: #666!important;
 	box-shadow: 2px 2px 3px #111; -moz-box-shadow: 2px 2px 3px #111; -webkit-box-shadow: 2px 2px 3px #111;
 }
 #slidenav a.activeSlide {
-	background: #b45e2c;
-	/*border: 1px solid #b45e2c;*/
-	color: #333!important;
+	background: #aaa;
+	color: #111!important;
 }
 #slidenav a:hover {
 	color: #111!important;

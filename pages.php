@@ -7,7 +7,7 @@
 				<?php printPageExtraContent(); ?>
 			</div>
 			<?php } ?>
-			
+
 			<?php printPageContent(); ?>
 			<?php printCodeblock(1); ?>
 		</div>

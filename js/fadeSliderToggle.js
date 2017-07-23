@@ -1,9 +1,9 @@
 /*
  * Fade Slider Toggle plugin
- * 
+ *
  * Copyright(c) 2009, Cedric Dugas
  * http://www.position-relative.net
- *	
+ *
  * A sliderToggle() with opacity
  * Licenced under the MIT Licence
  */
@@ -15,7 +15,7 @@
 		speed:500,
 		easing : "swing"
 	}, settings)
-	
+
 	caller = this
  	if ($(caller).css("display") == "none"){
  		$(caller).animate({
@@ -28,4 +28,4 @@
  			height: 'toggle'
  		}, settings.speed, settings.easing);
 	}
-}; 
+};

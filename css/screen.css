@@ -1,9 +1,9 @@
-/*
+ï»¿/*
 Theme Name: zpArdoise
 Theme URI: http://www.vincentbourganel.fr/news/zpArdoise-a-ZenPhoto-ZenPage-theme
 Author: Vincent3569
 Author URI: http://www.vincentbourganel.fr
-Version 1.4.2
+Version 1.4.3.1
 */
 
 /* --------- clear -----------*/
@@ -194,6 +194,19 @@ ul.hor-list, ul.hor-list li {
 	padding-left: 15px;
 }
 
+/* textfields */
+input, textarea, .disabled_input, select {
+	background: #444!important;
+	border: 1px solid #111!important;
+	padding: 3px 5px!important;
+	margin: 0 5px 0 0;
+	color: #ccc!important;
+	font-family: Corbel, Verdana, Arial, sans-serif;
+	font-size: 90%;
+	font-weight: normal!important;
+	border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
+}
+
 /*------------------------------------------------------------------------------
 									navigation and pagination
 ------------------------------------------------------------------------------ */
@@ -308,7 +321,7 @@ div.pagination a, div.pagination span.current, div.pagination span.ellipsis, div
 /* categories */
 div.news-cat-list {
 	background: url(../images/hr.gif) repeat-y;
-	width: 180px;
+	width: 190px;
 	float: right;
 	padding-left: 15px;
 }
@@ -435,7 +448,7 @@ ul#no-gal-ul, #image-stat ul {
 }
 #image img, #image a img {
 	margin-top: 10px;
-	border: 1px solid #4a4a4a; 
+	border: 1px solid #4a4a4a;
 	box-shadow: 2px 2px 9px #111; -moz-box-shadow: 2px 2px 9px #111; -webkit-box-shadow: 2px 2px 9px #111;
 }
 #img-title {
@@ -754,18 +767,11 @@ table#archive li.year {
 	margin-top: 10px;
 }
 
-/* password */
-.login-link {}
-.login-link:hover {
-	cursor: pointer;
-}
-#login-wrap {
-	background: #292929;
-}
+/* password and register */
 #passwordform {
 	background: #292929;
 	margin: 0 auto;
-	padding: 15px 0 25px;
+	padding: 20px 0;
 	width: 400px;
 	text-align: left;
 }
@@ -777,58 +783,30 @@ table#archive li.year {
 	width: 300px;
 	margin: 0 auto 10px;
 }
-#loginform fieldset {
+#registration_form {
+	margin: 0 auto;
+	width: 400px;
+}
+#loginform fieldset, #registration_form fieldset {
 	border: 1px solid #111;
 	padding: 10px;
 	line-height: 20px;
 	margin-bottom: 5px;
 	border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; -webkit-border-radius: 5px;
 }
-#loginform legend {
+#loginform legend, #registration_form legend {
 	color: #bbb;
 }
 #loginform input.textfield {
-	font-size: 100%;
-	margin: 0;
-	padding: 4px;
-	width: 180px;
+	width: 250px;
 }
 div.buttons {
 	margin-left: 10px;
 }
 .logon_link {
-	text-align: center;
-	margin-top: 20px;
+	margin: 20px 0 0!important;
 }
-/* à supprimer avec 1.4.2 */
-#logon_box  table.password {
-	margin: 0;
-}
-table.password h2 {
-	font-size: 100%;
-	font-weight: normal;
-	color: #bbb;
-	margin-bottom: 20px;
-	font-family: Corbel,Verdana,Arial,sans-serif;
-}
-table.password {
-	margin-left: 30px;
-}
-/* fin à supprimer avec 1.4.2 */
 
-/* register */
-div#registration {
-	margin: 0 auto;
-}
-table.register_user {
-	margin: 15px auto;
-}
-table.register_user p {
-	margin: 0!important;
-}
-.register_user  input[type=text], .register_user  input[type=password]{
-	width: 220px;
-}
 
 /* search result */
 div.search-result {
@@ -916,20 +894,9 @@ div.search-content {
 /*------------------------------------------------------------------------------
 									buttons
 ------------------------------------------------------------------------------ */
-input, textarea, .disabled_input, select {
-	background: #444!important;
-	border: 1px solid #111!important;
-	padding: 3px 5px!important;
-	margin: 0 5px 0 0;
-	color: #ccc!important;
-	font-family: Corbel, Verdana, Arial, sans-serif;
-	font-size: 90%;
-	font-weight: normal!important;
-	border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;
-}
-#registration input[type=submit] {
+/*#registration input[type=submit] {
 	margin-left: 260px;
-}
+}*/
 #search input.pushbutton {
 	float: left;
 }
@@ -1003,17 +970,20 @@ div#jump-search select option {
 	text-decoration: none;
 	float: left;
 }
-#search ul {
+#searchextrashow{
 	background: #292929;
 	border: 1px solid #4a4a4a;
 	position: absolute;
+	text-align: left;
 	left: 0;
 	z-index: 1000;
-	text-align: left;
-	list-style: none;
-	margin: 4px 0 0 2px;
+	margin: 7px 0 0 1px;
 	overflow: visible;
 	padding: 10px;
+}
+#search ul {
+	list-style: none;
+	padding-top: 10px;
 }
 #searchfields_icon {
 	position: relative;
@@ -1083,23 +1053,22 @@ div#jump-search select option {
 }
 #slidenav {
 	position: absolute;
-	left: 100px;
+	left: 90px;
 	bottom: -7px;
 	z-index: 1000;
 }
 #slidenav a, #slidenav a:visited {
 	font-size: 85%;
 	background: #4a4a4a;
-	border: 1px solid #bbb;
-	color: #bbb;
+	border: 1px solid #888;
+	color: #bbb!important;
 	padding: 3px 7px;
 	margin-right: 7px;
 	border-radius: 30px; -moz-border-radius: 30px; -khtml-border-radius: 30px; -webkit-border-radius: 30px;
 	box-shadow: 2px 2px 3px #111111; -moz-box-shadow: 2px 2px 3px #111111; -webkit-box-shadow: 2px 2px 3px #111111;
 }
 #slidenav a.activeSlide {
-	background: #86a1b6;
-	/*border: 1px solid #86a1b6;*/
+	background: #999;
 	color: #fff!important;
 }
 #slidenav a:hover {

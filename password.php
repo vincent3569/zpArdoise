@@ -3,13 +3,13 @@
 	<div id="post">
 
 		<div id="headline" class="clearfix">
-			<h3><?php printHomeLink('', ' &raquo; '); ?>
+			<h3><?php printHomeLink('', ' » '); ?>
 			<?php if (gettext(getOption('zenpage_homepage')) == gettext('none')) { ?>
-				<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo getGalleryTitle(); ?></a>
+				<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo html_encode(getGalleryTitle()); ?></a>
 			<?php } else { ?>
 				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
 			<?php } ?>
-			&raquo; <?php echo gettext('Password required'); ?></h3>
+			&raquo;&nbsp;<?php echo gettext('Password required'); ?></h3>
 		</div>
 
 		<div class="post">
@@ -18,14 +18,17 @@
 			</div>
 		</div>
 		<script type="text/javascript">
+		//<![CDATA[
 			$(document).ready(function(){
 				$.colorbox({
 					inline: true,
 					href: "#passwordform",
 					innerWidth: "400px",
+					close: '<?php echo gettext("close"); ?>',
 					open: true
 				});
 			});
+		//]]>
 		</script>
 
 	</div>

@@ -1,3 +1,60 @@
+* 1.4.3.1
+- css/light.css :
+	- fix issue on searchextrashow
+- locale/
+	- add Polish translation: thanks to Paweł Kowalczyk
+- inc_header.php :
+	- some code cleanup
+
+
+* 1.4.3
+- css/screen.css :
+	- graphical improvements
+- locale/
+	- add Dutch translation: thanks to Fred Sondaar (fretzl)
+	- update German translation: thanks to Malte Müller (acrylian)
+- 404.php, album.php, archives.php, contact.php, gallery.php, image.php, inc_header.php, news.php, password.php, register.php, search.php :
+	- fix html encoding
+- 404.php :
+	- fix High-Tech Bridge security issue (http://www.zenphoto.org/trac/changeset/8994)
+- album.php, image.php :
+	- fix typo on breadcrumb
+- functions.php :
+	- use improvements of zenphoto 1.4.3 on zpArdoise_printRandomImages and zpArdoise_printImageStatistic (http://www.zenphoto.org/trac/changeset/10223)
+- image.php :
+	- fix typo
+- inc_footer.php :
+	- fix an issue on RSS Feed : use options 'RSS_album_image' and 'RSS_articles'
+	- fix an issue on displaying help message
+	- use rss icon of zpardoise theme
+	- remove contact link
+- inc_header.php :
+	- fix an issue with 1.4.3 : use only $isHomePage variable to avoid warning of unknown value
+	- fix an issue with 1.4.3 : force $galleryactive to false to avoid warning of unknown value
+	- fix an issue on RSS Feed : use options 'RSS_album_image' and 'RSS_articles'
+	- fix an issue on loading galleriffic script
+	- fix translation issue on colorbox : use 'prev' rather than 'previous'
+	- use zenphoto's 'stop' translation rather than local translation
+	- some code cleanup
+- inc_print_album_thumb.php
+	- fix an issue  with 1.4.3 : missing some '' on options
+- inc_print_image_thumb.php
+	- fix an issue  with 1.4.3 : code cleanup on next_image()
+- index.php
+	- fix an issue with 1.4.3 : use only isHomePage variable to avoid warning of unknown value
+- news.php :
+	- fix translation issue : add translation for 'category' on news filter
+- password :
+	- fix translation issue : add translation for 'close' link of colorbox
+- search.php :
+	- fix issue : some </li></ul> was in the wrong order
+- slideshow.php
+	- this file is deprecated (theme supports only colorbox slideshow : think to change options of slideshow plugin)
+- themeoptions.php :
+	- set some options (ie : albums_per_row, albums_per_page, images_per_row, images_per_page, colorbox_js)
+	- use SetOption instead SetOptionDefault for some options (in order to force the value of the options)
+
+
 * 1.4.2
 - css/screen.css :
 	- rewrite of the file

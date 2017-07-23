@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zpArdoise\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-08 21:14+0100\n"
-"PO-Revision-Date: 2011-04-22 00:28+0100\n"
+"PO-Revision-Date: 2012-04-24 23:41+0100\n"
 "Last-Translator: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "MIME-Version: 1.0\n"
@@ -20,49 +20,25 @@ msgstr ""
 #: Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/archive.php:24
 msgid "News archive"
-msgstr "News archiv"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/footer.php:25
-msgid "The photos of this site are licensed under <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en\" target=\"_blank\">Creative Common</a>"
-msgstr "The photos of this site are licensed under <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.de\" target=\"_blank\">Creative Common</a>"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/footer.php:25
-msgid "<a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en\" target=\"_blank\"><img style=\"border-width: 0;\" src=\"http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png\" alt=\"Creative Commons\" /></a>"
-msgstr "<a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.de\" target=\"_blank\"><img style=\"border-width: 0;\" src=\"http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png\" alt=\"Creative Commons\" /></a>"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/footer.php:25
-msgid "Thank you contact me before using"
-msgstr "Thank you contact me before using"
+msgstr "Neuigkeiten-Archiv"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/footer.php:44
 msgid "You can browse with the arrows keys of your keyboard"
-msgstr "Sie können mit den pfeiltasten der tastatur navigieren"
-
-#: C:\Users\Famille\Documents\_Vincent\Site
-#: Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/header.php:83
-msgid "Stop"
-msgstr "Stop"
+msgstr "Sie können mit den Pfeiltasten der Tastatur navigieren"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/image_statistic.php:5
 msgid "Random images"
-msgstr "Zufällige bilder"
+msgstr "Zufällige Bilder"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/image_statistic.php:7
 msgid "Popular images"
-msgstr "Beliebte bilder"
+msgstr "Beliebte Bilder"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
@@ -70,19 +46,19 @@ msgstr "Beliebte bilder"
 #: photo\zenphoto\themes\zpArdoise/image_statistic.php:11
 #: photo\zenphoto\themes\zpArdoise/image_statistic.php:13
 msgid "Latest images"
-msgstr "Neueste bilder"
+msgstr "Neuste bilder"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/image_statistic.php:15
 msgid "Most Rated Images"
-msgstr "Meistbewerted bilder"
+msgstr "Meistbewertete Bilder"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
 #: photo\zenphoto\themes\zpArdoise/image_statistic.php:17
 msgid "Top Rated Images"
-msgstr "Top Bilder"
+msgstr "Bestbewertete Bilder"
 
 #: C:\Users\Famille\Documents\_Vincent\Site
 #: Internet\Galerie
@@ -96,5 +72,5 @@ msgstr "neuere"
 #: photo\zenphoto\themes\zpArdoise/news.php:14
 #: photo\zenphoto\themes\zpArdoise/news.php:16
 msgid "older"
-msgstr "älter"
+msgstr "ältere"
 
