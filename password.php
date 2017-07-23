@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 	<div id="post">
 
@@ -13,9 +13,21 @@
 		</div>
 
 		<div class="post">
-			<?php printPasswordForm('', true); ?>
+			<div style='display: none;'>
+				<?php printPasswordForm('', true); ?>
+			</div>
 		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$.colorbox({
+					inline: true,
+					href: "#passwordform",
+					innerWidth: "400px",
+					open: true
+				});
+			});
+		</script>
 
 	</div>
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

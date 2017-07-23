@@ -1,7 +1,64 @@
+* 1.4.2
+- css/screen.css :
+	- rewrite of the file
+	- graphical improvements
+	- fix an issue if there is a error box in comment box
+- css/light.css :
+	- new css rules for light style
+- js/jquery.galleriffic.js :
+	- fix an issue : disable navigation on an input editable element (issue#147 on http://code.google.com/p/galleriffic/issues/detail?id=147)
+	- new call of colorbox
+- js/zpardoise.js :
+	- fix an issue : force to open comment box if there is an error
+- footer.php, header.php, print_album_thumb.php, print_comment.php, print_image_thumb.php, print_news_loop.php, image_statistic :
+	- renaming file with prefix inc_ for more lisibility of the code
+- album.php :
+	- improvements of management of galleriffic script (add the filename of the current picture in the url)
+	- improvements of management of navigation bars
+	- new call of colorbox
+	- graphical improvements of googlemap link
+	- call of new html_decode() function instead of zp_html_decode()
+- archive.php :
+	- use improvements of zenphoto 1.4.2 on printNewsArchive (http://www.zenphoto.org/trac/ticket/1972)
+- functions.php :
+	- new customized functions called by zpArdoise
+- gallery.php :
+	- improvements of management of navigation bars
+- image.php :
+	- new call of colorbox
+- inc_footer.php :
+	- change of the div structure of the footer (div#footer is now outside of div#container)
+	- use improvements of zenphoto 1.4.2 on user_login-out (http://www.zenphoto.org/trac/ticket/2054)
+	- improvements of management of user_login-out (login form is displayed in colorbox)
+- inc_header.php :
+	- supports printLanguageSelector plugin
+	- supports new 'Style' option
+	- new setup of colorbox's call
+	- call of new html_decode() function instead of zp_html_decode()
+	- fix an issue with evaluation of $_zp_gallery_page (the title of the page was incorrect in some case)
+	- fix an issue on the header's link
+- inc_print_image_statistic.php :
+	- use zenphoto's translation rather than local translation
+	- use new customized functions with new call of colorbox
+- inc_print_image_thumb.php :
+	- new call of colorbox
+- index.php :
+	- fix an issue with evaluation of $_zp_gallery_page (the title of the page was incorrect in some case)
+- login.php :
+	- this file is deprecated (login form is displayed in colorbox)
+- password :
+	- improvements of management of the password form (password form is displayed in colorbox)
+- search.php :
+	- improvements of management of navigation bars
+- themeoptions.php :
+	- force some options (ie : thumbnail size, thumbnail crop, image size, colorbox,...) and disable to change them
+	- supports new 'Style' option to choose the main color of the theme
+
+
 * 1.4
 - css/screen.css :
 	- graphical improvements
-- js/zpardoise.js
+- js/zpardoise.js :
 	- fix a compatibility issue between opacityrollover and flag_thumbnail with ie7 (fix only with no galleriffic)
 - 404.php :
 	- update for compatibility with zenphoto 1.4.1
@@ -12,7 +69,7 @@
 	- update for compatibility with zenphoto 1.4.1
 - contact.php :
 	- update for compatibility with zenphoto 1.4.1
-- hearder.php
+- hearder.php :
 	- fix an issue : add some code to force compatibility with IE9
 	- fix an issue : new evaluation of $galleryactive with 1.4.1
 	- update for compatibility with zenphoto 1.4.1
@@ -23,7 +80,7 @@
 	- customized functions called by zpardoise
 - image.php :
 	- update for compatibility with zenphoto 1.4.1
-- image_statistic.php
+- image_statistic.php :
 	 - supports 'Use Colorbox Album' option : if used, the pictures of the statistic strip are opened in the colorbox
 - news.php :
 	- fix an issue : include print_comment.php file to display comment

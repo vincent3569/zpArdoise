@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 		<div id="headline" class="clearfix">
 			<h3><?php printHomeLink('', ' &raquo; '); echo getGalleryTitle(); ?></h3>
@@ -6,7 +6,11 @@
 		</div>
 
 		<?php if (isAlbumPage()) { ?>
-			<?php include('print_album_thumb.php'); ?>
+			<div class="pagination-nogal">
+				<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
+			</div>
+
+			<?php include('inc_print_album_thumb.php'); ?>
 
 			<div class="pagination-nogal">
 				<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
@@ -20,7 +24,7 @@
 		<?php } ?>
 
 		<?php if ((getOption('image_statistic')!='none') && ((function_exists('printImageStatistic')) || (getOption('image_statistic') == 'random'))) { ?>
-			<?php include('image_statistic.php'); ?>
+			<?php include('inc_print_image_statistic.php'); ?>
 		<?php } ?>
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

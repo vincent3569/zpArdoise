@@ -7,7 +7,7 @@
  */
 ;(function($) {
 	var defaults = {
-		mouseOutOpacity:   0.75,								/* init : 0.67 */
+		mouseOutOpacity:   0.67,
 		mouseOverOpacity:  1.0,
 		fadeSpeed:         'fast',
 		exemptionSelector: '.selected'

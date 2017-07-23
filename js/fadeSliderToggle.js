@@ -17,12 +17,12 @@
 	}, settings)
 	
 	caller = this
- 	if($(caller).css("display") == "none"){
+ 	if ($(caller).css("display") == "none"){
  		$(caller).animate({
  			opacity: 1,
  			height: 'toggle'
  		}, settings.speed, settings.easing);
-	}else{
+	} else {
 		$(caller).animate({
  			opacity: 0,
  			height: 'toggle'

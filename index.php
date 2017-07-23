@@ -4,9 +4,11 @@ if (function_exists('checkForPage')) { // check if Zenpage is enabled or not
 		$ishomepage = true;
 		include ('pages.php');
 	} else {
+		$isGallery = true;
 		include ('gallery.php');
 	}
 } else {
+	$isGallery = true;
 	include ('gallery.php');
 }
 ?>

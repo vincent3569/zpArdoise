@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 		<div id="headline" class="clearfix">
 			<h3><?php printHomeLink('', ' &raquo; '); ?>
@@ -72,12 +72,17 @@
 
 			<?php
 			if (getNumAlbums() > 0) {
-				include('print_album_thumb.php');
+				include('inc_print_album_thumb.php');
 			}
 			if (getNumImages() > 0) {
-				include('print_image_thumb.php');
+				include('inc_print_image_thumb.php');
 			}
 			?>
+
+			<div class="pagination-nogal clearfix">
+				<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
+			</div>
+
 		</div>
 
 		<?php if ($_zp_page == 1) { //test of zenpage searches
@@ -115,4 +120,4 @@
 		}
 		?>
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

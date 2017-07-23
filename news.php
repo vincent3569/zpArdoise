@@ -1,7 +1,7 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 		<div id="headline-news">
-			<?php if(is_NewsArticle()) { ?>
+			<?php if (is_NewsArticle()) { ?>
 			<div class="control-nav-news">
 				<div class="nav-img clearfix">
 					<ul class="clearfix">
@@ -28,7 +28,7 @@
 
 	<?php
 	// single news article
-	if(is_NewsArticle()) { ?>
+	if (is_NewsArticle()) { ?>
 		<div id="news" class="clearfix">
 			<h3><?php printNewsTitle(); ?></h3>
 			<div class="newsarticlecredit">
@@ -39,7 +39,7 @@
 				<?php printNewsExtraContent(); ?>
 			</div>
 			<?php } ?>
-			<div>
+			<div class="clearfix">
 				<?php printNewsContent(); ?>
 				<?php printCodeblock(1); ?>
 			</div>
@@ -48,7 +48,7 @@
 			<?php } ?>
 		</div>
 
-		<?php include('print_comment.php'); ?>
+		<?php include('inc_print_comment.php'); ?>
 
 	<?php } else {
 	// news article loop ?>
@@ -77,4 +77,4 @@
 
 	<?php } ?>
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

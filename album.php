@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 		<div id="headline" class="clearfix">
 			<h3><?php printHomeLink('', ' &raquo; '); ?>
@@ -20,14 +20,14 @@
 		</div>
 		<?php } ?>
 
-		<?php if (!getOption('use_galleriffic')) { ?>
-		<div class="pagination-nogal clearfix">
-			<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
-		</div>
+		<?php if (!((getNumImages() > 0) && (getOption('use_galleriffic')))) { ?>
+			<div class="pagination-nogal">
+				<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
+			</div>
 		<?php } ?>
 
 		<?php if (isAlbumPage()) { ?>
-			<?php include('print_album_thumb.php'); ?>
+			<?php include('inc_print_album_thumb.php'); ?>
 		<?php } ?>
 
 		<?php if (getNumImages() > 0) { ?>
@@ -44,18 +44,18 @@
 				</div>
 				<div id="thumbs" class="navigation">
 					<ul class="thumbs">
-						<?php while (next_image(true)): ?>
+						<?php while (next_image(true)) { ?>
 						<li>
 							<?php if (isImageVideo()) { ?>
-								<a class="thumb" href="<?php echo $_zp_themeroot; ?>/images/video-placeholder.jpg" title="<?php echo getBareImageTitle(); ?>">
+								<a name="<?php echo html_decode($_zp_current_image->getFileName()); ?>" class="thumb" href="<?php echo $_zp_themeroot; ?>/images/video-placeholder.jpg" title="<?php echo getBareImageTitle(); ?>">
 							<?php } else { ?>
-								<a class="thumb" href="<?php echo getDefaultSizedImage(); ?>" title="<?php echo getBareImageTitle(); ?>">
+								<a name="<?php echo html_decode($_zp_current_image->getFileName()); ?>" class="thumb" href="<?php echo getDefaultSizedImage(); ?>" title="<?php echo getBareImageTitle(); ?>">
 							<?php } ?>
 							<?php printImageThumb(getAnnotatedImageTitle()); ?></a>
-							<a <?php if(getOption('use_colorbox_album')) { ?>rel="zoom"<?php } ?> href="<?php echo html_encode(getUnprotectedImageURL()); ?>" title="<?php echo getBareImageTitle(); ?>"></a>
+							<a <?php if (getOption('use_colorbox_album')) { ?>class="colorbox"<?php } ?> href="<?php echo html_encode(getUnprotectedImageURL()); ?>" title="<?php echo getBareImageTitle(); ?>"></a>
 							<div class="caption">
 								<?php if (getOption('show_exif')) { ?>
-								<div id="exif-infos-gal">
+								<div class="exif-infos-gal">
 									<?php zpardoise_printEXIF() ?>
 								</div>
 								<?php } ?>
@@ -67,14 +67,14 @@
 								</div>
 							</div>
 						</li>
-						<?php endwhile; ?>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>
 			
 			<!-- If javascript is disabled in the users browser, the following version of the album page will display  -->
 			<noscript>
-				<?php include('print_image_thumb.php'); ?>
+				<?php include('inc_print_image_thumb.php'); ?>
 
 				<div class="pagination-nogal clearfix">
 					<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
@@ -84,14 +84,15 @@
 			<!-- End of noscript display -->
 
 			<?php } else { ?>
-
-				<?php include('print_image_thumb.php'); ?>
-
-				<div class="pagination-nogal clearfix">
-					<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
-				</div>
-
+				<?php include('inc_print_image_thumb.php'); ?>
 			<?php } ?>
+
+		<?php } ?>
+
+		<?php if (!((getNumImages() > 0) && (getOption('use_galleriffic')))) { ?>
+			<div class="pagination-nogal">
+				<?php printPageListWithNav(' &laquo; ', ' &raquo; ', false, true, 'clearfix', NULL, true, 7); ?>
+			</div>
 		<?php } ?>
 
 		<?php if (getOption('show_tag')) { ?>
@@ -100,8 +101,17 @@
 
 		<?php if (function_exists('printGoogleMap')) { ?>
 			<div class="googlemap"><?php printGoogleMap(NULL, 'googlemap'); ?></div>
+			<script type="text/javascript">
+			<?php if (getOption('gmap_display') == 'colorbox') { ?>
+				$('.google_map').addClass('fadetoggler');
+				$('.google_map').prepend('<img id="icon-map" alt="icon-map" src="<?php echo $_zp_themeroot; ?>/images/map.png" />');
+			<?php } else { ?>
+				$('#googlemap_toggle').addClass('fadetoggler');
+				$('#googlemap_toggle').prepend('<img id="icon-map" alt="icon-map" src="<?php echo $_zp_themeroot; ?>/images/map.png" />');
+			<?php } ?>
+			</script>
 		<?php } ?>
 
-		<?php include('print_comment.php'); ?>
+		<?php include('inc_print_comment.php'); ?>
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

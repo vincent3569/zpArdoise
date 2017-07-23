@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 		<div id="image-page" class="clearfix">
 			<div id="headline" class="clearfix">
@@ -38,14 +38,14 @@
 			</div>
 
 			<div id="image">
-				<?php if(getOption('use_colorbox_image')) { ?>
-					<a rel="zoom" href="<?php echo html_encode(getUnprotectedImageURL()); ?>" title="<?php echo getBareImageTitle();?>"><?php printDefaultSizedImage(getImageTitle()); ?></a>
+				<?php if (getOption('use_colorbox_image')) { ?>
+					<a class="colorbox" href="<?php echo html_encode(getUnprotectedImageURL()); ?>" title="<?php echo getBareImageTitle();?>"><?php printDefaultSizedImage(getImageTitle()); ?></a>
 				<?php } else { ?>
 					<?php printDefaultSizedImage(getImageTitle()); ?>
 				<?php } ?>
 			</div>
 
-			<div class="img-title"><?php printImageTitle(true); ?></div>
+			<div id="img-title"><?php printImageTitle(true); ?></div>
 			<div id="img-infos"><?php printImageDesc(true); ?></div>
 
 			<?php if (getOption('show_exif')) { ?>
@@ -64,6 +64,6 @@
 
 		</div>
 
-		<?php include('print_comment.php'); ?>	
+		<?php include('inc_print_comment.php'); ?>	
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

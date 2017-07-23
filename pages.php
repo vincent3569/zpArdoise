@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 		<div id="post" class="clearfix">
 			<h3><?php printPageTitle(); ?></h3>
@@ -9,9 +9,9 @@
 			<?php } ?>
 			
 			<?php printPageContent(); ?>
-			<?php printCodeblock(1, $_zp_current_zenpage_page); ?>
+			<?php printCodeblock(1); ?>
 		</div>
 
-		<?php include('print_comment.php'); ?>
+		<?php include('inc_print_comment.php'); ?>
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

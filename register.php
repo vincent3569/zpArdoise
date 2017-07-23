@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 	<div id="post">
 
@@ -13,8 +13,8 @@
 		</div>
 
 		<div class="post">
-			<?php  printRegistrationForm(); ?>
+			<div id="registration"><?php  printRegistrationForm(); ?></div>
 		</div>
 	</div>
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

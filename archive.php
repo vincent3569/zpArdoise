@@ -1,4 +1,4 @@
-<?php include ('header.php'); ?>
+<?php include ('inc_header.php'); ?>
 
 	<div id="post">
 
@@ -19,10 +19,10 @@
 						<h4><?php echo gettext('Gallery Archive'); ?></h4>
 						<?php printAllDates('archive', 'year', 'month', 'desc'); ?>
 					</td>
-					<?php if(function_exists('printNewsArchive')) { ?>
+					<?php if (function_exists('printNewsArchive')) { ?>
 					<td id="newsarchive">
 						<h4><?php echo gettext_th('News archive'); ?></h4>
-						<?php printNewsArchive('archive'); ?>
+						<?php printNewsArchive('archive', 'year', 'month', 'archive-active', false, 'desc'); ?>
 					</td>
 					<?php } ?>
 				</tr>
@@ -31,4 +31,4 @@
 
 	</div>
 
-<?php include('footer.php'); ?>
+<?php include('inc_footer.php'); ?>

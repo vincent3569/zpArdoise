@@ -637,7 +637,7 @@
 					.append(imageData.image)
 					
 					.click(function(e) {
-						$("a[rel='zoom']:eq(" + imageData.index + ")").click();
+						$("a.colorbox:eq(" + imageData.index + ")").click();
 						gallery.pause()
 					});
 				
@@ -938,6 +938,10 @@
 		// Setup Keyboard Navigation
 		if (this.enableKeyboardNavigation) {
 			$(document).keydown(function(e) {
+			
+			var target = e.target || e.srcElement;			/* disable navigation on an input editable element */
+			if (target && target.type) return true;			/* issue#147 on http://code.google.com/p/galleriffic/issues/detail?id=147 */
+			
 				var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
 				switch(key) {
 					case 33: // Page Up

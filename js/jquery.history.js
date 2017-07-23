@@ -50,7 +50,7 @@ jQuery.extend({
 			
 			jQuery.isFirst = true;
 		}
-		if(current_hash)
+		if (current_hash)
 			jQuery.historyCallback(current_hash.replace(/^#/, ''));
 		setInterval(jQuery.historyCheck, 100);
 	},
@@ -70,7 +70,7 @@ jQuery.extend({
 			var ihistory = jQuery("#jQuery_history")[0];
 			var iframe = ihistory.contentDocument || ihistory.contentWindow.document;
 			var current_hash = iframe.location.hash.replace(/\?.*$/, '');
-			if(current_hash != jQuery.historyCurrentHash) {
+			if (current_hash != jQuery.historyCurrentHash) {
 			
 				location.hash = current_hash;
 				jQuery.historyCurrentHash = current_hash;
@@ -78,7 +78,7 @@ jQuery.extend({
 				
 			}
 		} else if (jQuery.browser.safari) {
-			if(jQuery.lastHistoryLength == history.length && jQuery.historyBackStack.length > jQuery.lastHistoryLength) {
+			if (jQuery.lastHistoryLength == history.length && jQuery.historyBackStack.length > jQuery.lastHistoryLength) {
 				jQuery.historyBackStack.shift();
 			}
 			if (!jQuery.dontCheck) {
@@ -115,7 +115,7 @@ jQuery.extend({
 		} else {
 			// otherwise, check for location.hash
 			var current_hash = location.hash.replace(/\?.*$/, '');
-			if(current_hash != jQuery.historyCurrentHash) {
+			if (current_hash != jQuery.historyCurrentHash) {
 				jQuery.historyCurrentHash = current_hash;
 				jQuery.historyCallback(current_hash.replace(/^#/, ''));
 			}
