@@ -1,13 +1,7 @@
 <?php include ('inc_header.php'); ?>
 
 		<div id="headline" class="clearfix">
-			<h3><?php printHomeLink('', ' » '); ?>
-			<?php if (gettext(getOption('zenpage_homepage')) == gettext('none')) { ?>
-				<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo html_encode(getGalleryTitle()); ?></a>
-			<?php } else { ?>
-				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
-			<?php } ?>
-			&raquo;&nbsp;<?php echo '<em>'.gettext('Search').'</em>'; ?></h3>
+			<h3><?php echo '<em>'.gettext('Search').'</em>'; ?></h3>
 		</div>
 
 		<?php

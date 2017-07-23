@@ -1,7 +1,7 @@
 <?php
 if (!OFFSET_PATH) {
 	if ((getOption('use_galleriffic')) && !(($_zp_gallery_page == 'image.php') || ($_zp_gallery_page == 'search.php') || ($_zp_gallery_page == 'favorites.php'))) {
-		setOption('image_size', '525', false);
+		setOption('image_size', '555', false);
 		setOption('image_use_side', 'longest', false);
 		setOption('thumb_size', '85', false);
 		setOption('thumb_crop', '1', false);
@@ -179,4 +179,5 @@ function zpardoise_printEXIF() {
 		echo $Exifs_list;
 	}
 }
+
 ?>

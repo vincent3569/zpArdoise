@@ -1,13 +1,7 @@
 <?php include ('inc_header.php'); ?>
 
 		<div id="headline" class="clearfix">
-			<h3><?php printHomeLink('', ' » '); ?>
-			<?php if (gettext(getOption('zenpage_homepage')) == gettext('none')) { ?>
-				<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo html_encode(getGalleryTitle()); ?></a>
-			<?php } else { ?>
-				<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
-			<?php } ?>
-			&raquo;&nbsp;<?php printParentBreadcrumb('', ' » ', ' » '); ?><?php printAlbumTitle(); ?></h3>
+			<h3><?php printGalleryIndexURL(' » ', getGalleryTitle(), false); ?><?php printParentBreadcrumb('', ' » ', ' » '); ?><?php printAlbumTitle(); ?></h3>
 			<div class="headline-text"><?php printAlbumDesc(); ?></div>
 		</div>
 
@@ -70,17 +64,6 @@
 					</ul>
 				</div>
 			</div>
-
-			<!-- If javascript is disabled in the users browser, the following version of the album page will display -->
-			<noscript>
-				<?php include('inc_print_image_thumb.php'); ?>
-
-				<div class="pagination-nogal clearfix">
-					<?php printPageListWithNav(' « ', ' » ', false, true, 'clearfix', NULL, true, 7); ?>
-				</div>
-
-			</noscript>
-			<!-- End of noscript display -->
 
 			<?php } else { ?>
 				<?php include('inc_print_image_thumb.php'); ?>

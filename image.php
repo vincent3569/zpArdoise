@@ -27,13 +27,7 @@
 
 				</div>
 
-				<h3><?php printHomeLink('', ' » '); ?>
-				<?php if (gettext(getOption('zenpage_homepage')) == gettext('none')) { ?>
-					<a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php echo gettext('Albums Index'); ?>"><?php echo html_encode(getGalleryTitle()); ?></a>
-				<?php } else { ?>
-					<?php printCustomPageURL(getGalleryTitle(), 'gallery'); ?>
-				<?php } ?>
-				&raquo;&nbsp;<?php printParentBreadcrumb('', ' » ', ' » '); printAlbumBreadcrumb('', ' » '); printImageTitle(); ?></h3>
+				<h3><?php printGalleryIndexURL(' » ', getGalleryTitle(), false); ?><?php printParentBreadcrumb('', ' » ', ' » '); ?><?php printAlbumBreadcrumb('', ' » '); ?><?php printImageTitle(); ?></h3>
 
 			</div>
 

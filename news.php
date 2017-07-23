@@ -26,7 +26,7 @@ if ($_zenpage_enabled) {
 				<?php printAllNewsCategories(gettext('All news'), true, 'news-cat-list', 'news-cat-active'); ?>
 			</div>
 			<?php } ?>
-			<h3><?php printNewsIndexURL(gettext('News')); ?><?php printCurrentNewsCategory(' » ' . gettext('Category') . ' : '); ?><?php printCurrentNewsArchive(' » '); ?></h3>
+			<h3><?php printZenpageItemsBreadcrumb(); ?><?php printCurrentNewsCategory(' » ' . gettext('Category') . ' : '); ?><?php printCurrentNewsArchive(' » '); ?></h3>
 		</div>
 
 	<?php
@@ -70,7 +70,7 @@ if ($_zenpage_enabled) {
 					<?php printNewsDate(); ?><?php printNewsCategories(', ', ' | ', 'hor-list'); ?>
 				</div>
 
-				<?php printNewsContent(); ?>
+				<?php printNewsContent(false, '<p class="readmorelink">(...)</p>'); ?>
 
 			</div>
 			<?php } ?>

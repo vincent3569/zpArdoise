@@ -21,7 +21,7 @@ class ThemeOptions {
 		setThemeOptionDefault('thumb_crop_height', 150);
 		setThemeOptionDefault('image_size', 700);
 		setThemeOptionDefault('image_use_side', 'longest');
-		setThemeOptionDefault('custom_index_page', '');
+		setThemeOptionDefault('custom_index_page', 'gallery');
 
 		setThemeOptionDefault('use_image_logo_filename', 'banniere3.jpg');
 		setThemeOptionDefault('show_image_logo_on_image', false);
@@ -58,7 +58,7 @@ class ThemeOptions {
 			cacheManager::addThemeCacheSize($me, getThemeOption('thumb_size'), NULL, NULL, getThemeOption('thumb_crop_width'), getThemeOption('thumb_crop_height'), NULL, NULL, true);
 			if (getOption('use_galleriffic')) {
 				cacheManager::addThemeCacheSize($me, 85, NULL, NULL, 85, 85, NULL, NULL, true);
-				cacheManager::addThemeCacheSize($me, 525, NULL, NULL, NULL, NULL, NULL, NULL, false);
+				cacheManager::addThemeCacheSize($me, 555, NULL, NULL, NULL, NULL, NULL, NULL, false);
 			}
 			cacheManager::addThemeCacheSize($me, getThemeOption('image_size'), NULL, NULL, NULL, NULL, NULL, NULL, false);
 		}
@@ -125,7 +125,7 @@ class ThemeOptions {
 
 		if ($option == 'zenpage_homepage') {
 			$unpublishedpages = query_full_array("SELECT titlelink, title FROM " . prefix('pages') . " WHERE `show` != 1 ORDER by `sort_order`");
-			if (empty($unpublishedpages)) {
+			if ((! extensionEnabled('zenpage')) || (empty($unpublishedpages))) {
 				echo gettext("No unpublished pages available");
 				// clear option if no unpublished pages are available or have been published meanwhile
 				// so that the normal gallery index appears and no page is accidentally set if set to unpublished again.

@@ -1,3 +1,28 @@
+* 1.4.13
+- css/screen, css/light.css, js/zpardoise_light.js, functions.php, themeoptions.php
+	- simplifications of the theme (deleting frames and rollover effect on thumbnails, size optimization of thumbnails and images)
+- css/screen, css/light.css, inc_print_album_thumb.php, inc_print_image_thumb.php
+	- graphical improvements
+- 404.php, album.php, archive.php, contact.php, favorites.php, gallery.php, image.php, password.php, register.php, search.php
+	- removal of the link to homepage
+- 404.php, album.php, archive.php, contact.php, favorites.php, image.php, password.php, register.php, search.php
+	- simplifying the title breadcrumb (removal of the link to gallery)
+- album.php, image.php
+	- uses improvements of printGalleryIndexURL() (https://github.com/zenphoto/zenphoto/issues/1000)
+- album.php
+	- code cleanup (removal of javascript fallback to improve loading delay)
+- inc_header.php
+	- code cleanup (remove of javascript fallback)
+	- code cleanup (optimization of main menu display)
+	- fix issue with favorites menu item
+	- fix issue with $galleryactive
+- news.php
+	- uses printZenpageItemsBreadcrumb() rather than printNewsIndexURL() (https://github.com/zenphoto/zenphoto/issues/985)
+	- fix issue with readmorelink
+- themeoptions.php
+		- fix issue with settings of "custom_index_page" option (now set to 'gallery') and "zenpage_homepage" option
+
+
 * 1.4.6
 - colorbox_js/colorbox.css
 	- upgrade custom css to be compliant with colorbox 1.5.2

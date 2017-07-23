@@ -67,4 +67,4 @@
 
 </body>
 </html>
-<!-- zpArdoise 1.4.6 - a ZenPhoto/ZenPage theme by Vincent3569  -->
+<!-- zpArdoise 1.4.13 - a ZenPhoto/ZenPage theme by Vincent3569  -->
