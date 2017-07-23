@@ -9,7 +9,6 @@ Description
 -----------
 
 The theme supports the following ZenPhoto plugins:
-- comment_form, contact_form, image_album_statistics, print_album_menu, rating, slideshow, user_login-out, zenpage
 - colorbox (**new**), comment_form, contact_form, GoogleMap (**new**), image_album_statistics, print_album_menu, rating, register_user (**new**), slideshow, user_login-out, zenpage
 
 Additional scripts used:
