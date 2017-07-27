@@ -5,7 +5,7 @@
 		<div id="jump-search" class="clearfix">
 			<?php
 			if (extensionEnabled('print_album_menu')) {
-				printAlbumMenu('jump', NULL, '', '', '', '', gettext('Gallery Index'));
+				printAlbumMenu('jump', NULL, '', '', '', '', gettext('Gallery Index'), true);
 			}
 			if (getOption('allow_search')) {
 				printSearchForm('', 'search', '', gettext('Search'), "$_zp_themeroot/images/search-drop.png", NULL, NULL,"$_zp_themeroot/images/reset.gif" );
