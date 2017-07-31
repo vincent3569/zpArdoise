@@ -2,44 +2,121 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zpArdoise\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-08 21:14+0100\n"
-"PO-Revision-Date: 2013-12-23 19:09+0100\n"
-"Last-Translator: vincent3569 <vincent_bourganel@yahoo.fr>\n"
+"POT-Creation-Date: 2017-07-31 22:19+0200\n"
+"PO-Revision-Date: 2017-07-31 22:24+0200\n"
+"Last-Translator: Vincent Bourganel <vincent_bourganel@yahoo.fr>\n"
 "Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: gettext_th\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"Language: es_ES\n"
-"X-Generator: Poedit 1.6.3\n"
-"X-Poedit-SearchPath-0: C:\\Users\\Famille\\Documents\\_Vincent\\Site Internet"
-"\\Galerie photo\\zenphoto\\themes\\zpArdoise\n"
+"X-Poedit-KeywordsList: ;gettext_th\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/footer.php:44
+#: inc_footer.php:57 inc_footer.prod.php:67
 msgid "You can browse with the arrows keys of your keyboard"
 msgstr "Usted puede navegar con las teclas de las flechas de tu teclado"
 
-#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/image_statistic.php:7
+#: inc_footer.prod.php:61
+msgid ""
+"The photos of this site are licensed under <a href=\"http://creativecommons."
+"org/licenses/by-nc-nd/3.0/deed.en\" target=\"_blank\">Creative Commons</a>"
+msgstr ""
+
+#: inc_footer.prod.php:62
+msgid ""
+"<a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en\" target="
+"\"_blank\"><img style=\"border-width: 0;\" src=\"http://i.creativecommons."
+"org/l/by-nc-nd/3.0/80x15.png\" alt=\"Creative Commons\" /></a>"
+msgstr ""
+
+#: inc_footer.prod.php:63
+msgid "Thanks contact me before using"
+msgstr ""
+
+#: inc_print_image_statistic.php:8
 msgid "Popular images"
 msgstr "Imágenes populares"
 
-#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/image_statistic.php:15
+#: inc_print_image_statistic.php:16
 msgid "Most rated images"
 msgstr "La mayoría de las imágenes clasificado"
 
-#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/news.php:9
-#: photo\zenphoto\themes\zpArdoise/news.php:11
+#: news.php:12 news.php:14
 msgid "newer"
 msgstr "más reciente"
 
-#: C:\Users\Famille\Documents\_Vincent\Site Internet\Galerie
-#: photo\zenphoto\themes\zpArdoise/news.php:14
-#: photo\zenphoto\themes\zpArdoise/news.php:16
+#: news.php:17 news.php:19
 msgid "older"
 msgstr "más antiguo"
+
+#: themeoptions.php:73
+msgid ""
+"Image file for the logo area: enter the full filename (including extension) "
+"of the image file located in themes/zpArdoise/images/ (banniere1.jpg for "
+"example)."
+msgstr ""
+
+#: themeoptions.php:74
+msgid "Check to show the logo on the Image page."
+msgstr ""
+
+#: themeoptions.php:75
+msgid "Choose Dark or Light for color style of the site."
+msgstr ""
+
+#: themeoptions.php:76
+msgid ""
+"Choose the color of links: choose Default to use the default color of Dark "
+"or Light style and choose Custom to use a custom value. You can customize "
+"these values by editing the file theme/zpArdoise/css/custom.css."
+msgstr ""
+
+#: themeoptions.php:78
+msgid "Display a menu link to the Archive list."
+msgstr ""
+
+#: themeoptions.php:80
+msgid "Check to show a tag cloud with all the tags of the gallery."
+msgstr ""
+
+#: themeoptions.php:81
+msgid ""
+"Shows a strip of thumbnails on Gallery page, depending of the selected "
+"option. NOTE: For anything other than random, the image_statistic plugin "
+"must be activated."
+msgstr ""
+
+#: themeoptions.php:82
+msgid ""
+"Check to use the Galleriffic script. Uncheck to use a standard display. This "
+"standard display is also displayed when javascript is disabled in the "
+"browser."
+msgstr ""
+
+#: themeoptions.php:83
+msgid ""
+"If Galleriffic is used, enter the delay of the gallerific slideshow in ms "
+"(eg 3000)."
+msgstr ""
+
+#: themeoptions.php:84
+msgid ""
+"Check to display the full size image with Colorbox in album page, if "
+"galleriffic is used or not. NOTE : in that case, Image page will never be "
+"used."
+msgstr ""
+
+#: themeoptions.php:85
+msgid "Check to display the full size image with Colorbox in Image page."
+msgstr ""
+
+#: themeoptions.php:86
+msgid ""
+"Show the main EXIF Data on Image page (Model, FocalLength, FNumber, "
+"ExposureTime, ISOSpeedRatings). Remember you have to check these EXIFs data "
+"on admin>image>information EXIF."
+msgstr ""
