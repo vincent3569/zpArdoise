@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zpArdoise\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-31 22:25+0200\n"
-"PO-Revision-Date: 2017-07-31 22:25+0200\n"
+"POT-Creation-Date: 2017-08-01 07:58+0200\n"
+"PO-Revision-Date: 2017-08-01 07:58+0200\n"
 "Last-Translator: Vincent Bourganel <vincent_bourganel@yahoo.fr>\n"
 "Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "Language: it_IT\n"
@@ -16,26 +16,9 @@ msgstr ""
 "X-Generator: Poedit 2.0.1\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: inc_footer.php:57 inc_footer.prod.php:67
+#: inc_footer.php:57
 msgid "You can browse with the arrows keys of your keyboard"
 msgstr "È possibile navigare con i tasti freccia della vostra tastiera"
-
-#: inc_footer.prod.php:61
-msgid ""
-"The photos of this site are licensed under <a href=\"http://creativecommons."
-"org/licenses/by-nc-nd/3.0/deed.en\" target=\"_blank\">Creative Commons</a>"
-msgstr ""
-
-#: inc_footer.prod.php:62
-msgid ""
-"<a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en\" target="
-"\"_blank\"><img style=\"border-width: 0;\" src=\"http://i.creativecommons."
-"org/l/by-nc-nd/3.0/80x15.png\" alt=\"Creative Commons\" /></a>"
-msgstr ""
-
-#: inc_footer.prod.php:63
-msgid "Thanks contact me before using"
-msgstr ""
 
 #: inc_print_image_statistic.php:8
 msgid "Popular images"
