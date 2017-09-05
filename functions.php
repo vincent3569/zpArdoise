@@ -16,6 +16,8 @@ if (!OFFSET_PATH) {
 	setOption('tinymce4_comments', null, true);			// force this option to disable tinyMCE for comment form
 
 	$_zenpage_enabled = extensionEnabled('zenpage');
+	$_zenpage_and_news_enabled = extensionEnabled('zenpage') && ZP_NEWS_ENABLED;
+	$_zenpage_and_pages_enabled = extensionEnabled('zenpage') && ZP_PAGES_ENABLED;
 	$_zp_page_check = 'my_checkPageValidity';
 }
 

@@ -1,5 +1,5 @@
 <?php 
-if ($_zenpage_enabled) {
+if ($_zenpage_and_news_enabled) {
 	include ('inc_header.php');
 ?>
 

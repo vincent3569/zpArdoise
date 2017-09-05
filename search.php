@@ -9,11 +9,14 @@
 		$numalbums = getNumAlbums();
 		$total1 = $numimages + $numalbums;
 
+		$numnews = $numpages = 0;
 		if ($_zenpage_enabled && !isArchive()) {
-			$numnews = getNumNews();
-			$numpages = getNumPages();
-		} else {
-			$numnews = $numpages = 0;
+			if ($_zenpage_and_news_enabled) {
+				$numnews = getNumNews();
+			}
+			if ($_zenpage_and_pages_enabled) {
+				$numpages = getNumPages();
+			}
 		}
 		$total = $total1 + $numnews + $numpages ;
 

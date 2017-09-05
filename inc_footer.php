@@ -5,7 +5,7 @@
 		<div id="jump-search" class="clearfix">
 			<?php
 			if (extensionEnabled('print_album_menu')) {
-				printAlbumMenu('jump', NULL, '', '', '', '', gettext('Gallery Index'), true);
+				printAlbumMenu('jump', NULL, '', '', '', '', gettext('Gallery Index'));
 			}
 			if (getOption('allow_search')) {
 				printSearchForm('', 'search', '', gettext('Search'), "$_zp_themeroot/images/search-drop.png", NULL, NULL,"$_zp_themeroot/images/reset.gif" );
@@ -15,7 +15,7 @@
 		<?php } ?>
 
 		<div id="foot-left">
-			<?php if ((extensionEnabled('rss')) && ((getOption('RSS_album_image')) || (($_zenpage_enabled) && (getOption('RSS_articles'))))) { ?>
+			<?php if ((extensionEnabled('rss')) && ((getOption('RSS_album_image')) || (($_zenpage_and_news_enabled)) && (getOption('RSS_articles'))))) { ?>
 			<div id="rsslinks">
 				<?php
 				$rss = false;
@@ -23,7 +23,7 @@
 					printRSSLink('Gallery', '', gettext('Latest images'), '', false, 'rss');
 					$rss = true;
 				}
-				if (($_zenpage_enabled) && (getOption('RSS_articles'))) {
+				if (($_zenpage_and_news_enabled)) && (getOption('RSS_articles'))) {
 					if ($rss) {$separ = ' | ';} else {$separ = '';};
 					printRSSLink('News', $separ, gettext('Latest news'), '', false, 'rss');
 				}
@@ -53,7 +53,7 @@
 				<?php printZenphotoLink(); ?>
 				<?php if (($_zp_gallery_page == 'image.php') ||
 						(($_zp_gallery_page == 'album.php') && (getOption('use_galleriffic')) && (getNumImages() > 0)) ||
-						(($_zenpage_enabled) && (is_NewsArticle()))) { ?>
+						(($_zenpage_and_news_enabled)) && (is_NewsArticle()))) { ?>
 					<img id="icon-help" src="<?php echo $_zp_themeroot; ?>/images/help.png" title="<?php echo gettext_th('You can browse with the arrows keys of your keyboard'); ?>" alt="help" />
 				<?php } ?>
 			</div>
@@ -61,10 +61,8 @@
 	</div>		<!-- END #FOOTER -->
 </div>			<!-- END #PAGE -->
 
-<?php
-	zp_apply_filter('theme_body_close');
-?>
+<?php zp_apply_filter('theme_body_close'); ?>
 
 </body>
 </html>
-<!-- zpArdoise 1.4.13 - a ZenPhoto/ZenPage theme by Vincent3569  -->
+<!-- zpArdoise 1.4.14 - a ZenPhoto/ZenPage theme by Vincent3569  -->
