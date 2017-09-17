@@ -19,6 +19,8 @@ if (!OFFSET_PATH) {
 	$_zenpage_and_news_enabled = extensionEnabled('zenpage') && ZP_NEWS_ENABLED;
 	$_zenpage_and_pages_enabled = extensionEnabled('zenpage') && ZP_PAGES_ENABLED;
 	$_zp_page_check = 'my_checkPageValidity';
+	
+	zp_remove_filter('zenphoto_information', 'exposeZenPhotoInformations');
 }
 
 function my_checkPageValidity($request, $gallery_page, $page) {
@@ -29,6 +31,7 @@ function my_checkPageValidity($request, $gallery_page, $page) {
 }
 
 /* zpArdoise_printRandomImages
+/*	- use improvements of zenphoto 1.4.14 on printRandomImages
 /*	- use improvements of zenphoto 1.4.6 on printRandomImages
 /*	- use improvements of zenphoto 1.4.5 on printRandomImages
 /*	- use improvements of zenphoto 1.4.2 on printRandomImages
@@ -54,7 +57,7 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 	if (!empty($class))
 		$class = ' class="' . $class . '"';
 
-	echo "<ul" . $class . ">";
+	echo '<ul' . $class . '>';
 	for ($i = 1; $i <= $number; $i++) {
 		switch ($option) {
 			case "all":
@@ -65,7 +68,7 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 				break;
 		}
 		if (is_object($randomImage) && $randomImage->exists) {
-			echo "<li>\n";
+			echo '<li>' . "\n";
 			if ($fullimagelink) {
 				$aa_class = ' class="' . $a_class . '"';
 				$randomImageURL = $randomImage->getFullimageURL();
@@ -76,26 +79,30 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 			echo '<a href="' . html_encode($randomImageURL) . '"' . $aa_class . ' title="' . html_encode($randomImage->getTitle()) . '">';
 			switch ($crop) {
 				case 0:
-					$html =  "<img src=\"" . html_encode(pathurlencode($randomImage->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE))) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
+					$sizes = getSizeCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, $randomImage);
+					$html = '<img src="' . html_encode(pathurlencode($randomImage->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
 					break;
 				case 1:
-					$html = "<img src=\"" . html_encode(pathurlencode($randomImage->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE))) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" width=\"" . $width . "\" height=\"" . $height . "\" />\n";
+					$sizes = getSizeCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, $randomImage);
+					$html = '<img src="' . html_encode(pathurlencode($randomImage->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
 					break;
 				case 2:
-					$html = "<img src=\"" . html_encode(pathurlencode($randomImage->getThumb())) . "\" alt=\"" . html_encode($randomImage->getTitle()) . "\" />\n";
+					$sizes = getSizeDefaultThumb($randomImage);
+					$html = '<img src="' . html_encode(pathurlencode($randomImage->getThumb())) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
 					break;
 			}
 			echo zp_apply_filter('custom_image_html', $html, false);
-			echo "</a>";
-			echo "</li>\n";
+			echo '</a>';
+			echo '</li>' . "\n";
 		} else {
 			break;
 		}
 	}
-	echo "</ul>";
+	echo '</ul>';
 }
 
 /* zpArdoise_printImageStatistic
+/*	- use improvements of zenphoto 1.4.14 on printImageStatistic
 /*	- use improvements of zenphoto 1.4.6 on printRandomImages
 /*	- use improvements of zenphoto 1.4.2 on printImageStatistic (http://www.zenphoto.org/trac/ticket/1914)
 /*	- implements call of colorbox (http://www.zenphoto.org/trac/ticket/1908 and http://www.zenphoto.org/trac/ticket/1909)
@@ -116,8 +123,8 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 		}
 	}
 
-	echo "\n<div id=\"$option\">\n";
-	echo "<ul>";
+	echo "\n" . '<div id="$option">' . "\n";
+	echo '<ul>' . "\n";
 	foreach ($images as $image) {
 		if ($fullimagelink) {
 			$aa_class = ' class="' . $a_class . '"';
@@ -126,24 +133,27 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 			$aa_class = NULL;
 			$imagelink = $image->getLink();
 		}
-		echo "<li><a href=\"" . html_encode(pathurlencode($imagelink)) ."\"" . $aa_class . " title=\"" . html_encode($image->getTitle()) . "\">\n";
+		echo '<li><a href="' . html_encode(pathurlencode($imagelink)) . '"' . $aa_class . ' title="' . html_encode($image->getTitle()) . '"' . '>' . "\n";
 		switch ($crop) {
 			case 0:
-				echo "<img src=\"" . html_encode(pathurlencode($image->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE))) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n";
+				$sizes = getSizeCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, $image);
+				echo '<img src="' . html_encode(pathurlencode($image->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . '" /></a>' . "\n";
 				break;
 			case 1:
-				echo "<img src=\"" . html_encode(pathurlencode($image->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE))) . "\" alt=\"" . html_encode($image->getTitle()) . "\" width=\"" . $width . "\" height=\"" . $height . "\" /></a>\n";
+				$sizes = getSizeCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, $image);
+				echo '<img src="' . html_encode(pathurlencode($image->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . '" /></a>' . "\n";
 				break;
 			case 2:
-				echo "<img src=\"" . html_encode(pathurlencode($image->getThumb())) . "\" alt=\"" . html_encode($image->getTitle()) . "\" /></a>\n<br />";
+				$sizes = getSizeDefaultThumb($image);
+				echo '<img src="' . html_encode(pathurlencode($image->getThumb())) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . '" /></a>' . "\n";
 				break;
 		}
 		if ($showtitle) {
-			echo "<h3><a href=\"" . html_encode(pathurlencode($image->getLink())) . "\" title=\"" . html_encode($image->getTitle()) . "\">\n";
-			echo $image->getTitle() . "</a></h3>\n";
+			echo '<h3><a href="' . html_encode(pathurlencode($image->getLink())) . '" title="' . html_encode($image->getTitle()) . '">' . "\n";
+			echo $image->getTitle() . '</a></h3>' . "\n";
 		}
 		if ($showdate) {
-			echo "<p>" . zpFormattedDate(DATE_FORMAT, strtotime($image->getDateTime())) . "</p>";
+			echo '<p>' . zpFormattedDate(DATE_FORMAT, strtotime($image->getDateTime())) . '</p>';
 		}
 		if ($showstatistic === "rating" OR $showstatistic === "rating+hitcounter") {
 			$votes = $image->get("total_votes");
@@ -151,21 +161,22 @@ function zpArdoise_printImageStatistic($number, $option, $albumfolder='', $showt
 			if ($votes != 0) {
 				$rating =  round($value/$votes, 1);
 			}
-			echo "<p>" . sprintf(gettext('Rating: %1$u (Votes: %2$u)'), $rating, $votes) . "</p>";
+			echo '<p>' . sprintf(gettext('Rating: %1$u (Votes: %2$u)'), $rating, $votes) . '</p>';
 		}
 		if ($showstatistic === "hitcounter" OR $showstatistic === "rating+hitcounter") {
 			$hitcounter = $image->get("hitcounter");
 			if (empty($hitcounter)) {
 				$hitcounter = "0";
 			}
-			echo "<p>" . sprintf(gettext("Views: %u"), $hitcounter) . "</p>";
+			echo '<p>' . sprintf(gettext("Views: %u"), $hitcounter) . '</p>';
 		}
 		if($showdesc) {
 			echo shortenContent($image->getDesc(), $desclength,' (...)');
 		}
-		echo "</li>";
+		echo '</li>' . "\n";;
 	}
-	echo "</ul></div>\n";
+	echo '</ul>' . "\n";;
+	echo '</div>' . "\n";
 }
 
 /* zpArdoise_printEXIF */
@@ -181,5 +192,4 @@ function zpardoise_printEXIF() {
 		echo $Exifs_list;
 	}
 }
-
 ?>
