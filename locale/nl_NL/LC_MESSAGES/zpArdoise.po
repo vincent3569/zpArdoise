@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zpArdoise\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 07:58+0200\n"
-"PO-Revision-Date: 2017-08-01 07:58+0200\n"
-"Last-Translator: Vincent Bourganel <vincent_bourganel@yahoo.fr>\n"
+"POT-Creation-Date: 2017-09-20 13:10+0200\n"
+"PO-Revision-Date: 2017-09-20 15:22+0200\n"
+"Last-Translator: fretzl\n"
 "Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -42,14 +42,19 @@ msgid ""
 "of the image file located in themes/zpArdoise/images/ (banniere1.jpg for "
 "example)."
 msgstr ""
+"Afbeelding om als banner te gebruiken. Vul de volledige bestandsnaam + "
+"extensie in. (bijv. mijnbanner.jpg) <br />Het bestand moet zich bevinden in "
+"<code>/themes/zpArdoise/images/</code>."
 
 #: themeoptions.php:74
 msgid "Check to show the logo on the Image page."
 msgstr ""
+"Vink aan om het logo ook op de afbeeldingspagina te tonen (<em>image.php</"
+"em>)."
 
 #: themeoptions.php:75
 msgid "Choose Dark or Light for color style of the site."
-msgstr ""
+msgstr "Kies Dark of Light als thema voor de site."
 
 #: themeoptions.php:76
 msgid ""
@@ -57,14 +62,18 @@ msgid ""
 "or Light style and choose Custom to use a custom value. You can customize "
 "these values by editing the file theme/zpArdoise/css/custom.css."
 msgstr ""
+"De kleur voor de links. Kies <em>Default</em> voor de kleuren die bij het "
+"hierboven gekozen thema horen. Kies <em>Custom</em> als je het bestand "
+"<code>/themes/zpArdoise/css/custom.css</code> gaat aanpassen."
 
 #: themeoptions.php:78
 msgid "Display a menu link to the Archive list."
-msgstr ""
+msgstr "Toon een link naar de Archief pagina."
 
 #: themeoptions.php:80
 msgid "Check to show a tag cloud with all the tags of the gallery."
 msgstr ""
+"Vink aan om een <em>tag cloud</em> te tonen met alle tags in de galerij."
 
 #: themeoptions.php:81
 msgid ""
@@ -72,19 +81,25 @@ msgid ""
 "option. NOTE: For anything other than random, the image_statistic plugin "
 "must be activated."
 msgstr ""
+"Toont een thumbnail strip op de galerij pagina, afhankelijk van de "
+"geselecteerde optie. OPMERKING: Voor alle opties, behalve <em>Random</em>, "
+"moet de <em>image_album_statistics</em> geactiveerd zijn."
 
 #: themeoptions.php:82
 msgid ""
 "Check to use the Galleriffic script. Uncheck to use a standard display. This "
 "standard display is also displayed when javascript is disabled in the "
 "browser."
-msgstr ""
+msgstr "Vink aan om het Galleriffic script te gebruiken."
 
 #: themeoptions.php:83
 msgid ""
 "If Galleriffic is used, enter the delay of the gallerific slideshow in ms "
 "(eg 3000)."
 msgstr ""
+"Als <em>Use Galleriffic script</em> is aangevinkt kun je hier de snelheid "
+"van de Galleriffic slideshow instellen in milliseconden (3000 milliseconden "
+"= 3 seconden)."
 
 #: themeoptions.php:84
 msgid ""
@@ -92,10 +107,14 @@ msgid ""
 "galleriffic is used or not. NOTE : in that case, Image page will never be "
 "used."
 msgstr ""
+"Vink aan om de orginele (grote) afbeelding te tonen in Colorbox op de "
+"albumpagina."
 
 #: themeoptions.php:85
 msgid "Check to display the full size image with Colorbox in Image page."
 msgstr ""
+"Vink aan om de orginele (grote) afbeelding te tonen in Colorbox op de "
+"afbeeldingspagina."
 
 #: themeoptions.php:86
 msgid ""
@@ -103,3 +122,6 @@ msgid ""
 "ExposureTime, ISOSpeedRatings). Remember you have to check these EXIFs data "
 "on admin>image>information EXIF."
 msgstr ""
+"Toon de EXIF informatie uit afbeeldingen op de afbeeldingen pagina "
+"(<em>image.php</em>) Vergeet niet de gewenste EXIF informatie te selecteren "
+"in Admin => Opties => Afbeelding => Metadata."
