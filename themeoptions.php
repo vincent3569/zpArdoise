@@ -11,6 +11,8 @@ require_once(SERVERPATH . '/' . ZENFOLDER . '/admin-functions.php');
 class ThemeOptions {
 
 	function __construct() {
+
+		$me = basename(dirname(__FILE__));
 		setThemeOptionDefault('albums_per_row', 3);
 		setThemeOptionDefault('albums_per_page', 9);
 		setThemeOptionDefault('images_per_row', 5);
@@ -39,21 +41,20 @@ class ThemeOptions {
 		setThemeOptionDefault('show_exif', true);
 
 		enableExtension('colorbox_js', 5|THEME_PLUGIN);
-		setOption('colorbox_zpArdoise_album', 1);
-		setOption('colorbox_zpArdoise_archive', 1);
-		setOption('colorbox_zpArdoise_contact', 1);
-		setOption('colorbox_zpArdoise_favorites', 1);
-		setOption('colorbox_zpArdoise_gallery', 1);
-		setOption('colorbox_zpArdoise_image', 1);
-		setOption('colorbox_zpArdoise_index', 1);
-		setOption('colorbox_zpArdoise_news', 1);
-		setOption('colorbox_zpArdoise_pages', 1);
-		setOption('colorbox_zpArdoise_password', 1);
-		setOption('colorbox_zpArdoise_register', 1);
-		setOption('colorbox_zpArdoise_search', 1);
+		setOption('colorbox_' . $me . '_album', 1);
+		setOption('colorbox_' . $me . '_archive', 1);
+		setOption('colorbox_' . $me . '_contact', 1);
+		setOption('colorbox_' . $me . '_favorites', 1);
+		setOption('colorbox_' . $me . '_gallery', 1);
+		setOption('colorbox_' . $me . '_image', 1);
+		setOption('colorbox_' . $me . '_index', 1);
+		setOption('colorbox_' . $me . '_news', 1);
+		setOption('colorbox_' . $me . '_pages', 1);
+		setOption('colorbox_' . $me . '_password', 1);
+		setOption('colorbox_' . $me . '_register', 1);
+		setOption('colorbox_' . $me . '_search', 1);
 
 		if (class_exists('cacheManager')) {
-			$me = basename(dirname(__FILE__));
 			cacheManager::deleteThemeCacheSizes($me);
 			cacheManager::addThemeCacheSize($me, getThemeOption('thumb_size'), NULL, NULL, getThemeOption('thumb_crop_width'), getThemeOption('thumb_crop_height'), NULL, NULL, true);
 			if (getOption('use_galleriffic')) {
@@ -69,12 +70,20 @@ class ThemeOptions {
 	}
 
 	function getOptionsSupported() {
+
+		$unpublishedpages = query_full_array("SELECT title, titlelink FROM " . prefix('pages') . " WHERE `show` != 1 ORDER by `sort_order`");
+		$unpub_list = array();
+		foreach ($unpublishedpages as $page) {
+			$unpub_list[get_language_string($page['title'])] = $page['titlelink'];
+		}
+
 		return array(
 			gettext('Use this file as logo') => array('order' => 0, 'key' => 'use_image_logo_filename', 'type' => OPTION_TYPE_TEXTBOX, 'multilingual' => 0, 'desc' => gettext_th('Image file for the logo area: enter the full filename (including extension) of the image file located in themes/zpArdoise/images/ (banniere1.jpg for example).', 'zpArdoise')),
 			gettext('Show the logo on Image page') => array('order' => 1, 'key' => 'show_image_logo_on_image', 'type' => OPTION_TYPE_CHECKBOX, 'desc' => gettext_th('Check to show the logo on the Image page.', 'zpArdoise')),
 			gettext('Style') => array('order' => 2, 'key' => 'css_style', 'type' => OPTION_TYPE_CUSTOM, 'desc' => gettext_th('Choose Dark or Light for color style of the site.', 'zpArdoise')),
 			gettext('Color') => array('order' => 3, 'key' => 'color_style', 'type' => OPTION_TYPE_CUSTOM, 'desc' => gettext_th('Choose the color of links: choose Default to use the default color of Dark or Light style and choose Custom to use a custom value. You can customize these values by editing the file theme/zpArdoise/css/custom.css.', 'zpArdoise')),
-			gettext('Homepage') => array('order' => 4, 'key' => 'zenpage_homepage', 'type' => OPTION_TYPE_CUSTOM, 'desc' => gettext("Choose here any <em>un-published Zenpage page</em> (listed by <em>titlelink</em>) to act as your site’s homepage instead the normal gallery index.") . "<p class='notebox'>" . gettext("<strong>Note:</strong> This of course overrides the <em>News on index page</em> option and your theme must be setup for this feature! Visit the theming tutorial for details.") . "</p>"),
+			gettext('Homepage') => array('order' => 4, 'key' => 'zenpage_homepage', 'type' => OPTION_TYPE_SELECTOR, 'selections' => $unpub_list, 'null_selection' => gettext('none'), 'desc' => gettext("Choose here any <em>un-published Zenpage page</em> (listed by <em>titlelink</em>) to act as your site’s homepage instead the normal gallery index.")
+																																																. "<p class='notebox'>" . gettext("<strong>Note:</strong> This of course overrides the <em>News on index page</em> option and your theme must be setup for this feature! Visit the theming tutorial for details.") . "</p>"),
 			gettext('Show Archive link') => array('order' => 5, 'key' => 'show_archive', 'type' => OPTION_TYPE_CHECKBOX, 'desc' => gettext_th('Display a menu link to the Archive list.', 'zpArdoise')),
 			gettext('Allow search') => array('order' => 6, 'key' => 'allow_search', 'type' => OPTION_TYPE_CHECKBOX, 'desc' => gettext('Check to enable search form.')),
 			gettext('Show Tags') => array('order' => 7, 'key' => 'show_tag', 'type' => OPTION_TYPE_CHECKBOX, 'desc' => gettext_th('Check to show a tag cloud with all the tags of the gallery.', 'zpArdoise')),
@@ -121,37 +130,6 @@ class ThemeOptions {
 					echo '>Custom</option>\n';
 				}
 			echo "</select>\n";
-		}
-
-		if ($option == 'zenpage_homepage') {
-			$unpublishedpages = query_full_array("SELECT titlelink, title FROM " . prefix('pages') . " WHERE `show` != 1 ORDER by `sort_order`");
-			if ((! extensionEnabled('zenpage')) || (empty($unpublishedpages))) {
-				echo gettext("No unpublished pages available");
-				// clear option if no unpublished pages are available or have been published meanwhile
-				// so that the normal gallery index appears and no page is accidentally set if set to unpublished again.
-				setThemeOption('zenpage_homepage', 'none', NULL, 'zpArdoise');
-			} else {
-				echo '<input type="hidden" name="' . CUSTOM_OPTION_PREFIX . 'selector-zenpage_homepage" value=0 />' . "\n";
-				echo '<select id="' . $option . '" name="' . $option . '">' . "\n";
-
-				echo '<option value="none"';
-				if ($currentValue == 'none') {
-					echo ' selected="selected">' . gettext("none") . '</option>\n';
-				} else {
-					echo '>' . gettext("none") . '</option>\n';
-				}
-
-				foreach($unpublishedpages as $page) {
-					if ($currentValue == $page["titlelink"]) {
-						$selected = ' selected="selected"';
-					} else {
-						$selected = '';
-					}
-					echo '<option value="' . $page["titlelink"] . '"' . $selected . '>' . get_language_string($page["title"]) . '</option>';
-				}
-
-				echo "</select>\n";
-			}
 		}
 
 		if ($option == 'image_statistic') {
