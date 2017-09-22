@@ -22,4 +22,7 @@
 		fadeSpeed:         'fast',
 		exemptionSelector: '.selected'
 	});
+
+	// fix issue with flag thumbnail
+	$('.flag_thumbnail').removeAttr('style');
 });

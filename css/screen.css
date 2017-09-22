@@ -397,6 +397,10 @@ div#album-wrap ul li h4 {
 	margin: 2px 0 0;
 	padding: 0;
 }
+.flag_thumbnail {
+	position:relative;
+	display:inline-block;
+}
 
 /* albums and images statistics */
 #image-stat {
