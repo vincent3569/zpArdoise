@@ -19,8 +19,6 @@ if (!OFFSET_PATH) {
 	$_zenpage_and_news_enabled = extensionEnabled('zenpage') && ZP_NEWS_ENABLED;
 	$_zenpage_and_pages_enabled = extensionEnabled('zenpage') && ZP_PAGES_ENABLED;
 	$_zp_page_check = 'my_checkPageValidity';
-	
-	zp_remove_filter('zenphoto_information', 'exposeZenPhotoInformations');
 }
 
 function my_checkPageValidity($request, $gallery_page, $page) {
