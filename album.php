@@ -53,7 +53,7 @@
 								</div>
 								<?php } ?>
 								<div class="image-title">
-									<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php echo html_encode(getBareImageTitle()); ?>"><?php printImageTitle(); ?></a>
+									<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php echo html_encode(getBareImageTitle()); ?>"><?php printBareImageTitle(); ?></a>
 								</div>
 								<div class="image-desc">
 									<?php printImageDesc(); ?>
