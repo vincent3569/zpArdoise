@@ -8,7 +8,7 @@
 				printAlbumMenu('jump', NULL, '', '', '', '', gettext('Gallery Index'));
 			}
 			if (getOption('allow_search')) {
-				printSearchForm('', 'search', '', gettext('Search'), "$_zp_themeroot/images/search-drop.png", NULL, NULL,"$_zp_themeroot/images/reset.gif" );
+				printSearchForm('', 'search', '', gettext('Search'), "$_zp_themeroot/images/search-drop.png", NULL, NULL, "$_zp_themeroot/images/reset.gif");
 			}
 			?>
 		</div>

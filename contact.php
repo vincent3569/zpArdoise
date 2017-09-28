@@ -20,4 +20,5 @@ if (extensionEnabled('contact_form')) {
 
 } else {
 	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
-} ?>
+}
+?>

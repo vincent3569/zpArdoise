@@ -24,4 +24,5 @@ if ($_zenpage_and_pages_enabled) {
 
 } else {
 	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
-} ?>
+}
+?>

@@ -41,4 +41,5 @@ if (extensionEnabled('favoritesHandler')) {
 
 } else {
 	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
-} ?>
+}
+?>
