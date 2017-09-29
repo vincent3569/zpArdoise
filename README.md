@@ -22,7 +22,7 @@ If you use Galleriffic script, you should not have any albums that mixes sub-alb
 Please, read [install.txt](https://github.com/vincent3569/zpArdoise/blob/master/install.txt).
 
 ### Important
-To use the release **1.4.13** of the theme, you must have **ZenPhoto 1.4.13 or more**.
+To use the release **1.4.14** of the theme, you must have **ZenPhoto 1.4.14 or more**.
 If you use another release of ZenPhoto, see [archives of zpArdoise on Github](https://github.com/vincent3569/zpArdoise/releases).
 
 Report issues on the [ZenPhoto forum](http://www.zenphoto.org/support/) or create a new issue on [GitHub](https://github.com/vincent3569/zpArdoise/issues) and I will fix it as soon as possible (only the latest version is supported).
