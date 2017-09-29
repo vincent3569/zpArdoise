@@ -1,4 +1,25 @@
-* 1.4.13
+* 1.4.14
+- archives.php, functions.php, inc_footer.php, inc_header.php, index.php, news.php, pages.php, search.php :
+	- use new variable $_zenpage_and_news_enabled and $_zenpage_and_pages_enabled to manage ZP_NEWS_ENABLED and ZP_PAGES_ENABLED values
+- album.php, image.php, inc_album_thumb.php
+	- use html_encode() for all title attributes
+	- use allways getBareAlbumTitle(), printBareAlbumTitle(), getBareImageTitle(), printBareImageTitle()
+- inc_header.php
+	- fix issue with printLanguageSelector
+	- use "switch" structure to avoids multiple "if" to determine page title
+- themeoptions.php
+	- use enableExtention() to enable plugin, to be more consistant
+	- minor improvements to be mode consistant with official themes
+- css/screen
+	- fix issue with errobox
+	- fix an issue with flag_thumbnail
+- js/zpardoise.js, js/zpardoise_light.js
+	- fix an issue with flag_thumbnail
+- functions
+	- use improvements of zenphoto 1.4.14 on zpArdoise_printRandomImages and zpArdoise_printImageStatistic (https://github.com/zenphoto/zenphoto/issues/1099 and https://github.com/zenphoto/zenphoto/issues/1100)
+
+
+* 1.4.13
 - css/screen, css/light.css, js/zpardoise_light.js, functions.php, themeoptions.php
 	- simplifications of the theme (deleting frames and rollover effect on thumbnails, size optimization of thumbnails and images)
 - css/screen, css/light.css, inc_print_album_thumb.php, inc_print_image_thumb.php
