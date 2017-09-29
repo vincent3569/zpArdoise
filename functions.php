@@ -19,13 +19,6 @@ if (!OFFSET_PATH) {
 	$_zenpage_and_news_enabled = extensionEnabled('zenpage') && ZP_NEWS_ENABLED;
 	$_zenpage_and_pages_enabled = extensionEnabled('zenpage') && ZP_PAGES_ENABLED;
 	$_zp_page_check = 'my_checkPageValidity';
-
-	if (in_context(ZP_SEARCH)) {						// force news and pages order in search page
-		$_zp_current_search->setSortType('date', 'news');
-		$_zp_current_search->setSortDirection(false, 'news');
-		$_zp_current_search->setSortType('title', 'pages');
-		$_zp_current_search->setSortDirection(true, 'pages');
-	}
 }
 
 function my_checkPageValidity($request, $gallery_page, $page) {
