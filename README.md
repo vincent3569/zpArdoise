@@ -27,13 +27,11 @@ Additional scripts used:
 If you use Galleriffic script, you should not have any albums that mixes sub-albums and pictures (in this case, there is no navigation bars, so all sub-albums may be not displayed on album.php).
 
 ### Installation
-Installation
-
-Upload the zip file to your computer
-Unzip the downloaded zip file locally, and upload the zpArdoise/ folder to the directory /themes/ of your ZenPhoto site
-In ZenPhoto administration, go to the Themes tab and activate the zpArdoise theme
-Navigate to Options>Theme to view and configure the available options for zpArdoise
-If you use an older version of the theme, purge image cache to regenerate it with new sizes of thumbnails and images
+- Upload the zip file to your computer
+- Unzip the downloaded zip file locally, and upload the zpArdoise/ folder to the directory /themes/ of your ZenPhoto site
+- In ZenPhoto administration, go to the Themes tab and activate the zpArdoise theme
+- Navigate to Options>Theme to view and configure the available options for zpArdoise
+- If you use an older version of the theme, purge image cache to regenerate it with new sizes of thumbnails and images
 
 ### ChangeLog
 Please, read [changelog.txt](https://github.com/vincent3569/zpArdoise/blob/master/changelog.txt)
