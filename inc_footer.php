@@ -65,4 +65,4 @@
 
 </body>
 </html>
-<!-- zpArdoise 1.4.14 - a ZenPhoto/ZenPage theme by Vincent3569  -->
+<!-- zpArdoise 1.4.14 - a Zenphoto theme by Vincent3569  -->

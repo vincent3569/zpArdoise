@@ -9,7 +9,7 @@ Feel free to download and use it, and thanks in advance for your feedback!
 To use the release **1.4.14** of the theme, you must have **Zenphoto 1.4.14 or more**.
 If you use another release of Zenphoto, see [archives of zpArdoise on Github](https://github.com/vincent3569/zpArdoise/releases).
 
-You can report bugs on the [Zenphoto forum](http://www.zenphoto.org/support/) or by creating a issue on [GitHub](https://github.com/vincent3569/zpArdoise/issues), and I will fix it as soon as possible (only the latest version is supported).  You can also improve theme via [Pull requests](https://github.com/vincent3569/zpArdoise/pulls).
+You can report bugs on the [Zenphoto forum](http://www.zenphoto.org/support/) or by creating a issue on [GitHub](https://github.com/vincent3569/zpArdoise/issues), and I will fix it as soon as possible (only the latest version is supported). You can also improve theme via [Pull requests](https://github.com/vincent3569/zpArdoise/pulls).
 
 Please note that the Zenphoto team advise to regulary upgrade its site with the latest version of Zenphoto to benefit from the latest features of the application, to solve the various security holes, and to benefit from the support of the Zenphoto team.
 
