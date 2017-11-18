@@ -29,7 +29,7 @@ class ThemeOptions {
 		setThemeOptionDefault('show_image_logo_on_image', false);
 		setThemeOptionDefault('css_style', 'dark');
 		setThemeOptionDefault('links_style', 'default');
-		setThemeOptionDefault('zenpage_homepage', 'none');
+		setThemeOptionDefault('zenpage_homepage', NULL);
 		setThemeOptionDefault('show_archive', false);
 		setThemeOptionDefault('allow_search', true);
 		setThemeOptionDefault('show_tag', true);
