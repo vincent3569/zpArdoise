@@ -8,7 +8,7 @@
 				printAlbumMenu('jump', NULL, '', '', '', '', gettext('Gallery Index'));
 			}
 			if (getOption('allow_search')) {
-				printSearchForm('', 'search', '', gettext('Search'), "$_zp_themeroot/images/search-drop.png", NULL, NULL,"$_zp_themeroot/images/reset.gif" );
+				printSearchForm('', 'search', '', gettext('Search'), "$_zp_themeroot/images/search-drop.png", NULL, NULL, "$_zp_themeroot/images/reset.gif");
 			}
 			?>
 		</div>
@@ -65,4 +65,4 @@
 
 </body>
 </html>
-<!-- zpArdoise 1.4.14 - a ZenPhoto/ZenPage theme by Vincent3569  -->
+<!-- zpArdoise 1.4.14 - a Zenphoto theme by Vincent3569  -->

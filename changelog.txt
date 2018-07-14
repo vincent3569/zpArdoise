@@ -1,4 +1,25 @@
-* 1.4.13
+* 1.4.14
+- archives.php, functions.php, inc_footer.php, inc_header.php, index.php, news.php, pages.php, search.php :
+	- use new variable $_zenpage_and_news_enabled and $_zenpage_and_pages_enabled to manage ZP_NEWS_ENABLED and ZP_PAGES_ENABLED values
+- album.php, image.php, inc_album_thumb.php
+	- use html_encode() for all title attributes
+	- use allways getBareAlbumTitle(), printBareAlbumTitle(), getBareImageTitle(), printBareImageTitle()
+- inc_header.php
+	- fix issue with printLanguageSelector
+	- use "switch" structure to avoids multiple "if" to determine page title
+- themeoptions.php
+	- use enableExtention() to enable plugin, to be more consistant
+	- minor improvements to be mode consistant with official themes
+- css/screen
+	- fix issue with errobox
+	- fix an issue with flag_thumbnail
+- js/zpardoise.js, js/zpardoise_light.js
+	- fix an issue with flag_thumbnail
+- functions
+	- use improvements of zenphoto 1.4.14 on zpArdoise_printRandomImages and zpArdoise_printImageStatistic (https://github.com/zenphoto/zenphoto/issues/1099 and https://github.com/zenphoto/zenphoto/issues/1100)
+
+
+* 1.4.13
 - css/screen, css/light.css, js/zpardoise_light.js, functions.php, themeoptions.php
 	- simplifications of the theme (deleting frames and rollover effect on thumbnails, size optimization of thumbnails and images)
 - css/screen, css/light.css, inc_print_album_thumb.php, inc_print_image_thumb.php
@@ -364,7 +385,7 @@
 * 1.1
 - css/screen.css
 	- graphical improvements (too many to be explained !)
-	- supports the errorbox of ZenPhoto 1.4 release
+	- supports the errorbox of Zenphoto 1.4 release
 - js/jquery.galleriffic.js
 	- supports the new 'Use Colorbox' option
 - js/zpgalleriffic.js
@@ -385,7 +406,7 @@
 	- graphical improvements
 - footer.php
 	- graphical improvements
-	- add code to be compatible with ZenPhoto 1.4 release (add zp_apply_filter() before </body> tag)
+	- add code to be compatible with Zenphoto 1.4 release (add zp_apply_filter() before </body> tag)
 	- improvements for the supported user_login-out plugin: if not login, display of a link to admin.php
 	- supports register_user plugin
 - gallery.php
@@ -394,7 +415,7 @@
 - header.php
 	- supports new 'Use Colorbox' option
 	- supports new 'Color' option
-	- add and suppress code to be compatible with ZenPhoto 1.4 release (add zp_apply_filter() between <head></head> tags, add zp_apply_filter() after <body> tag, remove deprecated normalizeColumns() function)
+	- add and suppress code to be compatible with Zenphoto 1.4 release (add zp_apply_filter() between <head></head> tags, add zp_apply_filter() after <body> tag, remove deprecated normalizeColumns() function)
 	- no display of "news" item if no news
 - image.php
 	- graphical improvements
@@ -414,7 +435,7 @@
 - slideshow.php and slideshow.css
 	- supports zpArdoise theme
 - themeoptions.php :
-	- add code to be compatible with ZenPhoto 1.4 release
+	- add code to be compatible with Zenphoto 1.4 release
 	- supports new 'Use Colorbox' option
 	- supports new 'Color' option
 

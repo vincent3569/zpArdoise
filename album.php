@@ -39,13 +39,13 @@
 						<?php while (next_image(true)) { ?>
 						<li>
 							<?php if (isImageVideo()) { ?>
-								<a class="thumb" href="<?php echo $_zp_themeroot; ?>/images/video-placeholder.jpg" title="<?php echo getBareImageTitle(); ?>">
+								<a class="thumb" href="<?php echo $_zp_themeroot; ?>/images/video-placeholder.jpg" title="<?php echo html_encode(getBareImageTitle()); ?>">
 							<?php } else { ?>
-								<a class="thumb" href="<?php echo html_encode(getDefaultSizedImage()); ?>" title="<?php echo getBareImageTitle(); ?>">
+								<a class="thumb" href="<?php echo html_encode(getDefaultSizedImage()); ?>" title="<?php echo html_encode(getBareImageTitle()); ?>">
 							<?php } ?>
 							<?php printImageThumb(getAnnotatedImageTitle()); ?></a>
 							<?php $fullimage = getFullImageURL(); ?>
-							<a <?php if ((getOption('use_colorbox_album')) && (!empty($fullimage))) { ?>class="colorbox"<?php } ?> href="<?php echo html_encode(pathurlencode($fullimage)); ?>" title="<?php echo getBareImageTitle(); ?>"></a>
+							<a <?php if ((getOption('use_colorbox_album')) && (!empty($fullimage))) { ?>class="colorbox"<?php } ?> href="<?php echo html_encode(pathurlencode($fullimage)); ?>" title="<?php echo html_encode(getBareImageTitle()); ?>"></a>
 							<div class="caption">
 								<?php if (getOption('show_exif')) { ?>
 								<div class="exif-infos-gal">
@@ -53,7 +53,7 @@
 								</div>
 								<?php } ?>
 								<div class="image-title">
-									<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php echo gettext('Image'); ?> : <?php echo getImageTitle(); ?>"><?php printImageTitle(); ?></a>
+									<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php echo html_encode(getBareImageTitle()); ?>"><?php printBareImageTitle(); ?></a>
 								</div>
 								<div class="image-desc">
 									<?php printImageDesc(); ?>

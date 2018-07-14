@@ -87,4 +87,5 @@ if ($_zenpage_and_news_enabled) {
 
 } else {
 	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
-} ?>
+}
+?>

@@ -271,7 +271,7 @@ if (!defined('WEBPATH')) die();
 		?>
 
 		<ul>
-		<?php if (($_zenpage_and_pages_enabled) && (gettext($zenpage_homepage) <> gettext('none'))) { ?>
+		<?php if (($_zenpage_and_pages_enabled) && ($zenpage_homepage <> NULL)) { ?>
 			<li <?php if (getPageTitleLink() == $zenpage_homepage) { ?>class="active"<?php } ?>><a href="<?php echo html_encode(getSiteHomeURL()); ?>" title="<?php echo gettext('Home'); ?>"><?php echo gettext('Home'); ?></a></li>
 		<?php } ?>
 		<li <?php if ($galleryactive) { ?>class="active"<?php } ?>><?php printCustomPageURL(gettext('Gallery'), 'gallery'); ?></li>

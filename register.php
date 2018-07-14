@@ -19,4 +19,5 @@ if (extensionEnabled('register_user')) {
 
 } else {
 	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
-} ?>
+}
+?>
