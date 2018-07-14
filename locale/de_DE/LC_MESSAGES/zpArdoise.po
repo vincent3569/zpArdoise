@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zpArdoise\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 07:56+0200\n"
-"PO-Revision-Date: 2017-08-01 07:57+0200\n"
-"Last-Translator: Vincent Bourganel <vincent_bourganel@yahoo.fr>\n"
-"Language-Team: vincent3569 <vincent_bourganel@yahoo.fr>\n"
+"POT-Creation-Date: 2018-07-14 17:47+0200\n"
+"PO-Revision-Date: 2018-07-14 18:24+0200\n"
+"Last-Translator: Malte Müller (acrylian) <wartgart@gmx.net>\n"
+"Language-Team: Malte Müller\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: ;gettext_th\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.9\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: inc_footer.php:57
@@ -26,7 +26,7 @@ msgstr "Beliebte Bilder"
 
 #: inc_print_image_statistic.php:16
 msgid "Most rated images"
-msgstr "Meistbewertete Bilder"
+msgstr "Bestbewertete Bilder"
 
 #: news.php:12 news.php:14
 msgid "newer"
@@ -36,70 +36,94 @@ msgstr "neuere"
 msgid "older"
 msgstr "ältere"
 
-#: themeoptions.php:73
+#: themeoptions.php:81
 msgid ""
 "Image file for the logo area: enter the full filename (including extension) "
 "of the image file located in themes/zpArdoise/images/ (banniere1.jpg for "
 "example)."
 msgstr ""
+"Bilddatei für den Logobereich: Geben Sie den vollen Dateiamen (inklusive "
+"Suffix) des Bildes an, dass in theme/zpArdoise/images/ (logo1.jpg z.B.)"
 
-#: themeoptions.php:74
+#: themeoptions.php:82
 msgid "Check to show the logo on the Image page."
-msgstr ""
+msgstr "Auswählen, um das Logo auf der Bildseite anzuzeigen."
 
-#: themeoptions.php:75
+#: themeoptions.php:83
 msgid "Choose Dark or Light for color style of the site."
-msgstr ""
+msgstr "Wählen Sie dunkel oder hell als Farbschema für die Site."
 
-#: themeoptions.php:76
+#: themeoptions.php:84
 msgid ""
 "Choose the color of links: choose Default to use the default color of Dark "
 "or Light style and choose Custom to use a custom value. You can customize "
 "these values by editing the file theme/zpArdoise/css/custom.css."
 msgstr ""
+"Wählen Sie die Farbe der Links: Wählen Sie „Standard“, um die Standardfarbe "
+"des des Dunkel- oder Hellfarbschemas zu verwenden.. Wählen Sie "
+"„Benutzerdefiniert“ für einen eigenen Farbwert. Sie können diese Werte auch "
+"auch in theme/zpArdoise/css/custom.css anpassen."
 
-#: themeoptions.php:78
+#: themeoptions.php:87
 msgid "Display a menu link to the Archive list."
-msgstr ""
+msgstr "Zeigt einen Menülink zur Archivseite an."
 
-#: themeoptions.php:80
+#: themeoptions.php:89
 msgid "Check to show a tag cloud with all the tags of the gallery."
 msgstr ""
+"Aktivieren Sie dies, um eine Schlagwortwolke aller Schlagwörter der Galerie "
+"anzuzeigen."
 
-#: themeoptions.php:81
+#: themeoptions.php:90
 msgid ""
 "Shows a strip of thumbnails on Gallery page, depending of the selected "
-"option. NOTE: For anything other than random, the image_statistic plugin "
-"must be activated."
+"option. NOTE: For anything other than random, the image_album_statistics "
+"plugin must be activated."
 msgstr ""
+"Zeit eine eine Reihe Thumbnails auf der Galerieseiten, abhängig von der "
+"ausgewählten Einstellung. HINWEIS: Für alles außer zufällig, muss das "
+"image_album_statistics plugin aktiviert sein."
 
-#: themeoptions.php:82
+#: themeoptions.php:91
 msgid ""
 "Check to use the Galleriffic script. Uncheck to use a standard display. This "
 "standard display is also displayed when javascript is disabled in the "
 "browser."
 msgstr ""
+"Aktivieren, um das Galleriffic-Skript zu verwenden. Andernfalls wird die "
+"Standardanzeige verwendet, die auch bei deaktiviertem JavaScript "
+"funktioniert."
 
-#: themeoptions.php:83
+#: themeoptions.php:92
 msgid ""
 "If Galleriffic is used, enter the delay of the gallerific slideshow in ms "
 "(eg 3000)."
 msgstr ""
+"Wenn Galleriffic verwendet  wird, gehen Sie hier die Verzögerung der "
+"Galleriffic-Slideshow in ms an (z.B. 3000)"
 
-#: themeoptions.php:84
+#: themeoptions.php:93
 msgid ""
 "Check to display the full size image with Colorbox in album page, if "
 "galleriffic is used or not. NOTE : in that case, Image page will never be "
 "used."
 msgstr ""
+"Aktivieren, um das Originalbild im Colorbox-Overlay auf der Albumseite "
+"anzuzeigen, egal ob Galleriffic aktiviert ist. HINWEIS: In diesem Fall wird "
+"die Bildseite nicht verwendet."
 
-#: themeoptions.php:85
+#: themeoptions.php:94
 msgid "Check to display the full size image with Colorbox in Image page."
 msgstr ""
+"Aktivieren, um das Originalbild im Colorbox-Overlay auf der Bildseite "
+"anzuzeigen."
 
-#: themeoptions.php:86
+#: themeoptions.php:95
 msgid ""
 "Show the main EXIF Data on Image page (Model, FocalLength, FNumber, "
 "ExposureTime, ISOSpeedRatings). Remember you have to check these EXIFs data "
-"on admin>image>information EXIF."
+"on Admin>Options>Image>Metadata."
 msgstr ""
+"Zeit die Haupt-EXIF-Daten auf der Bildseite (Model, FocalLength, FNumber, "
+"ExposureTime, ISOSpeedRatings). Denken Sie daran, dass Sie diese Metafelder "
+"zunächst auf Admin > Einstellungen > BIld aktivieren müssen."
