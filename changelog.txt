@@ -1,3 +1,8 @@
+*1.5.1
+- themeoptions.php
+	- cacheManager improvements (follow zenphoto commit https://github.com/zenphoto/zenphoto/commit/e61ecd53dc4b98dac4435c8a5c2a2453727291d4)
+
+
 * 1.4.14
 - archives.php, functions.php, inc_footer.php, inc_header.php, index.php, news.php, pages.php, search.php :
 	- use new variable $_zenpage_and_news_enabled and $_zenpage_and_pages_enabled to manage ZP_NEWS_ENABLED and ZP_PAGES_ENABLED values

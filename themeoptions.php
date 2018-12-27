@@ -55,13 +55,13 @@ class ThemeOptions {
 		setOption('colorbox_' . $me . '_search', 1);
 
 		if (class_exists('cacheManager')) {
-			cacheManager::deleteThemeCacheSizes($me);
-			cacheManager::addThemeCacheSize($me, getThemeOption('thumb_size'), NULL, NULL, getThemeOption('thumb_crop_width'), getThemeOption('thumb_crop_height'), NULL, NULL, true);
+			cacheManager::deleteCacheSizes($me);
+			cacheManager::addDefaultThumbSize();
+			cacheManager::addDefaultSizedImageSize();
 			if (getOption('use_galleriffic')) {
-				cacheManager::addThemeCacheSize($me, 85, NULL, NULL, 85, 85, NULL, NULL, true);
+				cacheManager::addThemeCacheSize($me, 85, 85, 85, 85, 85, NULL, NULL, true);
 				cacheManager::addThemeCacheSize($me, 555, NULL, NULL, NULL, NULL, NULL, NULL, false);
 			}
-			cacheManager::addThemeCacheSize($me, getThemeOption('image_size'), NULL, NULL, NULL, NULL, NULL, NULL, false);
 		}
 	}
 
