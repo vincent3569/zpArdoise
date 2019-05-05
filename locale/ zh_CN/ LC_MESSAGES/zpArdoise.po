@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zpArdoise-Chinese-translation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-01 07:57+0200\n"
+"PO-Revision-Date: 2019-05-06 04:37+0800\n"
+"Last-Translator: Vincent Bourganel <vincent_bourganel@yahoo.fr>\n"
+"Language-Team: zhaoying-95 (admin@zying.vip)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: ;gettext_th\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: inc_footer.php:57
+msgid "You can browse with the arrows keys of your keyboard"
+msgstr "您可以使用键盘的方向键进行浏览。"
+
+#: inc_print_image_statistic.php:8
+msgid "Popular images"
+msgstr "热门图片。"
+
+#: inc_print_image_statistic.php:16
+msgid "Most rated images"
+msgstr "评分最高的图片。"
+
+#: news.php:12 news.php:14
+msgid "newer"
+msgstr "新的。"
+
+#: news.php:17 news.php:19
+msgid "older"
+msgstr "旧的。"
+
+#: themeoptions.php:73
+msgid ""
+"Image file for the logo area: enter the full filename (including extension) "
+"of the image file located in themes/zpArdoise/images/ (banniere1.jpg for "
+"example)."
+msgstr ""
+"微标区的图像位于：themes/zpArdoise/images/(例如banniere1.jpg)。请输入完整的文"
+"件名(包括扩展名)。"
+
+#: themeoptions.php:74
+msgid "Check to show the logo on the Image page."
+msgstr "在选中的图像页面上显示微标。"
+
+#: themeoptions.php:75
+msgid "Choose Dark or Light for color style of the site."
+msgstr "选择深色或浅色的颜色样式。"
+
+#: themeoptions.php:76
+msgid ""
+"Choose the color of links: choose Default to use the default color of Dark "
+"or Light style and choose Custom to use a custom value. You can customize "
+"these values by editing the file theme/zpArdoise/css/custom.css."
+msgstr ""
+"选择选中链接的颜色：有“默认”“暗”“浅”等默认颜色。同时你可以选择“自定义”。自定"
+"义值在文件theme/zpArdoise/css/custom.css中。"
+
+#: themeoptions.php:78
+msgid "Display a menu link to the Archive list."
+msgstr "显示“记录模式显示”菜单链接。"
+
+#: themeoptions.php:80
+msgid "Check to show a tag cloud with all the tags of the gallery."
+msgstr "是否显示包含库的所有标签的标签云。"
+
+#: themeoptions.php:81
+msgid ""
+"Shows a strip of thumbnails on Gallery page, depending of the selected "
+"option. NOTE: For anything other than random, the image_statistic plugin "
+"must be activated."
+msgstr ""
+"在“图库”页面下方显示一条缩略图，显示内容取决于所选选项。 注意：对于除随机以外"
+"的任何内容，必须激活image_statistic插件。"
+
+#: themeoptions.php:82
+msgid ""
+"Check to use the Galleriffic script. Uncheck to use a standard display. This "
+"standard display is also displayed when javascript is disabled in the "
+"browser."
+msgstr ""
+"选中将使用Galleriffic脚本。 否则使用标准显示。 当浏览器禁用javascript时，会使"
+"用标准显示。"
+
+#: themeoptions.php:83
+msgid ""
+"If Galleriffic is used, enter the delay of the gallerific slideshow in ms "
+"(eg 3000)."
+msgstr ""
+"如果使用Galleriffic，输入画廊幻灯片的延迟，毫秒为单位（例如3000）。PS:1秒"
+"=1000毫秒。"
+
+#: themeoptions.php:84
+msgid ""
+"Check to display the full size image with Colorbox in album page, if "
+"galleriffic is used or not. NOTE : in that case, Image page will never be "
+"used."
+msgstr ""
+"如果使用Galleriffic，选中Colorbox以在相册页中显示完整尺寸的图像。 注意：在这"
+"种情况下，将不会使用图像页面。"
+
+#: themeoptions.php:85
+msgid "Check to display the full size image with Colorbox in Image page."
+msgstr "选中启用图像页面中的Colorbox以显示完整尺寸的图像。"
+
+#: themeoptions.php:86
+msgid ""
+"Show the main EXIF Data on Image page (Model, FocalLength, FNumber, "
+"ExposureTime, ISOSpeedRatings). Remember you have to check these EXIFs data "
+"on admin>image>information EXIF."
+msgstr ""
+"在图像页面上显示EXIF数据（相机型号，焦距，光圈，曝光时间，ISO速度）。 但您必"
+"须在管理>图片>信息EXIF中允许显示这些EXIF数据。"
