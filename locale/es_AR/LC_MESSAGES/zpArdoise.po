@@ -1,0 +1,383 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zpArdoise\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-29 12:01-0300\n"
+"PO-Revision-Date: 2019-05-29 12:13-0300\n"
+"Last-Translator: Guillermo R. Lapolla <guirala@gmail.com>\n"
+"Language-Team: guirala, guirala@gmail.com\n"
+"Language: es_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: ;gettext_th;gettext\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.2.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:6 inc_header.php:17
+msgid "Object not found"
+msgstr "Objeto no encontrado"
+
+#: album.php:11 favorites.php:14 image.php:24 inc_header.php:106 search.php:62
+msgid "Slideshow"
+msgstr "Diapositiva"
+
+#: archive.php:6 inc_footer.php:42 inc_header.php:21 inc_header.php:286
+msgid "Archive View"
+msgstr "Vista de Archivo"
+
+#: archive.php:13
+msgid "Gallery archive"
+msgstr "Archivo de Galería"
+
+#: archive.php:18
+msgid "News archive"
+msgstr "Archivo de Noticias"
+
+#: contact.php:9 inc_header.php:23 inc_header.php:289
+msgid "Contact"
+msgstr "Contacto"
+
+#: functions.php:162
+#, php-format
+msgid "Rating: %1$u (Votes: %2$u)"
+msgstr "Clasificación: %1$u (Votos: %2$u)"
+
+#: functions.php:169
+#, php-format
+msgid "Views: %u"
+msgstr "Vistas: %u"
+
+#: image.php:10
+msgid "Previous Image"
+msgstr "Imagen previa"
+
+#: image.php:10 image.php:12 inc_header.php:108 inc_header.php:222
+msgid "prev"
+msgstr "previo"
+
+#: image.php:15
+msgid "Next Image"
+msgstr "Imagen siguiente"
+
+#: image.php:15 image.php:17 inc_header.php:109 inc_header.php:223
+msgid "next"
+msgstr "siguiente"
+
+#: inc_footer.php:8
+msgid "Gallery Index"
+msgstr "Indice de la Galería"
+
+#: inc_footer.php:11 inc_header.php:39 search.php:4
+msgid "Search"
+msgstr "Buscar"
+
+#: inc_footer.php:23 inc_header.php:46 inc_print_image_statistic.php:10
+#: inc_print_image_statistic.php:12 inc_print_image_statistic.php:14
+msgid "Latest images"
+msgstr "Ultimas imágenes"
+
+#: inc_footer.php:28 inc_header.php:49
+msgid "Latest news"
+msgstr "Ultimas noticias"
+
+#: inc_footer.php:47 inc_header.php:37
+msgid "Register"
+msgstr "Registro"
+
+#: inc_footer.php:57
+msgid "You can browse with the arrows keys of your keyboard"
+msgstr "También puede navegar con las teclas de flechas de tu teclado"
+
+#: inc_header.php:15 inc_header.php:257 inc_header.php:275
+msgid "Home"
+msgstr "Inicio"
+
+#: inc_header.php:15 inc_header.php:27 inc_header.php:277
+msgid "Gallery"
+msgstr "Galería"
+
+#: inc_header.php:25
+msgid "My favorites"
+msgstr "Mis favoritos"
+
+#: inc_header.php:31 inc_header.php:279
+msgid "News"
+msgstr "Noticias"
+
+#: inc_header.php:35
+msgid "Password Required..."
+msgstr "Contraseña Requerida..."
+
+#: inc_header.php:107
+msgid "Stop"
+msgstr "Parar"
+
+#: inc_header.php:220
+msgid "start slideshow"
+msgstr "iniciar diapositivas"
+
+#: inc_header.php:221
+msgid "stop slideshow"
+msgstr "detener diapositivas"
+
+#: inc_header.php:224 password.php:21
+msgid "close"
+msgstr "cerrar"
+
+#: inc_print_comment.php:30
+msgid "No Comments"
+msgstr "Sin Comentarios"
+
+#: inc_print_image_statistic.php:6
+msgid "Random images"
+msgstr "Imágenes aleatorias"
+
+#: inc_print_image_statistic.php:8
+msgid "Popular images"
+msgstr "Imágenes populares"
+
+#: inc_print_image_statistic.php:16
+msgid "Most rated images"
+msgstr "Imágenes más valorizadas"
+
+#: inc_print_image_statistic.php:18
+msgid "Top rated images"
+msgstr "Imágenes más valorizadas"
+
+#: news.php:12 news.php:14
+msgid "newer"
+msgstr "más reciente"
+
+#: news.php:17 news.php:19
+msgid "older"
+msgstr "más antiguo"
+
+#: news.php:26
+msgid "All news"
+msgstr "Todas las Noticias"
+
+#: news.php:29
+msgid "Category"
+msgstr "Categoría"
+
+#: news.php:38
+msgid " | "
+msgstr " | "
+
+#: password.php:6
+msgid "Password required"
+msgstr "Contraseña Requerida"
+
+#: register.php:9
+msgid "User Registration"
+msgstr "Registración de Usuario"
+
+#: search.php:36
+msgid "Sorry, no matches found. Try refining your search."
+msgstr "No se encontraron coincidencias. Intente redefinir la búsqueda."
+
+#: search.php:44
+#, php-format
+msgid "Images (%s)"
+msgstr "Imágenes (%s)"
+
+#: search.php:49
+#, php-format
+msgid "Albums (%s)"
+msgstr "Albums (%s)"
+
+#: search.php:53
+#, php-format
+msgid "Albums (%1$s) &amp; Images (%2$s)"
+msgstr "Albums (%1$s) &amp; Imágenes (%2$s)"
+
+#: search.php:89
+#, php-format
+msgid "Articles (%s)"
+msgstr "Artículos (%s)"
+
+#: search.php:104
+#, php-format
+msgid "Pages (%s)"
+msgstr "Páginas (%s)"
+
+#: themeoptions.php:81
+msgid "Use this file as logo"
+msgstr "Usar este archivo como logotipo"
+
+#: themeoptions.php:81
+msgid ""
+"Image file for the logo area: enter the full filename (including extension) "
+"of the image file located in themes/zpArdoise/images/ (banniere1.jpg for "
+"example)."
+msgstr ""
+"Archivo de Imagen para el area del logotipo: ingrese el nombre completo del "
+"archivo (incluyendo la extensión) del archivo de imagen ubicado en themes/"
+"zpArdoise/images/ (p.ej. banniere1.jpg)."
+
+#: themeoptions.php:82
+msgid "Show the logo on Image page"
+msgstr "Mostrar el logotipo en la página Imagen"
+
+#: themeoptions.php:82
+msgid "Check to show the logo on the Image page."
+msgstr "Marque para mostrar el logotipo en la página Imagen."
+
+#: themeoptions.php:83
+msgid "Style"
+msgstr "Estilo"
+
+#: themeoptions.php:83
+msgid "Choose Dark or Light for color style of the site."
+msgstr "Seleccione Dark o Light para el estilo de color del sitio."
+
+#: themeoptions.php:84
+msgid "Color"
+msgstr "Color"
+
+#: themeoptions.php:84
+msgid ""
+"Choose the color of links: choose Default to use the default color of Dark "
+"or Light style and choose Custom to use a custom value. You can customize "
+"these values by editing the file theme/zpArdoise/css/custom.css."
+msgstr ""
+"Elección del color de los enlaces: elija Predeterminado para usar el color "
+"predeterminado del estilo Oscuro (Dark) o Claro (Light), o elija "
+"Personalizar para usar un valor personalizado. Puede personalizar estos "
+"valores editando el tema en el archivo /zpArdoise/css/custom.css."
+
+#: themeoptions.php:85
+msgid "Homepage"
+msgstr "Página Inicio"
+
+#: themeoptions.php:85
+msgid "none"
+msgstr "ninguno"
+
+#: themeoptions.php:85
+msgid ""
+"Choose here any <em>un-published Zenpage page</em> (listed by <em>titlelink</"
+"em>) to act as your site’s homepage instead the normal gallery index."
+msgstr ""
+"Seleccione aquí cualquier página de Zenpage <em>no publicada</em> (listada "
+"por <em>titlelink</em>) para fungir como página de Inicio de su sitio en vez "
+"de el Inicio normal de la Galería."
+
+#: themeoptions.php:86
+msgid ""
+"<strong>Note:</strong> This of course overrides the <em>News on index page</"
+"em> option and your theme must be setup for this feature! Visit the theming "
+"tutorial for details."
+msgstr ""
+"<strong>Nota:</strong> Esto por supuesto anula la opción <em>Noticias en la "
+"página Inicio</em> y su tema debe ser configurado para esta característica! "
+"Visita el tutorial de temas para más detalles."
+
+#: themeoptions.php:87
+msgid "Show Archive link"
+msgstr "Mostrar enlace Archivo"
+
+#: themeoptions.php:87
+msgid "Display a menu link to the Archive list."
+msgstr "Despliega un enlace de menú a la lista de Archivos."
+
+#: themeoptions.php:88
+msgid "Allow search"
+msgstr "Permitir Buscar"
+
+#: themeoptions.php:88
+msgid "Check to enable search form."
+msgstr "Marque para habilitar el formulario de búsqueda."
+
+#: themeoptions.php:89
+msgid "Show Tags"
+msgstr "Mostrar Etiquetas"
+
+#: themeoptions.php:89
+msgid "Check to show a tag cloud with all the tags of the gallery."
+msgstr ""
+"Marque para mostrar una nube de etiquetas conteniendo todas las etiquetas de "
+"la Galería."
+
+#: themeoptions.php:90
+msgid "Show Image Statistic strip"
+msgstr "Mostrar tira de estadística de Imagen"
+
+#: themeoptions.php:90
+msgid ""
+"Shows a strip of thumbnails on Gallery page, depending of the selected "
+"option. NOTE: For anything other than random, the image_album_statistics "
+"plugin must be activated."
+msgstr ""
+"Muestra una tira de miniaturas de imágenes en la página de la Galería, "
+"dependiendo de la opción seleccionada. NOTA: para cualquier opción distinta "
+"a \"aleatoria\", el complemento image_statistic debe estar activado."
+
+#: themeoptions.php:91
+msgid "Use Galleriffic script"
+msgstr "Usar el complemento Galleriffic"
+
+#: themeoptions.php:91
+msgid ""
+"Check to use the Galleriffic script. Uncheck to use a standard display. This "
+"standard display is also displayed when javascript is disabled in the "
+"browser."
+msgstr ""
+"Marque para usar el complemento Galleriffic. Desmarque para usar un visor "
+"estándar. Este visor estándar también es desplegado cuando Javascript está "
+"deshabilitado en el navegador."
+
+#: themeoptions.php:92
+msgid "Galleriffic slideshow delay"
+msgstr "Lapso entre diapositivas de Galleriffic"
+
+#: themeoptions.php:92
+msgid ""
+"If Galleriffic is used, enter the delay of the gallerific slideshow in ms "
+"(eg 3000)."
+msgstr ""
+"Si se usa Galleriffic, ingrese el lapso entre dispositivas de Galleriffic en "
+"milisegundos (ej. 3000)."
+
+#: themeoptions.php:93
+msgid "Use Colorbox in Album page"
+msgstr "Usar Colorbox en página Album"
+
+#: themeoptions.php:93
+msgid ""
+"Check to display the full size image with Colorbox in album page, if "
+"galleriffic is used or not. NOTE : in that case, Image page will never be "
+"used."
+msgstr ""
+"Marque para desplegar la imagen en tamaño completo con Colorbox en la página "
+"Album, si Galleriffic es utilizado o no. NOTA: en ese caso, la página imagen "
+"nunca será usada."
+
+#: themeoptions.php:94
+msgid "Use Colorbox in Image page"
+msgstr "Usar Colorbox en página Imagen"
+
+#: themeoptions.php:94
+msgid "Check to display the full size image with Colorbox in Image page."
+msgstr ""
+"Marque para desplegar la imagen en tamaño completo con Colorbox en la página "
+"Imagen."
+
+#: themeoptions.php:95
+msgid "Show image EXIF data"
+msgstr "Mortar datos EXIF de imagen"
+
+#: themeoptions.php:95
+msgid ""
+"Show the main EXIF Data on Image page (Model, FocalLength, FNumber, "
+"ExposureTime, ISOSpeedRatings). Remember you have to check these EXIFs data "
+"on Admin>Options>Image>Metadata."
+msgstr ""
+"Muestra los Datos EXIF principales en la página Imagen (Modelo, Distancia "
+"Focal, FNumber, Tiempo de Exposición, Escala de Velocidades ISO, etc.). "
+"Recuerde que tiene que marcar esos datos EXIF en admin->imagen->Información "
+"EXIF."
