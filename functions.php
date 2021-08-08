@@ -52,50 +52,53 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 			$crop = (int) $crop && true;
 		}
 	}
-	if (!empty($class))
+	if (!empty($class)) {
 		$class = ' class="' . $class . '"';
+	}
 
 	echo '<ul' . $class . '>';
-	for ($i = 1; $i <= $number; $i++) {
+
 		switch ($option) {
 			case "all":
-				$randomImage = getRandomImages();
+				//$randomImage = getRandomImages();
+				$randomImages = getImageStatistic($number, 'random', '');
 				break;
 			case "album":
-				$randomImage = getRandomImagesAlbum($rootAlbum);
+				//$randomImage = getRandomImagesAlbum($rootAlbum);
+				$randomImages = getImageStatistic($number, 'random', $rootAlbum);
 				break;
 		}
-		if (is_object($randomImage) && $randomImage->exists) {
-			echo '<li>' . "\n";
-			if ($fullimagelink) {
-				$aa_class = ' class="' . $a_class . '"';
-				$randomImageURL = $randomImage->getFullimageURL();
-			} else {
-				$aa_class = NULL;
-				$randomImageURL = $randomImage->getLink();
+		if ( isset($randomImages) ) {
+			foreach($randomImages as $randomImage) {
+				$randomImageList[] = $randomImage;
+				echo '<li>' . "\n";
+				if ($fullimagelink) {
+					$aa_class = ' class="' . $a_class . '"';
+					$randomImageURL = $randomImage->getFullimageURL();
+				} else {
+					$aa_class = NULL;
+					$randomImageURL = $randomImage->getLink();
+				}
+				echo '<a href="' . html_encode($randomImageURL) . '"' . $aa_class . ' title="' . html_encode($randomImage->getTitle()) . '">';
+				switch ($crop) {
+					case 0:
+						$sizes = getSizeCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, $randomImage);
+						$html = '<img src="' . html_encode(pathurlencode($randomImage->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
+						break;
+					case 1:
+						$sizes = getSizeCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, $randomImage);
+						$html = '<img src="' . html_encode(pathurlencode($randomImage->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
+						break;
+					case 2:
+						$sizes = getSizeDefaultThumb($randomImage);
+						$html = '<img src="' . html_encode(pathurlencode($randomImage->getThumb())) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
+						break;
+				}
+				echo zp_apply_filter('custom_image_html', $html, false);
+				echo '</a>';
+				echo '</li>' . "\n";
 			}
-			echo '<a href="' . html_encode($randomImageURL) . '"' . $aa_class . ' title="' . html_encode($randomImage->getTitle()) . '">';
-			switch ($crop) {
-				case 0:
-					$sizes = getSizeCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, $randomImage);
-					$html = '<img src="' . html_encode(pathurlencode($randomImage->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
-					break;
-				case 1:
-					$sizes = getSizeCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, $randomImage);
-					$html = '<img src="' . html_encode(pathurlencode($randomImage->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
-					break;
-				case 2:
-					$sizes = getSizeDefaultThumb($randomImage);
-					$html = '<img src="' . html_encode(pathurlencode($randomImage->getThumb())) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($randomImage->getTitle()) . '" />' . "\n";
-					break;
-			}
-			echo zp_apply_filter('custom_image_html', $html, false);
-			echo '</a>';
-			echo '</li>' . "\n";
-		} else {
-			break;
 		}
-	}
 	echo '</ul>';
 }
 
