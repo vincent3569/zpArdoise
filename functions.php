@@ -60,11 +60,9 @@ function zpArdoise_printRandomImages($number=5, $class=NULL, $option='all', $roo
 
 		switch ($option) {
 			case "all":
-				//$randomImage = getRandomImages();
 				$randomImages = getImageStatistic($number, 'random', '');
 				break;
 			case "album":
-				//$randomImage = getRandomImagesAlbum($rootAlbum);
 				$randomImages = getImageStatistic($number, 'random', $rootAlbum);
 				break;
 		}
