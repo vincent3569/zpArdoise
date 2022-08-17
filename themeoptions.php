@@ -56,12 +56,12 @@ class ThemeOptions {
 
 		if (class_exists('cacheManager')) {
 			cacheManager::deleteCacheSizes($me);
-			cacheManager::addDefaultThumbSize();
-			cacheManager::addDefaultSizedImageSize();
+			cacheManager::addCacheSize($me, getThemeOption('thumb_size'), NULL, NULL, getThemeOption('thumb_crop_width'), getThemeOption('thumb_crop_height'), NULL, NULL, true);
 			if (getOption('use_galleriffic')) {
-				cacheManager::addThemeCacheSize($me, 85, 85, 85, 85, 85, NULL, NULL, true);
-				cacheManager::addThemeCacheSize($me, 555, NULL, NULL, NULL, NULL, NULL, NULL, false);
+				cacheManager::addCacheSize($me, 85, NULL, NULL, 85, 85, NULL, NULL, true);
+				cacheManager::addCacheSize($me, 555, NULL, NULL, NULL, NULL, NULL, NULL, false);
 			}
+			cacheManager::addCacheSize($me, getThemeOption('image_size'), NULL, NULL, NULL, NULL, NULL, NULL, false);
 		}
 	}
 
@@ -70,8 +70,8 @@ class ThemeOptions {
 	}
 
 	function getOptionsSupported() {
-
-		$unpublishedpages = query_full_array("SELECT title, titlelink FROM " . prefix('pages') . " WHERE `show` != 1 ORDER by `sort_order`");
+		global $_zp_db;
+		$unpublishedpages = $_zp_db->queryFullArray("SELECT title, titlelink FROM " . $_zp_db->prefix('pages') . " WHERE `show` != 1 ORDER by `sort_order`");
 		$unpub_list = array();
 		foreach ($unpublishedpages as $page) {
 			$unpub_list[get_language_string($page['title'])] = $page['titlelink'];

@@ -38,7 +38,7 @@
 
 			<div id="copyright">
 				<?php
-				echo getMainSiteName();
+				echo getParentSiteTitle();
 				printCustomPageURL(gettext('Archive View'), 'archive', '', ' | ');
 				if (extensionEnabled('user_login-out')) {
 					printUserLogin_out(' | ', '', 2);

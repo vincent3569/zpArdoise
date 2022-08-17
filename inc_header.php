@@ -9,7 +9,7 @@ if (!defined('WEBPATH')) die();
 	<?php zp_apply_filter('theme_head'); ?>
 	<title>
 	<?php
-	echo getMainSiteName() . ' | ';
+	echo getParentSiteTitle() . ' | ';
 	switch ($_zp_gallery_page) {
 		case 'index.php':
 			if ($isHomePage) { echo gettext('Home'); } else { echo gettext('Gallery'); }; break;
